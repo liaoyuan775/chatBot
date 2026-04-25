@@ -5,15 +5,11 @@ from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import select
 
 from app.core.config import get_settings
-from app.core.database import SessionLocal, engine
+from app.core.database import SessionLocal
 from app.core.logging import configure_logging
 from app.core.provider_gateway import encrypt_api_key
-from app.models import Base, ProviderConfigEntity
-from app.modules.admin_auth.middleware import AdminAuthMiddleware
-from app.modules.admin_auth.router import router as admin_router
-from app.modules.admin_auth.service import cleanup_expired_admin_sessions, ensure_default_admin
+from app.models import ProviderConfigEntity
 from app.modules.chat.engine import ensure_default_call_config
-from app.modules.ops.router import router as ops_router
 from app.modules.call_config.router import router as call_config_router
 from app.modules.chain_config.router import router as chain_router
 from app.modules.chat.router import router as chat_router
@@ -37,7 +33,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-app.add_middleware(AdminAuthMiddleware)
 
 app.include_router(chat_router)
 app.include_router(call_config_router)
@@ -50,21 +45,16 @@ app.include_router(voice_router)
 app.include_router(knowledge_router)
 app.include_router(settings_router)
 app.include_router(realtime_router)
-app.include_router(admin_router)
-app.include_router(ops_router)
 
 
 @app.on_event("startup")
 async def bootstrap_runtime_defaults() -> None:
-    async with engine.begin() as conn:
-        await conn.run_sync(Base.metadata.create_all)
     async with SessionLocal() as db:
         providers = [
             ("dashscope", settings.dashscope_base_url, settings.dashscope_api_key),
             ("volcengine", settings.volcengine_ark_base_url, settings.volcengine_ark_api_key),
             ("siliconflow", "https://api.siliconflow.cn", settings.siliconflow_api_key),
         ]
-        await ensure_default_admin(db)
         for provider_name, base_url, api_key in providers:
             row = await db.scalar(
                 select(ProviderConfigEntity).where(ProviderConfigEntity.provider_name == provider_name)
@@ -88,7 +78,6 @@ async def bootstrap_runtime_defaults() -> None:
                 await encrypt_api_key(db, row.id, api_key)
         await db.commit()
         await ensure_default_call_config(db)
-        await cleanup_expired_admin_sessions(db)
 
 
 @app.get("/healthz")

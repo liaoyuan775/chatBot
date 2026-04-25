@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
 import clsx from "clsx";
-import { useAuth } from "../auth/AuthContext";
 
 const LAST_CONFIG_ROUTE_KEY = "chatbot-last-config-route";
 const DEFAULT_CONFIG_ROUTE = "/context";
@@ -26,7 +25,6 @@ function resolveConfigRoute(raw: string | null) {
 export function AppLayout() {
   const location = useLocation();
   const navigate = useNavigate();
-  const { authenticated, username, logout } = useAuth();
   const isChatMode = location.pathname.startsWith("/chat");
 
   useEffect(() => {
@@ -44,11 +42,6 @@ export function AppLayout() {
     navigate("/chat");
   };
 
-  const handleLogout = async () => {
-    await logout();
-    navigate("/login");
-  };
-
   return (
     <div className="min-h-screen px-3 py-3 md:px-5 md:py-4">
       <div className="mx-auto max-w-[1560px] fade-up">
@@ -57,27 +50,13 @@ export function AppLayout() {
             <h1 className="font-display text-lg text-[var(--ink)] md:text-xl">智能多模态语音聊天机器人</h1>
             <p className="text-xs text-[var(--muted)]">{isChatMode ? "对话模式" : "配置模式"} · 通过循环图标切换</p>
           </div>
-          <div className="flex items-center gap-2">
-            {authenticated ? (
-              <>
-                <div className="hidden rounded-full border border-[var(--line)] bg-white/75 px-3 py-1 text-xs text-[var(--muted)] md:block">
-                  管理员：{username || "admin"}
-                </div>
-                {!isChatMode ? (
-                  <button className="action-btn action-btn-secondary px-3 py-2 text-xs" onClick={() => void handleLogout()} title="退出管理端">
-                    退出登录
-                  </button>
-                ) : null}
-              </>
-            ) : null}
-            <button
-              className="rotate-switch-btn"
-              title={isChatMode ? "切换到配置模式" : "切换到对话模式"}
-              onClick={switchMode}
-            >
-              ↻
-            </button>
-          </div>
+          <button
+            className="rotate-switch-btn"
+            title={isChatMode ? "切换到配置模式" : "切换到对话模式"}
+            onClick={switchMode}
+          >
+            ↻
+          </button>
         </header>
 
         {isChatMode ? (

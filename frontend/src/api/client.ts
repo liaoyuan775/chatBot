@@ -30,8 +30,7 @@ function resolveApiBaseUrl() {
 
 const http = axios.create({
   baseURL: resolveApiBaseUrl(),
-  timeout: 20000,
-  withCredentials: true
+  timeout: 20000
 });
 
 const mutatingMethods = new Set(["post", "put", "patch", "delete"]);
@@ -122,8 +121,7 @@ export const api = {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
-        signal: controller.signal,
-        credentials: "include"
+        signal: controller.signal
       });
       if (response.status === 405) {
         const fallback = await http.post("/api/messages", payload, { headers: { "x-toast-skip": "1" } });
@@ -225,11 +223,6 @@ export const api = {
   initCallConfig: async () => (await http.post("/api/call-config/init-defaults")).data,
   getCallConfig: async () => (await http.get<CallConfig>("/api/call-config")).data,
   updateCallConfig: async (payload: Omit<CallConfig, "id" | "updated_at">) => (await http.put("/api/call-config", payload)).data,
-  adminLogin: async (payload: { username: string; password: string }) => (await http.post("/api/admin/auth/login", payload)).data,
-  adminLogout: async () => (await http.post("/api/admin/auth/logout")).data,
-  adminMe: async () => (await http.get<{ authenticated: boolean; user?: { id?: string; username?: string } }>("/api/admin/auth/me")).data,
-  listAuditLogs: async () => (await http.get<Array<Record<string, unknown>>>("/api/admin/audit-logs")).data,
-  getDiagnostics: async () => (await http.get<Record<string, unknown>>("/api/admin/ops/diagnostics")).data,
 
   listProviders: async () => (await http.get<Provider[]>("/api/providers")).data,
   listProviderTemplates: async () => (await http.get<Array<{ provider_name: string; base_url: string }>>("/api/providers/templates")).data,

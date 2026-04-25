@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 from functools import lru_cache
-import secrets
 from urllib.parse import urlparse
 
 from pydantic import Field, field_validator
@@ -24,17 +23,6 @@ class Settings(BaseSettings):
     session_ttl_seconds: int = Field(default=3600, alias="SESSION_TTL_SECONDS")
     memory_window_turns: int = Field(default=6, alias="MEMORY_WINDOW_TURNS")
     simulation_enabled: bool = Field(default=False, alias="SIMULATION_ENABLED")
-    admin_username: str = Field(default="admin", alias="ADMIN_USERNAME")
-    admin_password: str = Field(default="ChangeMe123!", alias="ADMIN_PASSWORD")
-    admin_session_ttl_hours: int = Field(default=12, alias="ADMIN_SESSION_TTL_HOURS")
-    auth_cookie_name: str = Field(default="chatbot_admin_session", alias="AUTH_COOKIE_NAME")
-    auth_cookie_secure: bool = Field(default=False, alias="AUTH_COOKIE_SECURE")
-    auth_cookie_samesite: str = Field(default="lax", alias="AUTH_COOKIE_SAMESITE")
-    login_rate_limit_window_seconds: int = Field(default=300, alias="LOGIN_RATE_LIMIT_WINDOW_SECONDS")
-    login_rate_limit_max_attempts: int = Field(default=10, alias="LOGIN_RATE_LIMIT_MAX_ATTEMPTS")
-    chat_rate_limit_window_seconds: int = Field(default=60, alias="CHAT_RATE_LIMIT_WINDOW_SECONDS")
-    chat_rate_limit_max_requests: int = Field(default=120, alias="CHAT_RATE_LIMIT_MAX_REQUESTS")
-    diagnostics_recent_error_limit: int = Field(default=20, alias="DIAGNOSTICS_RECENT_ERROR_LIMIT")
 
     volcengine_ark_api_key: str | None = Field(default=None, alias="VOLCENGINE_ARK_API_KEY")
     volcengine_ark_base_url: str = Field(default="https://ark.cn-beijing.volces.com/api/v3", alias="VOLCENGINE_ARK_BASE_URL")
@@ -52,20 +40,6 @@ class Settings(BaseSettings):
     siliconflow_tts_voice: str = Field(default="FunAudioLLM/CosyVoice2-0.5B:alex", alias="SILICONFLOW_TTS_VOICE")
     siliconflow_embedding_model: str = Field(default="BAAI/bge-m3", alias="SILICONFLOW_EMBEDDING_MODEL")
     siliconflow_rerank_model: str = Field(default="BAAI/bge-reranker-v2-m3", alias="SILICONFLOW_RERANK_MODEL")
-
-    @field_validator("auth_cookie_samesite")
-    @classmethod
-    def validate_auth_cookie_samesite(cls, value: str) -> str:
-        normalized = str(value or "lax").strip().lower()
-        if normalized not in {"lax", "strict", "none"}:
-            return "lax"
-        return normalized
-
-    @field_validator("admin_password")
-    @classmethod
-    def ensure_admin_password_not_empty(cls, value: str) -> str:
-        text = str(value or "").strip()
-        return text or secrets.token_urlsafe(18)
 
     @field_validator("database_url")
     @classmethod

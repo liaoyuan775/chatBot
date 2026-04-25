@@ -1,8 +1,5 @@
 from app.models.base import Base
 from app.models.entities import (
-    AdminAuditLogEntity,
-    AdminSessionEntity,
-    AdminUserEntity,
     CallConfigEntity,
     ChainConfigEntity,
     KnowledgeBaseEntity,
@@ -22,9 +19,6 @@ from app.models.entities import (
 
 __all__ = [
     "Base",
-    "AdminUserEntity",
-    "AdminSessionEntity",
-    "AdminAuditLogEntity",
     "SessionEntity",
     "MessageEntity",
     "SessionMemoryEntity",
