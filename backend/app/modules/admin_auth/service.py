@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 from collections import defaultdict, deque
-from collections.abc import Iterable
 from dataclasses import dataclass
 from datetime import datetime
 from time import monotonic
@@ -223,6 +222,7 @@ def serialize_audit_log(row: AdminAuditLogEntity) -> dict[str, Any]:
     return {
         "id": str(row.id),
         "username": row.username,
+        "admin_username": row.username,
         "action": row.action,
         "target": row.target,
         "method": row.method,
