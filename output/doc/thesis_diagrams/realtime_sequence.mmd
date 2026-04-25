@@ -1,0 +1,39 @@
+sequenceDiagram
+  autonumber
+  participant U as 用户
+  participant FE as 前端界面
+  participant RT as SessionRuntime
+  participant WS as WebSocket 实时服务
+  participant CH as 聊天编排 / Provider 路由
+  participant OM as 实时模型 / 回退链路
+  participant DB as PostgreSQL
+
+  U->>FE: 点击开始通话并说话
+  FE->>RT: 开启 integrated-realtime 策略
+  RT->>WS: 建立 WebSocket 连接(session_id)
+  WS-->>RT: session.ready / listening
+
+  loop 持续通话
+    FE->>RT: 发送音频分片
+    RT->>WS: audio.chunk
+    WS->>OM: 转发音频流
+    OM-->>WS: partial transcript / text delta / audio delta
+    WS-->>RT: user.transcript.partial
+    WS-->>RT: assistant.text.delta
+    WS-->>RT: assistant.audio.started / delta / stopped
+    RT-->>FE: 更新字幕、消息与播放状态
+  end
+
+  alt 用户中途插话
+    U->>FE: 打断当前播报
+    FE->>RT: interrupt
+    RT->>WS: interrupt event
+    WS-->>RT: assistant.interrupted
+    RT-->>FE: 标记当前回复被打断
+  else 正常完成一轮
+    WS->>CH: 持久化本轮输入输出
+    CH->>DB: 写入 messages / session_chain_audits
+    CH->>DB: 更新 session memories
+    WS-->>RT: metrics.turn / session.updated
+    RT-->>FE: 展示最终消息与指标
+  end

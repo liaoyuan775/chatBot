@@ -1,0 +1,898 @@
+[      66ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=a645c4a9:21550
+[     157ms] [WARNING] ⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition. @ http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=fecbe714:4435
+[     157ms] [WARNING] ⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath. @ http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=fecbe714:4435
+[ 4709493ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:5173/src/layouts/AppLayout.tsx?t=1776146342069:0
+[ 4709494ms] [ERROR] [hmr] Failed to reload /src/layouts/AppLayout.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://127.0.0.1:5173/@vite/client:175
+[ 4736864ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/sessions:0
+[ 4736865ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/chains:0
+[ 4736865ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/personas:0
+[ 4736865ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/voices:0
+[ 4736865ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/messages?session_id=466a2cef-6221-4d14-913a-8e422a69f533:0
+[ 4736865ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/context/sessions/466a2cef-6221-4d14-913a-8e422a69f533:0
+[ 4738899ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/call-config:0
+[ 4738976ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/sessions:0
+[ 4739895ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/chains:0
+[ 4739896ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/personas:0
+[ 4739896ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/voices:0
+[ 4739896ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/messages?session_id=466a2cef-6221-4d14-913a-8e422a69f533:0
+[ 4740936ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/context/sessions/466a2cef-6221-4d14-913a-8e422a69f533:0
+[ 4741965ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/call-config:0
+[ 4743037ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/sessions:0
+[ 4743958ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/chains:0
+[ 4743958ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/personas:0
+[ 4743959ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/voices:0
+[ 4743959ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/messages?session_id=466a2cef-6221-4d14-913a-8e422a69f533:0
+[ 4745003ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/context/sessions/466a2cef-6221-4d14-913a-8e422a69f533:0
+[ 4746029ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/call-config:0
+[ 4749063ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/sessions:0
+[ 4749355ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/chains:0
+[ 4750024ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/personas:0
+[ 4750025ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/voices:0
+[ 4750028ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/messages?session_id=466a2cef-6221-4d14-913a-8e422a69f533:0
+[ 4750029ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/context/sessions/466a2cef-6221-4d14-913a-8e422a69f533:0
+[ 4752083ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/call-config:0
+[ 4754048ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776146386628:0
+[ 4754049ms] [ERROR] [hmr] Failed to reload /src/pages/ChatCenterPage.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://127.0.0.1:5173/@vite/client:175
+[ 4879930ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/sessions:0
+[ 4879930ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/chains:0
+[ 4879930ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/personas:0
+[ 4879930ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/voices:0
+[ 4879931ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/messages?session_id=466a2cef-6221-4d14-913a-8e422a69f533:0
+[ 4879944ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/context/sessions/466a2cef-6221-4d14-913a-8e422a69f533:0
+[ 4881980ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/call-config:0
+[ 4882041ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/sessions:0
+[ 4882984ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/chains:0
+[ 4882984ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/personas:0
+[ 4882985ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/voices:0
+[ 4882986ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/messages?session_id=466a2cef-6221-4d14-913a-8e422a69f533:0
+[ 4884022ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/context/sessions/466a2cef-6221-4d14-913a-8e422a69f533:0
+[ 4885031ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/call-config:0
+[ 4886103ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/sessions:0
+[ 4887048ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/chains:0
+[ 4887049ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/personas:0
+[ 4887049ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/voices:0
+[ 4887049ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/messages?session_id=466a2cef-6221-4d14-913a-8e422a69f533:0
+[ 4888072ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/context/sessions/466a2cef-6221-4d14-913a-8e422a69f533:0
+[ 4889068ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/call-config:0
+[ 4892160ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/sessions:0
+[ 4892426ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/chains:0
+[ 4893106ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/personas:0
+[ 4893106ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/voices:0
+[ 4893106ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/messages?session_id=466a2cef-6221-4d14-913a-8e422a69f533:0
+[ 4893107ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/context/sessions/466a2cef-6221-4d14-913a-8e422a69f533:0
+[ 4895121ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/call-config:0
+[ 6705561ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=a645c4a9:21550
+[ 6705670ms] [WARNING] ⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition. @ http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=fecbe714:4435
+[ 6705671ms] [WARNING] ⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath. @ http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=fecbe714:4435
+[ 6852173ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=a645c4a9:21550
+[ 6852278ms] [WARNING] ⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition. @ http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=fecbe714:4435
+[ 6852278ms] [WARNING] ⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath. @ http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=fecbe714:4435
+[ 9321775ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=a645c4a9:21550
+[ 9321879ms] [WARNING] ⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition. @ http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=fecbe714:4435
+[ 9321880ms] [WARNING] ⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath. @ http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=fecbe714:4435
+[ 9322247ms] [ERROR] Failed to load resource: net::ERR_UNKNOWN_URL_SCHEME @ inline:base64:0
+[15946328ms] [LOG] [vite] server connection lost. Polling for restart... @ http://127.0.0.1:5173/@vite/client:559
+[15948389ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[15951679ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:21550
+[15951783ms] [WARNING] ⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition. @ http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4435
+[15951784ms] [WARNING] ⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath. @ http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4435
+[18529194ms] [LOG] [vite] server connection lost. Polling for restart... @ http://127.0.0.1:5173/@vite/client:559
+[18531217ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[18534094ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:21550
+[18534186ms] [WARNING] ⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition. @ http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4435
+[18534187ms] [WARNING] ⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath. @ http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4435
+[19342966ms] [LOG] [vite] server connection lost. Polling for restart... @ http://127.0.0.1:5173/@vite/client:559
+[19344991ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[19347579ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:21550
+[19347689ms] [WARNING] ⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition. @ http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4435
+[19347689ms] [WARNING] ⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath. @ http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4435
+[20064338ms] ReferenceError: singleRecording is not defined
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776161696635:858:44)
+    at renderWithHooks (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:11548:26)
+    at mountIndeterminateComponent (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14926:21)
+    at beginWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:15914:22)
+    at HTMLUnknownElement.callCallback2 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3674:22)
+    at Object.invokeGuardedCallbackDev (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3699:24)
+    at invokeGuardedCallback (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3733:39)
+    at beginWork$1 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19765:15)
+    at performUnitOfWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19198:20)
+    at workLoopSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19137:13)
+[20064346ms] ReferenceError: singleRecording is not defined
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776161696635:858:44)
+    at renderWithHooks (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:11548:26)
+    at mountIndeterminateComponent (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14926:21)
+    at beginWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:15914:22)
+    at HTMLUnknownElement.callCallback2 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3674:22)
+    at Object.invokeGuardedCallbackDev (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3699:24)
+    at invokeGuardedCallback (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3733:39)
+    at beginWork$1 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19765:15)
+    at performUnitOfWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19198:20)
+    at workLoopSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19137:13)
+[20064348ms] [ERROR] The above error occurred in the <ChatCenterPage> component:
+
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776161696635:54:23)
+    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4131:5)
+    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4537:26)
+    at main
+    at div
+    at div
+    at AppLayout (http://127.0.0.1:5173/src/layouts/AppLayout.tsx?t=1776161182033:40:20)
+    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4131:5)
+    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4601:5)
+    at AppRoutes
+    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4544:15)
+    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:5290:5)
+    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=9a5ac708:3194:3)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14031
+[20064350ms] ReferenceError: singleRecording is not defined
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776161696635:858:44)
+    at renderWithHooks (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:11548:26)
+    at mountIndeterminateComponent (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14926:21)
+    at beginWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:15914:22)
+    at beginWork$1 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19753:22)
+    at performUnitOfWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19198:20)
+    at workLoopSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19137:13)
+    at renderRootSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19116:15)
+    at recoverFromConcurrentError (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:18736:28)
+    at performSyncWorkOnRoot (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:18879:28)
+[20064480ms] ReferenceError: singleRecording is not defined
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776161696804:879:44)
+    at renderWithHooks (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:11548:26)
+    at mountIndeterminateComponent (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14926:21)
+    at beginWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:15914:22)
+    at HTMLUnknownElement.callCallback2 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3674:22)
+    at Object.invokeGuardedCallbackDev (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3699:24)
+    at invokeGuardedCallback (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3733:39)
+    at beginWork$1 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19765:15)
+    at performUnitOfWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19198:20)
+    at workLoopSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19137:13)
+[20064487ms] ReferenceError: singleRecording is not defined
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776161696804:879:44)
+    at renderWithHooks (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:11548:26)
+    at mountIndeterminateComponent (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14926:21)
+    at beginWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:15914:22)
+    at HTMLUnknownElement.callCallback2 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3674:22)
+    at Object.invokeGuardedCallbackDev (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3699:24)
+    at invokeGuardedCallback (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3733:39)
+    at beginWork$1 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19765:15)
+    at performUnitOfWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19198:20)
+    at workLoopSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19137:13)
+[20064487ms] [ERROR] The above error occurred in the <ChatCenterPage> component:
+
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776161696804:54:23)
+    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4131:5)
+    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4537:26)
+    at main
+    at div
+    at div
+    at AppLayout (http://127.0.0.1:5173/src/layouts/AppLayout.tsx?t=1776161182033:40:20)
+    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4131:5)
+    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4601:5)
+    at AppRoutes
+    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4544:15)
+    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:5290:5)
+    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=9a5ac708:3194:3)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14031
+[20064488ms] ReferenceError: singleRecording is not defined
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776161696804:879:44)
+    at renderWithHooks (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:11548:26)
+    at mountIndeterminateComponent (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14926:21)
+    at beginWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:15914:22)
+    at beginWork$1 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19753:22)
+    at performUnitOfWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19198:20)
+    at workLoopSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19137:13)
+    at renderRootSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19116:15)
+    at recoverFromConcurrentError (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:18736:28)
+    at performSyncWorkOnRoot (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:18879:28)
+[20078712ms] ReferenceError: singleRecording is not defined
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776161711099:911:44)
+    at renderWithHooks (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:11548:26)
+    at mountIndeterminateComponent (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14926:21)
+    at beginWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:15914:22)
+    at HTMLUnknownElement.callCallback2 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3674:22)
+    at Object.invokeGuardedCallbackDev (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3699:24)
+    at invokeGuardedCallback (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3733:39)
+    at beginWork$1 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19765:15)
+    at performUnitOfWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19198:20)
+    at workLoopSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19137:13)
+[20078719ms] ReferenceError: singleRecording is not defined
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776161711099:911:44)
+    at renderWithHooks (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:11548:26)
+    at mountIndeterminateComponent (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14926:21)
+    at beginWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:15914:22)
+    at HTMLUnknownElement.callCallback2 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3674:22)
+    at Object.invokeGuardedCallbackDev (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3699:24)
+    at invokeGuardedCallback (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3733:39)
+    at beginWork$1 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19765:15)
+    at performUnitOfWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19198:20)
+    at workLoopSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19137:13)
+[20078718ms] [ERROR] The above error occurred in the <ChatCenterPage> component:
+
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776161711099:54:23)
+    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4131:5)
+    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4537:26)
+    at main
+    at div
+    at div
+    at AppLayout (http://127.0.0.1:5173/src/layouts/AppLayout.tsx?t=1776161182033:40:20)
+    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4131:5)
+    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4601:5)
+    at AppRoutes
+    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4544:15)
+    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:5290:5)
+    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=9a5ac708:3194:3)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14031
+[20078721ms] ReferenceError: singleRecording is not defined
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776161711099:911:44)
+    at renderWithHooks (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:11548:26)
+    at mountIndeterminateComponent (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14926:21)
+    at beginWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:15914:22)
+    at beginWork$1 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19753:22)
+    at performUnitOfWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19198:20)
+    at workLoopSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19137:13)
+    at renderRootSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19116:15)
+    at recoverFromConcurrentError (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:18736:28)
+    at performSyncWorkOnRoot (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:18879:28)
+[20078842ms] ReferenceError: singleRecording is not defined
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776161711221:911:44)
+    at renderWithHooks (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:11548:26)
+    at mountIndeterminateComponent (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14926:21)
+    at beginWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:15914:22)
+    at HTMLUnknownElement.callCallback2 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3674:22)
+    at Object.invokeGuardedCallbackDev (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3699:24)
+    at invokeGuardedCallback (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3733:39)
+    at beginWork$1 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19765:15)
+    at performUnitOfWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19198:20)
+    at workLoopSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19137:13)
+[20078846ms] ReferenceError: singleRecording is not defined
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776161711221:911:44)
+    at renderWithHooks (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:11548:26)
+    at mountIndeterminateComponent (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14926:21)
+    at beginWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:15914:22)
+    at HTMLUnknownElement.callCallback2 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3674:22)
+    at Object.invokeGuardedCallbackDev (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3699:24)
+    at invokeGuardedCallback (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3733:39)
+    at beginWork$1 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19765:15)
+    at performUnitOfWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19198:20)
+    at workLoopSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19137:13)
+[20078846ms] [ERROR] The above error occurred in the <ChatCenterPage> component:
+
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776161711221:54:23)
+    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4131:5)
+    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4537:26)
+    at main
+    at div
+    at div
+    at AppLayout (http://127.0.0.1:5173/src/layouts/AppLayout.tsx?t=1776161182033:40:20)
+    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4131:5)
+    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4601:5)
+    at AppRoutes
+    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4544:15)
+    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:5290:5)
+    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=9a5ac708:3194:3)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14031
+[20078847ms] ReferenceError: singleRecording is not defined
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776161711221:911:44)
+    at renderWithHooks (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:11548:26)
+    at mountIndeterminateComponent (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14926:21)
+    at beginWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:15914:22)
+    at beginWork$1 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19753:22)
+    at performUnitOfWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19198:20)
+    at workLoopSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19137:13)
+    at renderRootSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19116:15)
+    at recoverFromConcurrentError (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:18736:28)
+    at performSyncWorkOnRoot (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:18879:28)
+[27513690ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:5173/src/pages/ChainPage.tsx?t=1776169146152:0
+[27513691ms] [ERROR] [hmr] Failed to reload /src/pages/ChainPage.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://127.0.0.1:5173/@vite/client:175
+[27819491ms] ReferenceError: sessionsQuery is not defined
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776169451864:133:24)
+    at renderWithHooks (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:11548:26)
+    at mountIndeterminateComponent (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14926:21)
+    at beginWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:15914:22)
+    at HTMLUnknownElement.callCallback2 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3674:22)
+    at Object.invokeGuardedCallbackDev (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3699:24)
+    at invokeGuardedCallback (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3733:39)
+    at beginWork$1 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19765:15)
+    at performUnitOfWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19198:20)
+    at workLoopSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19137:13)
+[27819491ms] ReferenceError: sessionsQuery is not defined
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776169451864:133:24)
+    at renderWithHooks (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:11548:26)
+    at mountIndeterminateComponent (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14926:21)
+    at beginWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:15914:22)
+    at HTMLUnknownElement.callCallback2 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3674:22)
+    at Object.invokeGuardedCallbackDev (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3699:24)
+    at invokeGuardedCallback (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3733:39)
+    at beginWork$1 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19765:15)
+    at performUnitOfWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19198:20)
+    at workLoopSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19137:13)
+[27819493ms] [ERROR] The above error occurred in the <ChatCenterPage> component:
+
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776169451864:78:23)
+    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4131:5)
+    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4537:26)
+    at main
+    at div
+    at div
+    at AppLayout (http://127.0.0.1:5173/src/layouts/AppLayout.tsx?t=1776161182033:40:20)
+    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4131:5)
+    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4601:5)
+    at AppRoutes
+    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4544:15)
+    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:5290:5)
+    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=9a5ac708:3194:3)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14031
+[27819496ms] ReferenceError: sessionsQuery is not defined
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776169451864:133:24)
+    at renderWithHooks (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:11548:26)
+    at mountIndeterminateComponent (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14926:21)
+    at beginWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:15914:22)
+    at beginWork$1 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19753:22)
+    at performUnitOfWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19198:20)
+    at workLoopSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19137:13)
+    at renderRootSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19116:15)
+    at recoverFromConcurrentError (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:18736:28)
+    at performSyncWorkOnRoot (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:18879:28)
+[27884491ms] ReferenceError: sessionsQuery is not defined
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776169516692:133:24)
+    at renderWithHooks (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:11548:26)
+    at mountIndeterminateComponent (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14926:21)
+    at beginWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:15914:22)
+    at HTMLUnknownElement.callCallback2 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3674:22)
+    at Object.invokeGuardedCallbackDev (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3699:24)
+    at invokeGuardedCallback (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3733:39)
+    at beginWork$1 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19765:15)
+    at performUnitOfWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19198:20)
+    at workLoopSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19137:13)
+[27884492ms] ReferenceError: sessionsQuery is not defined
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776169516692:133:24)
+    at renderWithHooks (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:11548:26)
+    at mountIndeterminateComponent (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14926:21)
+    at beginWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:15914:22)
+    at HTMLUnknownElement.callCallback2 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3674:22)
+    at Object.invokeGuardedCallbackDev (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3699:24)
+    at invokeGuardedCallback (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3733:39)
+    at beginWork$1 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19765:15)
+    at performUnitOfWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19198:20)
+    at workLoopSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19137:13)
+[27884493ms] [ERROR] The above error occurred in the <ChatCenterPage> component:
+
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776169516692:78:23)
+    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4131:5)
+    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4537:26)
+    at main
+    at div
+    at div
+    at AppLayout (http://127.0.0.1:5173/src/layouts/AppLayout.tsx?t=1776161182033:40:20)
+    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4131:5)
+    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4601:5)
+    at AppRoutes
+    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4544:15)
+    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:5290:5)
+    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=9a5ac708:3194:3)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14031
+[27884493ms] ReferenceError: sessionsQuery is not defined
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776169516692:133:24)
+    at renderWithHooks (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:11548:26)
+    at mountIndeterminateComponent (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14926:21)
+    at beginWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:15914:22)
+    at beginWork$1 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19753:22)
+    at performUnitOfWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19198:20)
+    at workLoopSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19137:13)
+    at renderRootSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19116:15)
+    at recoverFromConcurrentError (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:18736:28)
+    at performSyncWorkOnRoot (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:18879:28)
+[27894181ms] ReferenceError: sessionsQuery is not defined
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776169526525:133:24)
+    at renderWithHooks (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:11548:26)
+    at mountIndeterminateComponent (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14926:21)
+    at beginWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:15914:22)
+    at HTMLUnknownElement.callCallback2 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3674:22)
+    at Object.invokeGuardedCallbackDev (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3699:24)
+    at invokeGuardedCallback (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3733:39)
+    at beginWork$1 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19765:15)
+    at performUnitOfWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19198:20)
+    at workLoopSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19137:13)
+[27894182ms] ReferenceError: sessionsQuery is not defined
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776169526525:133:24)
+    at renderWithHooks (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:11548:26)
+    at mountIndeterminateComponent (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14926:21)
+    at beginWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:15914:22)
+    at HTMLUnknownElement.callCallback2 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3674:22)
+    at Object.invokeGuardedCallbackDev (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3699:24)
+    at invokeGuardedCallback (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3733:39)
+    at beginWork$1 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19765:15)
+    at performUnitOfWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19198:20)
+    at workLoopSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19137:13)
+[27894182ms] [ERROR] The above error occurred in the <ChatCenterPage> component:
+
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776169526525:78:23)
+    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4131:5)
+    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4537:26)
+    at main
+    at div
+    at div
+    at AppLayout (http://127.0.0.1:5173/src/layouts/AppLayout.tsx?t=1776161182033:40:20)
+    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4131:5)
+    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4601:5)
+    at AppRoutes
+    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4544:15)
+    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:5290:5)
+    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=9a5ac708:3194:3)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14031
+[27894183ms] ReferenceError: sessionsQuery is not defined
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776169526525:133:24)
+    at renderWithHooks (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:11548:26)
+    at mountIndeterminateComponent (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14926:21)
+    at beginWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:15914:22)
+    at beginWork$1 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19753:22)
+    at performUnitOfWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19198:20)
+    at workLoopSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19137:13)
+    at renderRootSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19116:15)
+    at recoverFromConcurrentError (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:18736:28)
+    at performSyncWorkOnRoot (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:18879:28)
+[27901334ms] ReferenceError: sessionsQuery is not defined
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776169533490:133:24)
+    at renderWithHooks (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:11548:26)
+    at mountIndeterminateComponent (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14926:21)
+    at beginWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:15914:22)
+    at HTMLUnknownElement.callCallback2 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3674:22)
+    at Object.invokeGuardedCallbackDev (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3699:24)
+    at invokeGuardedCallback (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3733:39)
+    at beginWork$1 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19765:15)
+    at performUnitOfWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19198:20)
+    at workLoopSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19137:13)
+[27901335ms] ReferenceError: sessionsQuery is not defined
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776169533490:133:24)
+    at renderWithHooks (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:11548:26)
+    at mountIndeterminateComponent (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14926:21)
+    at beginWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:15914:22)
+    at HTMLUnknownElement.callCallback2 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3674:22)
+    at Object.invokeGuardedCallbackDev (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3699:24)
+    at invokeGuardedCallback (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3733:39)
+    at beginWork$1 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19765:15)
+    at performUnitOfWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19198:20)
+    at workLoopSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19137:13)
+[27901335ms] [ERROR] The above error occurred in the <ChatCenterPage> component:
+
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776169533490:78:23)
+    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4131:5)
+    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4537:26)
+    at main
+    at div
+    at div
+    at AppLayout (http://127.0.0.1:5173/src/layouts/AppLayout.tsx?t=1776161182033:40:20)
+    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4131:5)
+    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4601:5)
+    at AppRoutes
+    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4544:15)
+    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:5290:5)
+    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=9a5ac708:3194:3)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14031
+[27901336ms] ReferenceError: sessionsQuery is not defined
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776169533490:133:24)
+    at renderWithHooks (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:11548:26)
+    at mountIndeterminateComponent (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14926:21)
+    at beginWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:15914:22)
+    at beginWork$1 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19753:22)
+    at performUnitOfWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19198:20)
+    at workLoopSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19137:13)
+    at renderRootSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19116:15)
+    at recoverFromConcurrentError (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:18736:28)
+    at performSyncWorkOnRoot (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:18879:28)
+[27911929ms] ReferenceError: sessionsQuery is not defined
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776169544262:133:24)
+    at renderWithHooks (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:11548:26)
+    at mountIndeterminateComponent (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14926:21)
+    at beginWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:15914:22)
+    at HTMLUnknownElement.callCallback2 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3674:22)
+    at Object.invokeGuardedCallbackDev (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3699:24)
+    at invokeGuardedCallback (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3733:39)
+    at beginWork$1 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19765:15)
+    at performUnitOfWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19198:20)
+    at workLoopSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19137:13)
+[27911931ms] ReferenceError: sessionsQuery is not defined
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776169544262:133:24)
+    at renderWithHooks (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:11548:26)
+    at mountIndeterminateComponent (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14926:21)
+    at beginWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:15914:22)
+    at HTMLUnknownElement.callCallback2 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3674:22)
+    at Object.invokeGuardedCallbackDev (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3699:24)
+    at invokeGuardedCallback (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3733:39)
+    at beginWork$1 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19765:15)
+    at performUnitOfWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19198:20)
+    at workLoopSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19137:13)
+[27911931ms] [ERROR] The above error occurred in the <ChatCenterPage> component:
+
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776169544262:78:23)
+    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4131:5)
+    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4537:26)
+    at main
+    at div
+    at div
+    at AppLayout (http://127.0.0.1:5173/src/layouts/AppLayout.tsx?t=1776161182033:40:20)
+    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4131:5)
+    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4601:5)
+    at AppRoutes
+    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4544:15)
+    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:5290:5)
+    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=9a5ac708:3194:3)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14031
+[27911932ms] ReferenceError: sessionsQuery is not defined
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776169544262:133:24)
+    at renderWithHooks (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:11548:26)
+    at mountIndeterminateComponent (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14926:21)
+    at beginWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:15914:22)
+    at beginWork$1 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19753:22)
+    at performUnitOfWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19198:20)
+    at workLoopSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19137:13)
+    at renderRootSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19116:15)
+    at recoverFromConcurrentError (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:18736:28)
+    at performSyncWorkOnRoot (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:18879:28)
+[27932677ms] ReferenceError: sessionsQuery is not defined
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776169564869:133:24)
+    at renderWithHooks (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:11548:26)
+    at mountIndeterminateComponent (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14926:21)
+    at beginWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:15914:22)
+    at HTMLUnknownElement.callCallback2 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3674:22)
+    at Object.invokeGuardedCallbackDev (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3699:24)
+    at invokeGuardedCallback (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3733:39)
+    at beginWork$1 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19765:15)
+    at performUnitOfWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19198:20)
+    at workLoopSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19137:13)
+[27932680ms] ReferenceError: sessionsQuery is not defined
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776169564869:133:24)
+    at renderWithHooks (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:11548:26)
+    at mountIndeterminateComponent (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14926:21)
+    at beginWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:15914:22)
+    at HTMLUnknownElement.callCallback2 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3674:22)
+    at Object.invokeGuardedCallbackDev (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3699:24)
+    at invokeGuardedCallback (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3733:39)
+    at beginWork$1 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19765:15)
+    at performUnitOfWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19198:20)
+    at workLoopSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19137:13)
+[27932679ms] [ERROR] The above error occurred in the <ChatCenterPage> component:
+
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776169564869:78:23)
+    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4131:5)
+    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4537:26)
+    at main
+    at div
+    at div
+    at AppLayout (http://127.0.0.1:5173/src/layouts/AppLayout.tsx?t=1776161182033:40:20)
+    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4131:5)
+    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4601:5)
+    at AppRoutes
+    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4544:15)
+    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:5290:5)
+    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=9a5ac708:3194:3)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14031
+[27932680ms] ReferenceError: sessionsQuery is not defined
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776169564869:133:24)
+    at renderWithHooks (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:11548:26)
+    at mountIndeterminateComponent (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14926:21)
+    at beginWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:15914:22)
+    at beginWork$1 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19753:22)
+    at performUnitOfWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19198:20)
+    at workLoopSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19137:13)
+    at renderRootSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19116:15)
+    at recoverFromConcurrentError (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:18736:28)
+    at performSyncWorkOnRoot (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:18879:28)
+[27942639ms] ReferenceError: sessionsQuery is not defined
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776169574949:133:24)
+    at renderWithHooks (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:11548:26)
+    at mountIndeterminateComponent (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14926:21)
+    at beginWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:15914:22)
+    at HTMLUnknownElement.callCallback2 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3674:22)
+    at Object.invokeGuardedCallbackDev (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3699:24)
+    at invokeGuardedCallback (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3733:39)
+    at beginWork$1 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19765:15)
+    at performUnitOfWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19198:20)
+    at workLoopSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19137:13)
+[27942641ms] ReferenceError: sessionsQuery is not defined
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776169574949:133:24)
+    at renderWithHooks (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:11548:26)
+    at mountIndeterminateComponent (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14926:21)
+    at beginWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:15914:22)
+    at HTMLUnknownElement.callCallback2 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3674:22)
+    at Object.invokeGuardedCallbackDev (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3699:24)
+    at invokeGuardedCallback (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:3733:39)
+    at beginWork$1 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19765:15)
+    at performUnitOfWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19198:20)
+    at workLoopSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19137:13)
+[27942641ms] [ERROR] The above error occurred in the <ChatCenterPage> component:
+
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776169574949:78:23)
+    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4131:5)
+    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4537:26)
+    at main
+    at div
+    at div
+    at AppLayout (http://127.0.0.1:5173/src/layouts/AppLayout.tsx?t=1776161182033:40:20)
+    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4131:5)
+    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4601:5)
+    at AppRoutes
+    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4544:15)
+    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:5290:5)
+    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=9a5ac708:3194:3)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14031
+[27942642ms] ReferenceError: sessionsQuery is not defined
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776169574949:133:24)
+    at renderWithHooks (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:11548:26)
+    at mountIndeterminateComponent (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14926:21)
+    at beginWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:15914:22)
+    at beginWork$1 (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19753:22)
+    at performUnitOfWork (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19198:20)
+    at workLoopSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19137:13)
+    at renderRootSync (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19116:15)
+    at recoverFromConcurrentError (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:18736:28)
+    at performSyncWorkOnRoot (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:18879:28)
+[29114882ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:21550
+[29115036ms] [WARNING] ⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition. @ http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4435
+[29115038ms] [WARNING] ⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath. @ http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4435
+[30117211ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:21550
+[30117345ms] [WARNING] ⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition. @ http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4435
+[30117345ms] [WARNING] ⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath. @ http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4435
+[30125579ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:21550
+[30125677ms] [WARNING] ⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition. @ http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4435
+[30125677ms] [WARNING] ⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath. @ http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4435
+[30430340ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776172062915:0
+[30430340ms] [ERROR] [hmr] Failed to reload /src/pages/ChatCenterPage.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://127.0.0.1:5173/@vite/client:175
+[30626186ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776172258737:0
+[30626187ms] [ERROR] [hmr] Failed to reload /src/pages/ChatCenterPage.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://127.0.0.1:5173/@vite/client:175
+[30661335ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:5173/src/runtime/voice/types.ts:0
+[30661335ms] [ERROR] [hmr] Failed to reload /src/pages/ChatCenterPage.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://127.0.0.1:5173/@vite/client:175
+[30692555ms] [ERROR] [hmr] Failed to reload /src/pages/ChatCenterPage.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://127.0.0.1:5173/@vite/client:175
+[30697709ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776172330221:0
+[30697712ms] [ERROR] [hmr] Failed to reload /src/pages/ChatCenterPage.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://127.0.0.1:5173/@vite/client:175
+[30706700ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776172339117:0
+[30706702ms] [ERROR] [hmr] Failed to reload /src/pages/ChatCenterPage.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://127.0.0.1:5173/@vite/client:175
+[30706705ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776172339107:0
+[30706706ms] [ERROR] [hmr] Failed to reload /src/pages/ChatCenterPage.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://127.0.0.1:5173/@vite/client:175
+[30706726ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776172339119:0
+[30706728ms] [ERROR] [hmr] Failed to reload /src/pages/ChatCenterPage.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://127.0.0.1:5173/@vite/client:175
+[30706952ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776172339132:0
+[30706953ms] [ERROR] [hmr] Failed to reload /src/pages/ChatCenterPage.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://127.0.0.1:5173/@vite/client:175
+[30706964ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776172339139:0
+[30706966ms] [ERROR] [hmr] Failed to reload /src/pages/ChatCenterPage.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://127.0.0.1:5173/@vite/client:175
+[30706997ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776172339130:0
+[30706997ms] [ERROR] [hmr] Failed to reload /src/pages/ChatCenterPage.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://127.0.0.1:5173/@vite/client:175
+[30727828ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776172360351:0
+[30727829ms] [ERROR] [hmr] Failed to reload /src/pages/ChatCenterPage.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://127.0.0.1:5173/@vite/client:175
+[30736895ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776172369376:0
+[30736898ms] [ERROR] [hmr] Failed to reload /src/pages/ChatCenterPage.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://127.0.0.1:5173/@vite/client:175
+[30907503ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:21550
+[30907608ms] [WARNING] ⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition. @ http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4435
+[30907608ms] [WARNING] ⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath. @ http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4435
+[31169989ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776172802532:0
+[31169990ms] [ERROR] [hmr] Failed to reload /src/pages/ChatCenterPage.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://127.0.0.1:5173/@vite/client:175
+[31312932ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776172945509:0
+[31312932ms] [ERROR] [hmr] Failed to reload /src/pages/ChatCenterPage.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://127.0.0.1:5173/@vite/client:175
+[31614668ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776173247248:0
+[31614669ms] [ERROR] [hmr] Failed to reload /src/pages/ChatCenterPage.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://127.0.0.1:5173/@vite/client:175
+[39640114ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/sessions:0
+[39640128ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/chains:0
+[39640129ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/messages?session_id=49ffe1bf-4bf3-4d09-a8a9-9508adb45eca:0
+[39643155ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/sessions:0
+[39643170ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/chains:0
+[39643186ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/messages?session_id=49ffe1bf-4bf3-4d09-a8a9-9508adb45eca:0
+[39647198ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/sessions:0
+[39647213ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/chains:0
+[39647228ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/messages?session_id=49ffe1bf-4bf3-4d09-a8a9-9508adb45eca:0
+[39653247ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/sessions:0
+[39653263ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/chains:0
+[39653281ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/messages?session_id=49ffe1bf-4bf3-4d09-a8a9-9508adb45eca:0
+[39778529ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/sessions:0
+[39778530ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/chains:0
+[39778530ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/messages?session_id=49ffe1bf-4bf3-4d09-a8a9-9508adb45eca:0
+[39781574ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/sessions:0
+[39781574ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/chains:0
+[39781575ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/messages?session_id=49ffe1bf-4bf3-4d09-a8a9-9508adb45eca:0
+[39785626ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/sessions:0
+[39785627ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/chains:0
+[39785627ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/messages?session_id=49ffe1bf-4bf3-4d09-a8a9-9508adb45eca:0
+[39791678ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/sessions:0
+[39791679ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/chains:0
+[39791679ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/messages?session_id=49ffe1bf-4bf3-4d09-a8a9-9508adb45eca:0
+[39824122ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/sessions:0
+[39824122ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/chains:0
+[39824122ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/messages?session_id=49ffe1bf-4bf3-4d09-a8a9-9508adb45eca:0
+[39827170ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/sessions:0
+[39827170ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/chains:0
+[39827171ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/messages?session_id=49ffe1bf-4bf3-4d09-a8a9-9508adb45eca:0
+[39831220ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/sessions:0
+[39831220ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/chains:0
+[39831220ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/messages?session_id=49ffe1bf-4bf3-4d09-a8a9-9508adb45eca:0
+[39837267ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/sessions:0
+[39837267ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/chains:0
+[39837268ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/messages?session_id=49ffe1bf-4bf3-4d09-a8a9-9508adb45eca:0
+[40270671ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/sessions:0
+[40270672ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/chains:0
+[40270672ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/messages?session_id=49ffe1bf-4bf3-4d09-a8a9-9508adb45eca:0
+[40273745ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/sessions:0
+[40273746ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/chains:0
+[40273746ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/messages?session_id=49ffe1bf-4bf3-4d09-a8a9-9508adb45eca:0
+[40277808ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/sessions:0
+[40277809ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/chains:0
+[40277809ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/messages?session_id=49ffe1bf-4bf3-4d09-a8a9-9508adb45eca:0
+[40283854ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/sessions:0
+[40283855ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/chains:0
+[40283861ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/messages?session_id=49ffe1bf-4bf3-4d09-a8a9-9508adb45eca:0
+[40851188ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/sessions:0
+[40851188ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/chains:0
+[40851188ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/messages?session_id=49ffe1bf-4bf3-4d09-a8a9-9508adb45eca:0
+[40854255ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/sessions:0
+[40854255ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/chains:0
+[40854256ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/messages?session_id=49ffe1bf-4bf3-4d09-a8a9-9508adb45eca:0
+[40858317ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/sessions:0
+[40858317ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/chains:0
+[40858317ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/messages?session_id=49ffe1bf-4bf3-4d09-a8a9-9508adb45eca:0
+[40864341ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/sessions:0
+[40864358ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/chains:0
+[40864358ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/messages?session_id=49ffe1bf-4bf3-4d09-a8a9-9508adb45eca:0
+[42496465ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:5173/src/runtime/voice/integratedStrategy.ts?t=1776184128965:0
+[42496465ms] [ERROR] [hmr] Failed to reload /src/pages/ChatCenterPage.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://127.0.0.1:5173/@vite/client:175
+[43522488ms] [LOG] [vite] server connection lost. Polling for restart... @ http://127.0.0.1:5173/@vite/client:559
+[43524512ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[43527569ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[43530606ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[43535243ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:21550
+[43535347ms] [WARNING] ⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition. @ http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4435
+[43535347ms] [WARNING] ⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath. @ http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4435
+[43537395ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/sessions:0
+[43537396ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8000/api/chains:0
+[44249801ms] ReferenceError: playedAssistantAudioIdRef is not defined
+    at http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776185882007:233:41
+    at commitHookEffectListMount (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:16915:34)
+    at commitPassiveMountOnFiber (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:18156:19)
+    at commitPassiveMountEffects_complete (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:18129:17)
+    at commitPassiveMountEffects_begin (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:18119:15)
+    at commitPassiveMountEffects (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:18109:11)
+    at flushPassiveEffectsImpl (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19490:11)
+    at flushPassiveEffects (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19447:22)
+    at commitRootImpl (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19416:13)
+    at commitRoot (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19277:13)
+[44249802ms] ReferenceError: playedAssistantAudioIdRef is not defined
+    at http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776185882007:233:41
+    at commitHookEffectListMount (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:16915:34)
+    at invokePassiveEffectMountInDEV (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:18324:19)
+    at invokeEffectsInDev (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19701:19)
+    at commitDoubleInvokeEffectsInDEV (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19686:15)
+    at flushPassiveEffectsImpl (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19503:13)
+    at flushPassiveEffects (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19447:22)
+    at commitRootImpl (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19416:13)
+    at commitRoot (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19277:13)
+    at performSyncWorkOnRoot (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:18895:11)
+[44249799ms] [ERROR] The above error occurred in the <ChatCenterPage> component:
+
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776185882007:62:23)
+    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4131:5)
+    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4537:26)
+    at main
+    at div
+    at div
+    at AppLayout (http://127.0.0.1:5173/src/layouts/AppLayout.tsx:40:20)
+    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4131:5)
+    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4601:5)
+    at AppRoutes
+    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4544:15)
+    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:5290:5)
+    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=9a5ac708:3194:3)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14031
+[44249799ms] [ERROR] The above error occurred in the <ChatCenterPage> component:
+
+    at ChatCenterPage (http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776185882007:62:23)
+    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4131:5)
+    at Outlet (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4537:26)
+    at main
+    at div
+    at div
+    at AppLayout (http://127.0.0.1:5173/src/layouts/AppLayout.tsx:40:20)
+    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4131:5)
+    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4601:5)
+    at AppRoutes
+    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4544:15)
+    at BrowserRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:5290:5)
+    at QueryClientProvider (http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-query.js?v=9a5ac708:3194:3)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:14031
+[44249819ms] ReferenceError: playedAssistantAudioIdRef is not defined
+    at http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776185882007:233:41
+    at commitHookEffectListMount (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:16915:34)
+    at commitPassiveMountOnFiber (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:18156:19)
+    at commitPassiveMountEffects_complete (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:18129:17)
+    at commitPassiveMountEffects_begin (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:18119:15)
+    at commitPassiveMountEffects (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:18109:11)
+    at flushPassiveEffectsImpl (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19490:11)
+    at flushPassiveEffects (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19447:22)
+    at commitRootImpl (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19416:13)
+    at commitRoot (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:19277:13)
+[46187897ms] [LOG] [vite] server connection lost. Polling for restart... @ http://127.0.0.1:5173/@vite/client:559
+[46189934ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[46192994ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[46196261ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[46199505ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[46202829ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[46205873ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[46208917ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[46211953ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[46214988ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[46218033ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[46221061ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[46224114ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[46227154ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[46230177ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[46233214ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[46236231ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[46239277ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[46242324ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[46245342ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[46248356ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[46251413ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[46254442ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[46257478ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[46260518ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[46263548ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[46266579ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[46269607ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[46272652ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[46275902ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:21550
+[46276013ms] [WARNING] ⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition. @ http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4435
+[46276014ms] [WARNING] ⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath. @ http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4435
+[47077100ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776188709629:0
+[47077107ms] [ERROR] [hmr] Failed to reload /src/pages/ChatCenterPage.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://127.0.0.1:5173/@vite/client:175
+[47134646ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776188767150:0
+[47134646ms] [ERROR] [hmr] Failed to reload /src/pages/ChatCenterPage.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://127.0.0.1:5173/@vite/client:175
+[47231658ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776188864152:0
+[47231661ms] [ERROR] [hmr] Failed to reload /src/pages/ChatCenterPage.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://127.0.0.1:5173/@vite/client:175
+[47334592ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776188967114:0
+[47334592ms] [ERROR] [hmr] Failed to reload /src/pages/ChatCenterPage.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://127.0.0.1:5173/@vite/client:175
+[47357322ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:5173/src/pages/ChatCenterPage.tsx?t=1776188989839:0
+[47357324ms] [ERROR] [hmr] Failed to reload /src/pages/ChatCenterPage.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://127.0.0.1:5173/@vite/client:175
+[47433667ms] [LOG] [vite] server connection lost. Polling for restart... @ http://127.0.0.1:5173/@vite/client:559
+[47435716ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[47438769ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[47441822ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[47444881ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[47447927ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[47450980ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[47454030ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[47457088ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[47462226ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:21550
+[47462318ms] [WARNING] ⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition. @ http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4435
+[47462319ms] [WARNING] ⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath. @ http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4435
+[47554133ms] [LOG] [vite] server connection lost. Polling for restart... @ http://127.0.0.1:5173/@vite/client:559
+[47556175ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:5173/:0
+[47559761ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:21550
+[47559888ms] [WARNING] ⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition. @ http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4435
+[47559888ms] [WARNING] ⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath. @ http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4435
+[71960539ms] [LOG] [vite] server connection lost. Polling for restart... @ http://127.0.0.1:5173/@vite/client:559
+[71963941ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://127.0.0.1:5173/node_modules/.vite/deps/chunk-WERSD76P.js?v=9a5ac708:21550
+[71964037ms] [WARNING] ⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition. @ http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4435
+[71964038ms] [WARNING] ⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath. @ http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=9a5ac708:4435
+[72044865ms] [LOG] [vite] server connection lost. Polling for restart... @ http://127.0.0.1:5173/@vite/client:559

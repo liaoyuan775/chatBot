@@ -1,0 +1,10 @@
+INFO:     127.0.0.1:11424 - "GET /healthz HTTP/1.1" 200 OK
+2026-04-15 00:32:46,179 | ERROR | asyncio | Exception in callback Connection.connection_lost(ConnectionResetError())
+handle: <Handle Connection.connection_lost(ConnectionResetError())>
+Traceback (most recent call last):
+  File "D:\Python\Lib\asyncio\events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "D:\Python\Lib\site-packages\websockets\asyncio\connection.py", line 1018, in connection_lost
+    self.recv_messages.close()
+    ^^^^^^^^^^^^^^^^^^
+AttributeError: 'ClientConnection' object has no attribute 'recv_messages'

@@ -1,0 +1,109 @@
+- generic [ref=e4]:
+  - banner [ref=e5]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - paragraph [ref=e8]: 清新简洁 · 简约大方 · 8 大模块联动
+        - heading "智能多模态语音聊天机器人" [level=1] [ref=e9]
+        - paragraph [ref=e10]: 一期全栈控制台，覆盖对话、上下文、模型、链路、人格、音色、知识库与系统配置，保持轻盈但专业的使用感受。
+      - button "折叠侧栏" [ref=e12] [cursor=pointer]
+  - generic [ref=e13]:
+    - complementary [ref=e14]:
+      - generic [ref=e15]:
+        - generic [ref=e16]:
+          - generic [ref=e17]:
+            - generic [ref=e18]: 控制台导航
+            - generic [ref=e19]: 8 大面板完整联动
+          - button "<" [ref=e20] [cursor=pointer]
+        - navigation [ref=e21]:
+          - link "对 对话中心 多模态实时会话" [ref=e22] [cursor=pointer]:
+            - /url: /chat
+            - generic [ref=e23]: 对
+            - generic [ref=e24]:
+              - generic [ref=e25]: 对话中心
+              - generic [ref=e26]: 多模态实时会话
+          - link "忆 上下文管理 三级记忆规则" [ref=e27] [cursor=pointer]:
+            - /url: /context
+            - generic [ref=e28]: 忆
+            - generic [ref=e29]:
+              - generic [ref=e30]: 上下文管理
+              - generic [ref=e31]: 三级记忆规则
+          - link "模 厂商与模型 厂商、模型、可用性" [ref=e32] [cursor=pointer]:
+            - /url: /providers
+            - generic [ref=e33]: 模
+            - generic [ref=e34]:
+              - generic [ref=e35]: 厂商与模型
+              - generic [ref=e36]: 厂商、模型、可用性
+          - link "链 链路配置 主副链模板与绑定" [ref=e37] [cursor=pointer]:
+            - /url: /chains
+            - generic [ref=e38]: 链
+            - generic [ref=e39]:
+              - generic [ref=e40]: 链路配置
+              - generic [ref=e41]: 主副链模板与绑定
+          - link "人 人格配置 角色风格与预览" [ref=e42] [cursor=pointer]:
+            - /url: /personas
+            - generic [ref=e43]: 人
+            - generic [ref=e44]:
+              - generic [ref=e45]: 人格配置
+              - generic [ref=e46]: 角色风格与预览
+          - link "声 音色管理 试听、克隆、默认项" [ref=e47] [cursor=pointer]:
+            - /url: /voices
+            - generic [ref=e48]: 声
+            - generic [ref=e49]:
+              - generic [ref=e50]: 音色管理
+              - generic [ref=e51]: 试听、克隆、默认项
+          - link "知 知识库管理 上传、检索、重解析" [ref=e52] [cursor=pointer]:
+            - /url: /knowledge
+            - generic [ref=e53]: 知
+            - generic [ref=e54]:
+              - generic [ref=e55]: 知识库管理
+              - generic [ref=e56]: 上传、检索、重解析
+          - link "系 系统配置 数据库、策略、清理" [ref=e57] [cursor=pointer]:
+            - /url: /settings
+            - generic [ref=e58]: 系
+            - generic [ref=e59]:
+              - generic [ref=e60]: 系统配置
+              - generic [ref=e61]: 数据库、策略、清理
+    - main [ref=e62]:
+      - generic [ref=e63]:
+        - generic [ref=e65]:
+          - heading "音色管理" [level=2] [ref=e66]
+          - paragraph [ref=e67]: 系统音色、默认音色、试听、重命名、克隆，以及录制 / 上传入口统一放在这一页。
+        - generic [ref=e68]:
+          - article [ref=e69]:
+            - generic [ref=e71]:
+              - heading "新增音色" [level=3] [ref=e72]
+              - paragraph [ref=e73]: 默认音色会自动绑定到新会话。克隆入口支持在线录制或本地上传样本。
+            - generic [ref=e74]:
+              - generic [ref=e75]:
+                - text: 音色名称
+                - textbox "音色名称" [ref=e76]: 温柔女声 A
+              - generic [ref=e77]:
+                - text: 音色类型
+                - combobox "音色类型" [ref=e78]:
+                  - option "system" [selected]
+                  - option "custom"
+              - generic [ref=e79]:
+                - text: 试听音色标识
+                - textbox "试听音色标识" [ref=e80]: longanyang
+              - generic [ref=e81]:
+                - checkbox "设为默认音色" [checked] [ref=e82]
+                - text: 设为默认音色
+              - generic [ref=e83]:
+                - checkbox "音色可用" [checked] [ref=e84]
+                - text: 音色可用
+            - generic [ref=e85]:
+              - heading "音色克隆入口" [level=4] [ref=e86]
+              - generic [ref=e87]:
+                - button "在线录制样本" [ref=e88] [cursor=pointer]
+                - generic [ref=e89]: 本地上传样本
+              - generic [ref=e90]: "当前样本: 尚未选择样本"
+            - button "创建音色" [ref=e92] [cursor=pointer]
+          - article [ref=e93]:
+            - generic [ref=e94]:
+              - generic [ref=e95]:
+                - heading "音色列表与试听" [level=3] [ref=e96]
+                - paragraph [ref=e97]: 支持试听、克隆、删除限制提示和默认音色切换。
+              - generic [ref=e98]: 共 0 个音色
+            - generic [ref=e99]:
+              - text: 试听文本
+              - textbox "试听文本" [ref=e100]: 你好，这是一段音色试听文本，用来确认当前音色是否符合预期。

@@ -1,0 +1,131 @@
+erDiagram
+  SESSIONS {
+    uuid id PK
+    string title
+    uuid chain_id FK
+    uuid persona_id FK
+    uuid voice_id FK
+    boolean knowledge_enabled
+    string status
+  }
+
+  MESSAGES {
+    uuid id PK
+    uuid session_id FK
+    string role
+    string content_type
+    text text_content
+    text audio_url
+  }
+
+  SESSION_MEMORIES {
+    uuid id PK
+    uuid session_id FK
+    int short_turns
+    int mid_turns
+    int long_turns
+  }
+
+  LONG_TERM_MEMORIES {
+    uuid id PK
+    uuid session_id FK
+    uuid source_message_id FK
+    text summary_text
+    vector embedding
+  }
+
+  PROVIDER_CONFIGS {
+    uuid id PK
+    string provider_name
+    text base_url
+    string status
+  }
+
+  MODEL_CATALOG {
+    uuid id PK
+    uuid provider_id FK
+    string model_name
+    string model_type
+    boolean is_enabled
+  }
+
+  PERSONAS {
+    uuid id PK
+    string name
+    boolean is_default
+  }
+
+  VOICES {
+    uuid id PK
+    string name
+    string voice_type
+    boolean is_default
+  }
+
+  CHAINS {
+    uuid id PK
+    string name
+    uuid persona_id FK
+    uuid voice_id FK
+    boolean is_valid
+  }
+
+  KNOWLEDGE_BASES {
+    uuid id PK
+    string name
+    text description
+  }
+
+  KNOWLEDGE_DOCUMENTS {
+    uuid id PK
+    uuid knowledge_base_id FK
+    string file_name
+    string file_type
+    string parse_status
+  }
+
+  KNOWLEDGE_CHUNKS {
+    uuid id PK
+    uuid document_id FK
+    int chunk_index
+    text content
+    vector embedding
+  }
+
+  SESSION_CHAIN_AUDITS {
+    uuid id PK
+    uuid session_id FK
+    uuid message_id FK
+    string mode
+    string chain_name
+    boolean success
+  }
+
+  CALL_CONFIGS {
+    uuid id PK
+    string main_provider
+    string main_model
+    string fallback_asr_model
+    string fallback_llm_model
+    string fallback_tts_model
+  }
+
+  SYSTEM_SETTINGS {
+    string setting_key PK
+    json setting_value
+  }
+
+  SESSIONS ||--o{ MESSAGES : contains
+  SESSIONS ||--|| SESSION_MEMORIES : owns
+  SESSIONS ||--o{ LONG_TERM_MEMORIES : accumulates
+  MESSAGES o|--o{ LONG_TERM_MEMORIES : summarized_from
+  PROVIDER_CONFIGS ||--o{ MODEL_CATALOG : provides
+  PERSONAS ||--o{ CHAINS : defaults
+  VOICES ||--o{ CHAINS : defaults
+  CHAINS ||--o{ SESSIONS : selected_by
+  PERSONAS ||--o{ SESSIONS : selected_by
+  VOICES ||--o{ SESSIONS : selected_by
+  KNOWLEDGE_BASES ||--o{ KNOWLEDGE_DOCUMENTS : contains
+  KNOWLEDGE_DOCUMENTS ||--o{ KNOWLEDGE_CHUNKS : split_into
+  SESSIONS ||--o{ SESSION_CHAIN_AUDITS : records
+  MESSAGES o|--o{ SESSION_CHAIN_AUDITS : references

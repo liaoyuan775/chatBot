@@ -1,0 +1,111 @@
+- generic [ref=e4]:
+  - banner [ref=e5]:
+    - generic [ref=e6]:
+      - heading "智能多模态语音聊天机器人" [level=1] [ref=e7]
+      - paragraph [ref=e8]: 配置模式 · 通过循环图标切换
+    - button "↻" [active] [ref=e9] [cursor=pointer]
+  - generic [ref=e188]:
+    - complementary [ref=e189]:
+      - generic [ref=e190]:
+        - generic [ref=e191]:
+          - generic [ref=e192]: 控制台导航
+          - generic [ref=e193]: 8 大面板完整联动
+        - button "↻" [ref=e194] [cursor=pointer]
+      - navigation [ref=e195]:
+        - link "忆 上下文管理 三级记忆规则" [ref=e196] [cursor=pointer]:
+          - /url: /context
+          - generic [ref=e197]: 忆
+          - generic [ref=e198]:
+            - generic [ref=e199]: 上下文管理
+            - generic [ref=e200]: 三级记忆规则
+        - link "模 厂商与模型 厂商、模型、可用性" [ref=e201] [cursor=pointer]:
+          - /url: /providers
+          - generic [ref=e202]: 模
+          - generic [ref=e203]:
+            - generic [ref=e204]: 厂商与模型
+            - generic [ref=e205]: 厂商、模型、可用性
+        - link "链 链路配置 主副链模板与绑定" [ref=e206] [cursor=pointer]:
+          - /url: /chains
+          - generic [ref=e207]: 链
+          - generic [ref=e208]:
+            - generic [ref=e209]: 链路配置
+            - generic [ref=e210]: 主副链模板与绑定
+        - link "人 人格配置 角色风格与预览" [ref=e211] [cursor=pointer]:
+          - /url: /personas
+          - generic [ref=e212]: 人
+          - generic [ref=e213]:
+            - generic [ref=e214]: 人格配置
+            - generic [ref=e215]: 角色风格与预览
+        - link "声 音色管理 试听、克隆、默认项" [ref=e216] [cursor=pointer]:
+          - /url: /voices
+          - generic [ref=e217]: 声
+          - generic [ref=e218]:
+            - generic [ref=e219]: 音色管理
+            - generic [ref=e220]: 试听、克隆、默认项
+        - link "知 知识库管理 上传、检索、重解析" [ref=e221] [cursor=pointer]:
+          - /url: /knowledge
+          - generic [ref=e222]: 知
+          - generic [ref=e223]:
+            - generic [ref=e224]: 知识库管理
+            - generic [ref=e225]: 上传、检索、重解析
+        - link "系 系统配置 数据库、策略、清理" [ref=e226] [cursor=pointer]:
+          - /url: /settings
+          - generic [ref=e227]: 系
+          - generic [ref=e228]:
+            - generic [ref=e229]: 系统配置
+            - generic [ref=e230]: 数据库、策略、清理
+    - main [ref=e231]:
+      - generic [ref=e232]:
+        - generic [ref=e233]:
+          - generic [ref=e234]:
+            - heading "上下文管理" [level=2] [ref=e235]
+            - paragraph [ref=e236]: 三级记忆的配置、查看、压缩、导出与清理集中在这一页，便于按文档要求手动介入上下文。
+          - generic [ref=e238]: "当前会话: 74905735-71ec-45d9-89a1-8bab18230b9c"
+        - generic [ref=e239]:
+          - article [ref=e240]:
+            - heading "三级记忆配置" [level=3] [ref=e241]
+            - generic [ref=e242]:
+              - generic [ref=e243]:
+                - text: 短期原文保留轮数
+                - spinbutton "短期原文保留轮数" [ref=e244]: "6"
+              - generic [ref=e245]:
+                - text: 中期摘要保留轮数
+                - spinbutton "中期摘要保留轮数" [ref=e246]: "8"
+              - generic [ref=e247]:
+                - text: 长期记忆保留轮数
+                - spinbutton "长期记忆保留轮数" [ref=e248]: "12"
+              - generic [ref=e249]: 默认建议值为 6 / 8 / 12，既保证上下文连续性，也避免实时通话时上下文膨胀过快。
+              - generic [ref=e250]:
+                - button "保存配置" [ref=e251] [cursor=pointer]
+                - button "恢复默认" [ref=e252] [cursor=pointer]
+            - generic [ref=e253]:
+              - heading "手动管理动作" [level=4] [ref=e254]
+              - generic [ref=e255]:
+                - button "手动压缩上下文" [ref=e256] [cursor=pointer]
+                - button "导出当前上下文" [ref=e257] [cursor=pointer]
+                - button "清空当前上下文" [ref=e258] [cursor=pointer]
+          - article [ref=e259]:
+            - generic [ref=e260]:
+              - generic [ref=e261]:
+                - heading "当前会话详情" [level=3] [ref=e262]
+                - paragraph [ref=e263]: 短期原文、中期摘要、长期记忆数量均可直接查看。
+              - generic [ref=e264]:
+                - button "短期原文" [ref=e265] [cursor=pointer]
+                - button "中期摘要" [ref=e266] [cursor=pointer]
+                - button "长期记忆" [ref=e267] [cursor=pointer]
+            - generic [ref=e268]:
+              - generic [ref=e269]:
+                - generic [ref=e270]: 短期条目
+                - generic [ref=e271]: "2"
+              - generic [ref=e272]:
+                - generic [ref=e273]: 中期摘要
+                - generic [ref=e274]: "0"
+              - generic [ref=e275]:
+                - generic [ref=e276]: 长期记忆
+                - generic [ref=e277]: "0"
+            - generic [ref=e278]:
+              - generic [ref=e280]: "{ \"role\": \"user\", \"text\": \"hello from pytest\", \"message_id\": \"21df47ca-ebf1-4858-8fb8-e50d34297c9a\" }"
+              - generic [ref=e282]: "{ \"role\": \"assistant\", \"text\": \"Hello! It's nice to receive your message from pytest. How can I assist you today?\", \"message_id\": \"28590f54-0fa7-422f-81e9-f95389d5db2f\" }"
+            - generic [ref=e283]:
+              - generic [ref=e284]: 导出预览
+              - textbox "点击“导出当前上下文”后在这里查看导出文本。" [ref=e285]

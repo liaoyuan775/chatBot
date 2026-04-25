@@ -1,0 +1,7 @@
+INFO:     Started server process [6196]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8022 (Press CTRL+C to quit)
+INFO:     ('127.0.0.1', 11427) - "WebSocket /ws/realtime-chat?session_id=fce51c6e-8a85-48cb-91ef-c5273cf4bf77" [accepted]
+INFO:     connection open
+INFO:     connection closed

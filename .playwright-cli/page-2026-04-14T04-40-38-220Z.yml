@@ -1,0 +1,297 @@
+- generic [ref=e4]:
+  - banner [ref=e5]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - paragraph [ref=e8]: 清新简洁 · 简约大方 · 8 大模块联动
+        - heading "智能多模态语音聊天机器人" [level=1] [ref=e9]
+        - paragraph [ref=e10]: 一期全栈控制台，覆盖对话、上下文、模型、链路、人格、音色、知识库与系统配置，保持轻盈但专业的使用感受。
+      - button "展开侧栏" [ref=e307] [cursor=pointer]
+  - generic [ref=e13]:
+    - complementary [ref=e14]:
+      - generic [ref=e15]:
+        - button ">" [active] [ref=e308] [cursor=pointer]
+        - navigation [ref=e21]:
+          - link "对" [ref=e309] [cursor=pointer]:
+            - /url: /chat
+            - generic [ref=e23]: 对
+          - link "忆" [ref=e310] [cursor=pointer]:
+            - /url: /context
+            - generic [ref=e28]: 忆
+          - link "模" [ref=e311] [cursor=pointer]:
+            - /url: /providers
+            - generic [ref=e33]: 模
+          - link "链" [ref=e312] [cursor=pointer]:
+            - /url: /chains
+            - generic [ref=e38]: 链
+          - link "人" [ref=e313] [cursor=pointer]:
+            - /url: /personas
+            - generic [ref=e43]: 人
+          - link "声" [ref=e314] [cursor=pointer]:
+            - /url: /voices
+            - generic [ref=e48]: 声
+          - link "知" [ref=e315] [cursor=pointer]:
+            - /url: /knowledge
+            - generic [ref=e53]: 知
+          - link "系" [ref=e316] [cursor=pointer]:
+            - /url: /settings
+            - generic [ref=e58]: 系
+    - main [ref=e62]:
+      - generic [ref=e63]:
+        - generic [ref=e64]:
+          - generic [ref=e65]:
+            - heading "对话中心" [level=2] [ref=e66]
+            - paragraph [ref=e67]: 主链默认使用 Qwen-Omni，副链为 SenseVoice + Seed1.6 Flash + CosyVoice。通话配置已并入当前会话概述。
+          - generic [ref=e68]:
+            - generic [ref=e69]: "实时状态: 未开启"
+            - button "新建会话" [ref=e70] [cursor=pointer]
+        - generic [ref=e71]:
+          - complementary [ref=e72]:
+            - generic [ref=e73]:
+              - generic [ref=e74]:
+                - generic [ref=e75]:
+                  - heading "当前会话概述" [level=3] [ref=e76]
+                  - paragraph [ref=e77]: 链路、人格、音色、知识库与通话配置在这里统一联动。
+                - generic [ref=e78]: active
+              - generic [ref=e79]:
+                - generic [ref=e80]:
+                  - term [ref=e81]: 会话标题
+                  - definition [ref=e82]: pytest-session
+                - generic [ref=e83]:
+                  - term [ref=e84]: 会话摘要
+                  - definition [ref=e85]: hello from pytest
+                - generic [ref=e86]:
+                  - term [ref=e87]: 当前链路
+                  - definition [ref=e88]: Main-Qwen-Omni
+                - generic [ref=e89]:
+                  - term [ref=e90]: 当前人格
+                  - definition [ref=e91]: 未绑定人格
+                - generic [ref=e92]:
+                  - term [ref=e93]: 当前音色
+                  - definition [ref=e94]: 未绑定音色
+                - generic [ref=e95]:
+                  - term [ref=e96]: 知识库
+                  - definition [ref=e97]: 已启用
+                - generic [ref=e98]:
+                  - term [ref=e99]: 三级记忆
+                  - definition [ref=e100]: 短 2 / 中 0 / 长 0
+              - generic [ref=e101]:
+                - generic [ref=e102]:
+                  - text: 绑定链路
+                  - combobox "绑定链路" [ref=e103]:
+                    - option "未绑定"
+                    - option "Main-Qwen-Omni" [selected]
+                    - option "Fallback-SenseVoice-Seed-Cosy"
+                - generic [ref=e104]:
+                  - text: 绑定人格
+                  - combobox "绑定人格" [ref=e105]:
+                    - option "未绑定" [selected]
+                - generic [ref=e106]:
+                  - text: 绑定音色
+                  - combobox "绑定音色" [ref=e107]:
+                    - option "未绑定" [selected]
+                - generic [ref=e108]:
+                  - text: 知识库开关
+                  - combobox "知识库开关" [ref=e109]:
+                    - option "启用" [selected]
+                    - option "停用"
+              - generic [ref=e110]:
+                - generic [ref=e111]:
+                  - generic [ref=e112]:
+                    - heading "通话配置栏" [level=4] [ref=e113]
+                    - paragraph [ref=e114]: 主链优先，副链自动回退。这里直接控制当前系统默认通话配置。
+                  - generic [ref=e115]:
+                    - button "初始化默认" [ref=e116] [cursor=pointer]
+                    - button "恢复模板" [ref=e117] [cursor=pointer]
+                    - button "一键验证" [ref=e118] [cursor=pointer]
+                    - button "保存配置" [ref=e119] [cursor=pointer]
+                - generic [ref=e120]:
+                  - generic [ref=e121]:
+                    - text: 主链模型
+                    - textbox "主链模型" [ref=e122]: qwen-omni-turbo
+                  - generic [ref=e123]:
+                    - text: 副链 ASR
+                    - textbox "副链 ASR" [ref=e124]: FunAudioLLM/SenseVoiceSmall
+                  - generic [ref=e125]:
+                    - text: 副链 LLM
+                    - textbox "副链 LLM" [ref=e126]: doubao-seed-1-6-251015
+                  - generic [ref=e127]:
+                    - text: 副链 TTS
+                    - textbox "副链 TTS" [ref=e128]: cosyvoice-v3-flash
+                - generic [ref=e129]:
+                  - generic [ref=e130]: "主链: dashscope/qwen-omni-turbo"
+                  - generic [ref=e131]: "副链: FunAudioLLM/SenseVoiceSmall + doubao-seed-1-6-251015 + cosyvoice-v3-flash"
+            - generic [ref=e132]:
+              - generic [ref=e133]:
+                - generic [ref=e134]:
+                  - generic [ref=e135]: 会话总数
+                  - generic [ref=e136]: "10"
+                - generic [ref=e137]:
+                  - generic [ref=e138]: 当前消息
+                  - generic [ref=e139]: "2"
+                - generic [ref=e140]:
+                  - generic [ref=e141]: 长期记忆
+                  - generic [ref=e142]: "0"
+              - generic [ref=e143]:
+                - generic [ref=e144]:
+                  - heading "历史会话" [level=3] [ref=e145]
+                  - paragraph [ref=e146]: 支持单删、批量删、摘要预览和链路查看。
+                - button "批量删除" [disabled] [ref=e147]
+              - generic [ref=e170]:
+                - generic [ref=e171]:
+                  - generic [ref=e172]:
+                    - generic [ref=e173]:
+                      - checkbox "pytest-session hello from pytest" [ref=e174]
+                      - button "pytest-session hello from pytest" [ref=e175] [cursor=pointer]:
+                        - generic [ref=e176]: pytest-session
+                        - generic [ref=e177]: hello from pytest
+                    - button "删除" [ref=e178] [cursor=pointer]
+                  - generic [ref=e179]:
+                    - generic [ref=e180]: "链路: Main-Qwen-Omni"
+                    - generic [ref=e181]: "人格: 未绑定人格"
+                    - generic [ref=e182]: 2026/4/14 12:35:04
+                - generic [ref=e183]:
+                  - generic [ref=e184]:
+                    - generic [ref=e185]:
+                      - checkbox "pytest-session hello from pytest" [ref=e186]
+                      - button "pytest-session hello from pytest" [ref=e187] [cursor=pointer]:
+                        - generic [ref=e188]: pytest-session
+                        - generic [ref=e189]: hello from pytest
+                    - button "删除" [ref=e190] [cursor=pointer]
+                  - generic [ref=e191]:
+                    - generic [ref=e192]: "链路: 未绑定链路"
+                    - generic [ref=e193]: "人格: 未绑定人格"
+                    - generic [ref=e194]: 2026/4/14 11:58:16
+                - generic [ref=e195]:
+                  - generic [ref=e196]:
+                    - generic [ref=e197]:
+                      - checkbox "final-check hello one sentence" [ref=e198]
+                      - button "final-check hello one sentence" [ref=e199] [cursor=pointer]:
+                        - generic [ref=e200]: final-check
+                        - generic [ref=e201]: hello one sentence
+                    - button "删除" [ref=e202] [cursor=pointer]
+                  - generic [ref=e203]:
+                    - generic [ref=e204]: "链路: 未绑定链路"
+                    - generic [ref=e205]: "人格: 未绑定人格"
+                    - generic [ref=e206]: 2026/4/14 11:55:34
+                - generic [ref=e207]:
+                  - generic [ref=e208]:
+                    - generic [ref=e209]:
+                      - checkbox "ws-main-chain-check hello main chain test" [ref=e210]
+                      - button "ws-main-chain-check hello main chain test" [ref=e211] [cursor=pointer]:
+                        - generic [ref=e212]: ws-main-chain-check
+                        - generic [ref=e213]: hello main chain test
+                    - button "删除" [ref=e214] [cursor=pointer]
+                  - generic [ref=e215]:
+                    - generic [ref=e216]: "链路: 未绑定链路"
+                    - generic [ref=e217]: "人格: 未绑定人格"
+                    - generic [ref=e218]: 2026/4/14 11:55:08
+                - generic [ref=e219]:
+                  - generic [ref=e220]:
+                    - generic [ref=e221]:
+                      - checkbox "final-smoke Hello, tell me your capability in one se" [ref=e222]
+                      - button "final-smoke Hello, tell me your capability in one se" [ref=e223] [cursor=pointer]:
+                        - generic [ref=e224]: final-smoke
+                        - generic [ref=e225]: Hello, tell me your capability in one se
+                    - button "删除" [ref=e226] [cursor=pointer]
+                  - generic [ref=e227]:
+                    - generic [ref=e228]: "链路: 未绑定链路"
+                    - generic [ref=e229]: "人格: 未绑定人格"
+                    - generic [ref=e230]: 2026/4/14 11:52:09
+                - generic [ref=e231]:
+                  - generic [ref=e232]:
+                    - generic [ref=e233]:
+                      - checkbox "final-smoke Hello, tell me your capability in one se" [ref=e234]
+                      - button "final-smoke Hello, tell me your capability in one se" [ref=e235] [cursor=pointer]:
+                        - generic [ref=e236]: final-smoke
+                        - generic [ref=e237]: Hello, tell me your capability in one se
+                    - button "删除" [ref=e238] [cursor=pointer]
+                  - generic [ref=e239]:
+                    - generic [ref=e240]: "链路: 未绑定链路"
+                    - generic [ref=e241]: "人格: 未绑定人格"
+                    - generic [ref=e242]: 2026/4/14 11:51:02
+                - generic [ref=e243]:
+                  - generic [ref=e244]:
+                    - generic [ref=e245]:
+                      - checkbox "audio-smoke This is a single voice input smoke test." [ref=e246]
+                      - button "audio-smoke This is a single voice input smoke test." [ref=e247] [cursor=pointer]:
+                        - generic [ref=e248]: audio-smoke
+                        - generic [ref=e249]: This is a single voice input smoke test.
+                    - button "删除" [ref=e250] [cursor=pointer]
+                  - generic [ref=e251]:
+                    - generic [ref=e252]: "链路: 未绑定链路"
+                    - generic [ref=e253]: "人格: 未绑定人格"
+                    - generic [ref=e254]: 2026/4/14 11:48:40
+                - generic [ref=e255]:
+                  - generic [ref=e256]:
+                    - generic [ref=e257]:
+                      - checkbox "ws-smoke hello realtime chain" [ref=e258]
+                      - button "ws-smoke hello realtime chain" [ref=e259] [cursor=pointer]:
+                        - generic [ref=e260]: ws-smoke
+                        - generic [ref=e261]: hello realtime chain
+                    - button "删除" [ref=e262] [cursor=pointer]
+                  - generic [ref=e263]:
+                    - generic [ref=e264]: "链路: 未绑定链路"
+                    - generic [ref=e265]: "人格: 未绑定人格"
+                    - generic [ref=e266]: 2026/4/14 11:48:04
+                - generic [ref=e267]:
+                  - generic [ref=e268]:
+                    - generic [ref=e269]:
+                      - checkbox "real-smoke-session-2 ??????????" [ref=e270]
+                      - button "real-smoke-session-2 ??????????" [ref=e271] [cursor=pointer]:
+                        - generic [ref=e272]: real-smoke-session-2
+                        - generic [ref=e273]: "??????????"
+                    - button "删除" [ref=e274] [cursor=pointer]
+                  - generic [ref=e275]:
+                    - generic [ref=e276]: "链路: 未绑定链路"
+                    - generic [ref=e277]: "人格: 未绑定人格"
+                    - generic [ref=e278]: 2026/4/14 11:44:59
+                - generic [ref=e279]:
+                  - generic [ref=e280]:
+                    - generic [ref=e281]:
+                      - checkbox "real-smoke-session ???????????" [ref=e282]
+                      - button "real-smoke-session ???????????" [ref=e283] [cursor=pointer]:
+                        - generic [ref=e284]: real-smoke-session
+                        - generic [ref=e285]: "???????????"
+                    - button "删除" [ref=e286] [cursor=pointer]
+                  - generic [ref=e287]:
+                    - generic [ref=e288]: "链路: 未绑定链路"
+                    - generic [ref=e289]: "人格: 未绑定人格"
+                    - generic [ref=e290]: 2026/4/14 11:42:35
+          - generic [ref=e148]:
+            - generic [ref=e291]:
+              - article [ref=e292]:
+                - generic [ref=e293]:
+                  - generic [ref=e294]: 用户
+                  - generic [ref=e295]: 12:35:04
+                - paragraph [ref=e296]: hello from pytest
+                - generic [ref=e297]:
+                  - button "修改" [ref=e298] [cursor=pointer]
+                  - button "删除" [ref=e299] [cursor=pointer]
+              - article [ref=e300]:
+                - generic [ref=e301]:
+                  - generic [ref=e302]: 助手
+                  - generic [ref=e303]: 12:35:10
+                - paragraph [ref=e304]: Hello! It's nice to receive your greeting from pytest. How can I assist you today?
+                - button "重新生成" [ref=e306] [cursor=pointer]
+            - generic [ref=e150]:
+              - generic [ref=e151]:
+                - textbox "输入文本消息，或配合图片、单次语音、实时通话一起发送。" [ref=e152]
+                - generic [ref=e153]:
+                  - generic [ref=e154]: 多模态补充区
+                  - generic [ref=e155]:
+                    - text: 图片 URL
+                    - textbox "图片 URL" [ref=e156]:
+                      - /placeholder: 可粘贴图片地址
+                  - generic [ref=e157]:
+                    - button "加载图片地址" [ref=e158] [cursor=pointer]
+                    - generic [ref=e159]: 本地图片
+                    - button "清空图片" [disabled] [ref=e160]
+              - generic [ref=e161]:
+                - generic [ref=e162]: "主链: qwen-omni-turbo"
+                - generic [ref=e163]: "副链: FunAudioLLM/SenseVoiceSmall / doubao-seed-1-6-251015 / cosyvoice-v3-flash"
+                - generic [ref=e164]: "播放中禁止插话: 否"
+              - generic [ref=e165]:
+                - button "发送消息" [disabled] [ref=e166]
+                - button "单次语音输入" [ref=e167] [cursor=pointer]
+                - button "开启实时通话" [ref=e168] [cursor=pointer]
+                - button "开始推流" [disabled] [ref=e169]

@@ -1,0 +1,118 @@
+- generic [ref=e4]:
+  - banner [ref=e5]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - paragraph [ref=e8]: 清新简洁 · 简约大方 · 8 大模块联动
+        - heading "智能多模态语音聊天机器人" [level=1] [ref=e9]
+        - paragraph [ref=e10]: 一期全栈控制台，覆盖对话、上下文、模型、链路、人格、音色、知识库与系统配置，保持轻盈但专业的使用感受。
+      - button "折叠侧栏" [ref=e12] [cursor=pointer]
+  - generic [ref=e13]:
+    - complementary [ref=e14]:
+      - generic [ref=e15]:
+        - generic [ref=e16]:
+          - generic [ref=e17]:
+            - generic [ref=e18]: 控制台导航
+            - generic [ref=e19]: 8 大面板完整联动
+          - button "<" [ref=e20] [cursor=pointer]
+        - navigation [ref=e21]:
+          - link "对 对话中心 多模态实时会话" [ref=e22] [cursor=pointer]:
+            - /url: /chat
+            - generic [ref=e23]: 对
+            - generic [ref=e24]:
+              - generic [ref=e25]: 对话中心
+              - generic [ref=e26]: 多模态实时会话
+          - link "忆 上下文管理 三级记忆规则" [ref=e27] [cursor=pointer]:
+            - /url: /context
+            - generic [ref=e28]: 忆
+            - generic [ref=e29]:
+              - generic [ref=e30]: 上下文管理
+              - generic [ref=e31]: 三级记忆规则
+          - link "模 厂商与模型 厂商、模型、可用性" [ref=e32] [cursor=pointer]:
+            - /url: /providers
+            - generic [ref=e33]: 模
+            - generic [ref=e34]:
+              - generic [ref=e35]: 厂商与模型
+              - generic [ref=e36]: 厂商、模型、可用性
+          - link "链 链路配置 主副链模板与绑定" [ref=e37] [cursor=pointer]:
+            - /url: /chains
+            - generic [ref=e38]: 链
+            - generic [ref=e39]:
+              - generic [ref=e40]: 链路配置
+              - generic [ref=e41]: 主副链模板与绑定
+          - link "人 人格配置 角色风格与预览" [ref=e42] [cursor=pointer]:
+            - /url: /personas
+            - generic [ref=e43]: 人
+            - generic [ref=e44]:
+              - generic [ref=e45]: 人格配置
+              - generic [ref=e46]: 角色风格与预览
+          - link "声 音色管理 试听、克隆、默认项" [ref=e47] [cursor=pointer]:
+            - /url: /voices
+            - generic [ref=e48]: 声
+            - generic [ref=e49]:
+              - generic [ref=e50]: 音色管理
+              - generic [ref=e51]: 试听、克隆、默认项
+          - link "知 知识库管理 上传、检索、重解析" [ref=e52] [cursor=pointer]:
+            - /url: /knowledge
+            - generic [ref=e53]: 知
+            - generic [ref=e54]:
+              - generic [ref=e55]: 知识库管理
+              - generic [ref=e56]: 上传、检索、重解析
+          - link "系 系统配置 数据库、策略、清理" [ref=e57] [cursor=pointer]:
+            - /url: /settings
+            - generic [ref=e58]: 系
+            - generic [ref=e59]:
+              - generic [ref=e60]: 系统配置
+              - generic [ref=e61]: 数据库、策略、清理
+    - main [ref=e62]:
+      - generic [ref=e63]:
+        - generic [ref=e64]:
+          - generic [ref=e65]:
+            - heading "上下文管理" [level=2] [ref=e66]
+            - paragraph [ref=e67]: 三级记忆的配置、查看、压缩、导出与清理集中在这一页，便于按文档要求手动介入上下文。
+          - generic [ref=e69]: "当前会话: 未选择"
+        - generic [ref=e70]:
+          - article [ref=e71]:
+            - heading "三级记忆配置" [level=3] [ref=e72]
+            - generic [ref=e73]:
+              - generic [ref=e74]:
+                - text: 短期原文保留轮数
+                - spinbutton "短期原文保留轮数" [ref=e75]: "6"
+              - generic [ref=e76]:
+                - text: 中期摘要保留轮数
+                - spinbutton "中期摘要保留轮数" [ref=e77]: "8"
+              - generic [ref=e78]:
+                - text: 长期记忆保留轮数
+                - spinbutton "长期记忆保留轮数" [ref=e79]: "12"
+              - generic [ref=e80]: 默认建议值为 6 / 8 / 12，既保证上下文连续性，也避免实时通话时上下文膨胀过快。
+              - generic [ref=e81]:
+                - button "保存配置" [ref=e82] [cursor=pointer]
+                - button "恢复默认" [ref=e83] [cursor=pointer]
+            - generic [ref=e84]:
+              - heading "手动管理动作" [level=4] [ref=e85]
+              - generic [ref=e86]:
+                - button "手动压缩上下文" [disabled] [ref=e87]
+                - button "导出当前上下文" [disabled] [ref=e88]
+                - button "清空当前上下文" [disabled] [ref=e89]
+          - article [ref=e90]:
+            - generic [ref=e91]:
+              - generic [ref=e92]:
+                - heading "当前会话详情" [level=3] [ref=e93]
+                - paragraph [ref=e94]: 短期原文、中期摘要、长期记忆数量均可直接查看。
+              - generic [ref=e95]:
+                - button "短期原文" [ref=e96] [cursor=pointer]
+                - button "中期摘要" [ref=e97] [cursor=pointer]
+                - button "长期记忆" [ref=e98] [cursor=pointer]
+            - generic [ref=e99]:
+              - generic [ref=e100]:
+                - generic [ref=e101]: 短期条目
+                - generic [ref=e102]: "0"
+              - generic [ref=e103]:
+                - generic [ref=e104]: 中期摘要
+                - generic [ref=e105]: "0"
+              - generic [ref=e106]:
+                - generic [ref=e107]: 长期记忆
+                - generic [ref=e108]: "0"
+            - generic [ref=e110]: 当前标签还没有内容，先在对话中心发起几轮对话会更容易看到效果。
+            - generic [ref=e111]:
+              - generic [ref=e112]: 导出预览
+              - textbox "点击“导出当前上下文”后在这里查看导出文本。" [ref=e113]

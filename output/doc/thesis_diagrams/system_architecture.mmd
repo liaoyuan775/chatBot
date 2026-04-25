@@ -1,0 +1,67 @@
+flowchart LR
+  User["用户"]
+
+  subgraph FE["前端表现层"]
+    UI["聊天中心 / 配置页面"]
+    Runtime["SessionRuntime<br/>统一会话运行时"]
+    IR["integrated-realtime<br/>实时语音策略"]
+    SC["split-chain<br/>分阶段语音策略"]
+  end
+
+  subgraph BE["后端服务编排层"]
+    API["FastAPI REST API"]
+    WS["WebSocket 实时通话服务"]
+    Chat["聊天服务 / Provider 路由"]
+    RAG["知识库检索增强模块"]
+    Memory["上下文记忆模块"]
+    Voice["音色管理与克隆模块"]
+  end
+
+  subgraph DATA["数据与配置层"]
+    PG["PostgreSQL"]
+    PV["pgvector"]
+    Files["文档 / 音频样本"]
+  end
+
+  subgraph MODEL["模型能力层"]
+    ASR["ASR"]
+    LLM["LLM"]
+    TTS["TTS"]
+    Omni["实时多模态模型"]
+  end
+
+  User --> UI
+  UI --> Runtime
+  Runtime --> IR
+  Runtime --> SC
+
+  UI --> API
+  IR --> WS
+  SC --> API
+
+  API --> Chat
+  API --> RAG
+  API --> Memory
+  API --> Voice
+  WS --> Chat
+  WS --> Voice
+
+  Chat --> LLM
+  Chat --> ASR
+  Chat --> TTS
+  WS --> Omni
+  RAG --> PV
+  RAG --> PG
+  Memory --> PG
+  Voice --> Files
+  Voice --> TTS
+  Chat --> PG
+
+  classDef front fill:#e8f1ff,stroke:#325d9b,stroke-width:1.5px;
+  classDef back fill:#eef9f1,stroke:#2d7a4b,stroke-width:1.5px;
+  classDef data fill:#fff6dd,stroke:#9b7b18,stroke-width:1.5px;
+  classDef model fill:#fdebef,stroke:#b14b63,stroke-width:1.5px;
+  class UI,Runtime,IR,SC front;
+  class API,WS,Chat,RAG,Memory,Voice back;
+  class PG,PV,Files data;
+  class ASR,LLM,TTS,Omni model;

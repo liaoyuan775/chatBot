@@ -1,0 +1,86 @@
+- generic [ref=e4]:
+  - banner [ref=e5]:
+    - generic [ref=e6]:
+      - heading "智能多模态语音聊天机器人" [level=1] [ref=e7]
+      - paragraph [ref=e8]: 对话模式 · 通过循环图标切换
+    - button "↻" [ref=e9] [cursor=pointer]
+  - main [ref=e10]:
+    - generic [ref=e12]:
+      - complementary [ref=e13]:
+        - generic [ref=e14]:
+          - generic [ref=e15]:
+            - generic [ref=e16]:
+              - heading "会话概述" [level=3] [ref=e17]
+              - paragraph [ref=e18]: 会话状态、链路绑定、记忆概览与通话配置
+            - generic [ref=e19]: 未选中
+          - generic [ref=e20]:
+            - generic [ref=e21]:
+              - term [ref=e22]: 会话
+              - definition [ref=e23]: 未选择
+            - generic [ref=e24]:
+              - term [ref=e25]: 摘要
+              - definition [ref=e26]: 等待生成
+            - generic [ref=e27]:
+              - term [ref=e28]: 链路
+              - definition [ref=e29]: 未绑定链路
+            - generic [ref=e30]:
+              - term [ref=e31]: 人格
+              - definition [ref=e32]: 未绑定人格
+            - generic [ref=e33]:
+              - term [ref=e34]: 音色
+              - definition [ref=e35]: 未绑定音色
+            - generic [ref=e36]:
+              - term [ref=e37]: 三级记忆
+              - definition [ref=e38]: 加载中
+          - generic [ref=e39]:
+            - generic [ref=e40]:
+              - text: 链路
+              - combobox "链路" [disabled] [ref=e41]:
+                - option "未绑定" [selected]
+            - generic [ref=e42]:
+              - text: 人格
+              - combobox "人格" [disabled] [ref=e43]:
+                - option "未绑定" [selected]
+            - generic [ref=e44]:
+              - text: 音色
+              - combobox "音色" [disabled] [ref=e45]:
+                - option "未绑定" [selected]
+          - generic [ref=e46]:
+            - generic [ref=e47]:
+              - heading "通话配置栏" [level=4] [ref=e48]
+              - generic [ref=e49]: 未开启实时通话
+            - generic [ref=e50]:
+              - generic [ref=e51]:
+                - text: 主链
+                - textbox "主链" [ref=e52]: qwen-omni-turbo
+              - generic [ref=e53]:
+                - text: 副链 ASR
+                - textbox "副链 ASR" [ref=e54]: FunAudioLLM/SenseVoiceSmall
+              - generic [ref=e55]:
+                - text: 副链 LLM
+                - textbox "副链 LLM" [ref=e56]: doubao-seed-1-6-251015
+              - generic [ref=e57]:
+                - text: 副链 TTS
+                - textbox "副链 TTS" [ref=e58]: cosyvoice-v3-flash
+            - generic [ref=e59]:
+              - button "初始化" [ref=e60] [cursor=pointer]
+              - button "模板" [ref=e61] [cursor=pointer]
+              - button "验证" [ref=e62] [cursor=pointer]
+              - button "保存" [ref=e63] [cursor=pointer]
+        - generic [ref=e64]:
+          - generic [ref=e65]:
+            - generic [ref=e66]:
+              - heading "会话列表" [level=3] [ref=e67]
+              - paragraph [ref=e68]: 会话切换、批量删除、摘要预览
+            - button "新建" [ref=e69] [cursor=pointer]
+          - generic [ref=e70]:
+            - generic [ref=e71]: 已选 0
+            - button "批量删除" [disabled] [ref=e72]
+      - generic [ref=e76]:
+        - generic [ref=e77]:
+          - generic [ref=e78]:
+            - button "文本" [ref=e79] [cursor=pointer]
+            - button "语音转文字" [disabled] [ref=e80]
+            - button "通话" [disabled] [ref=e81]
+          - textbox "在这里输入文本..." [ref=e82]
+        - button "➤" [disabled] [ref=e83]

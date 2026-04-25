@@ -1,0 +1,53 @@
+﻿{
+    "routes":  [
+                   {
+                       "path":  "http://127.0.0.1:5173/chat",
+                       "heading":  "对话中心",
+                       "ok":  true
+                   },
+                   {
+                       "path":  "http://127.0.0.1:5173/context",
+                       "heading":  "上下文管理",
+                       "ok":  true
+                   },
+                   {
+                       "path":  "http://127.0.0.1:5173/providers",
+                       "heading":  "厂商与模型管理",
+                       "ok":  true
+                   },
+                   {
+                       "path":  "http://127.0.0.1:5173/chains",
+                       "heading":  "链路配置",
+                       "ok":  true
+                   },
+                   {
+                       "path":  "http://127.0.0.1:5173/personas",
+                       "heading":  "人格配置",
+                       "ok":  true
+                   },
+                   {
+                       "path":  "http://127.0.0.1:5173/voices",
+                       "heading":  "音色管理",
+                       "ok":  true
+                   },
+                   {
+                       "path":  "http://127.0.0.1:5173/knowledge",
+                       "heading":  "知识库管理",
+                       "ok":  true
+                   },
+                   {
+                       "path":  "http://127.0.0.1:5173/settings",
+                       "heading":  "系统配置",
+                       "ok":  true
+                   }
+               ],
+    "chat_has_call_config":  true,
+    "chat_has_overview":  true,
+    "sidebar_text_visible_before":  [
+                                        "          - link \"对 对话中心 多模态实时会话\" [ref=e22] [cursor=pointer]:",
+                                        "              - generic [ref=e26]: 多模态实时会话"
+                                    ],
+    "sidebar_text_visible_after":  [
+
+                                   ]
+}
