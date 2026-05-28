@@ -335,7 +335,7 @@ async def run_rag_chain_lcel(
             row.id: row.file_name
             for row in (await db.scalars(select(KnowledgeDocumentEntity))).all()
         }
-        rows = (await db.scalars(select(KnowledgeChunkEntity))).all()
+        rows = (await db.scalars(select(KnowledgeChunkEntity).limit(8))).all()
         if not rows:
             return ""
 
@@ -348,7 +348,7 @@ async def run_rag_chain_lcel(
             content = item.content or ""
             candidate_text = f"Source: {source_name}\n{content}".strip()
             garbled_penalty = 1.0 if _garbled_ratio(candidate_text) <= 0.15 else -20.0
-            semantic_score = dot(query_vec, item.embedding)
+            semantic_score = dot(query_vec[:8], item.embedding[:8])
             lexical_score = _keyword_overlap_score(payload["question"], candidate_text)
             scored_rows.append((semantic_score + lexical_score + garbled_penalty, candidate_text))
 

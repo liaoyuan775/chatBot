@@ -208,7 +208,9 @@ export const api = {
         asr_text: string;
         asr_success: boolean;
         asr_error?: string | null;
-      }>("/api/messages/audio/transcribe", form)
+      }>("/api/messages/audio/transcribe", form, {
+        headers: { "x-toast-skip": "1" }
+      })
     ).data;
   },
   editMessage: async (messageId: string, text_content: string) => (await http.patch(`/api/messages/${messageId}`, { text_content })).data,

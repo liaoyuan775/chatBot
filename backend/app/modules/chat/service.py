@@ -1,5 +1,6 @@
 ﻿from __future__ import annotations
 
+import asyncio
 import re
 from dataclasses import dataclass, field
 from time import perf_counter
@@ -45,6 +46,7 @@ class PreparedAssistantTurn:
     rag_trace: dict[str, Any]
     rag_reason: str | None
     image_prompt: str | None
+    grounded_answer: str | None = None
     context_latency_ms: int = 0
     retrieval_decision: str = "skip"
     retrieval_gate_reason: str = "not_evaluated"
@@ -122,6 +124,18 @@ def _looks_like_smalltalk(text: str) -> bool:
     normalized = re.sub(r"\s+", "", (text or "").strip().lower())
     if not normalized:
         return True
+    if any(
+        phrase in normalized
+        for phrase in [
+            "介绍一下你自己",
+            "介绍下你自己",
+            "简单介绍一下你自己",
+            "你能做什么",
+            "你是谁",
+            "你叫什么",
+        ]
+    ):
+        return True
     smalltalk_patterns = [
         r"^(你好|您好|嗨|哈喽|在吗|早上好|中午好|晚上好)$",
         r"^(谢谢|谢了|感谢|辛苦了|ok|好的|收到|明白了|嗯嗯|哦哦|哈哈|拜拜|再见)[!！。]*$",
@@ -139,7 +153,34 @@ def _looks_like_short_follow_up(text: str) -> bool:
 
 
 def _contains_knowledge_request(text: str) -> bool:
-    keywords = ["知识库", "文档", "资料", "根据", "基于", "参考", "引用", "出处", "上传", "手册", "规范", "原文"]
+    keywords = [
+        "知识库",
+        "文档",
+        "资料",
+        "根据",
+        "基于",
+        "参考",
+        "引用",
+        "出处",
+        "上传",
+        "手册",
+        "规范",
+        "原文",
+        "检索",
+        "查找",
+        "查询",
+        "搜索",
+        "搜一下",
+        "找一下",
+        "查一下",
+        "帮我查",
+        "帮我找",
+        "匹配",
+        "定位",
+        "命中",
+        "从知识库里",
+        "在知识库里",
+    ]
     return any(keyword in text for keyword in keywords)
 
 
@@ -185,6 +226,26 @@ def _contains_fact_pattern(text: str) -> bool:
         "方案",
         "策略",
         "建议",
+        "检索",
+        "查找",
+        "查询",
+        "搜索",
+        "匹配",
+        "定位",
+        "是谁",
+        "叫什么",
+        "主人",
+        "姓名",
+        "名字",
+        "电话",
+        "手机号",
+        "号码",
+        "编号",
+        "学号",
+        "工号",
+        "对应谁",
+        "谁的",
+        "归属",
     ]
     return any(trigger in text for trigger in triggers)
 
@@ -199,6 +260,32 @@ def _image_prompt_requires_knowledge(user_text: str | None) -> bool:
     text = (user_text or "").strip()
     knowledge_cues = ["根据知识库", "根据文档", "根据资料", "根据上传", "参考文档", "基于知识库", "基于资料"]
     return any(cue in text for cue in knowledge_cues)
+
+
+def _extract_grounded_answer(user_text: str | None, knowledge_text: str | None) -> str | None:
+    question = (user_text or "").strip()
+    knowledge = str(knowledge_text or "").strip()
+    if not question or not knowledge:
+        return None
+
+    phone_numbers = re.findall(r"1\d{10}", question)
+    lookup_cues = ["查", "检索", "查询", "搜索", "找", "对应谁", "是谁", "主人", "姓名", "名字", "号码", "手机号", "电话", "归属"]
+    if phone_numbers and any(cue in question for cue in lookup_cues):
+        for phone in phone_numbers:
+            blocks = [block.strip() for block in knowledge.split("Source:") if block.strip()]
+            for block in blocks:
+                if phone not in block:
+                    continue
+                lines = [line.strip() for line in block.splitlines() if line.strip()]
+                source_line = lines[0] if lines else ""
+                match = re.search(rf"-([\u4e00-\u9fff]{{2,8}})-{re.escape(phone)}(?:-|\.|$)", source_line)
+                if match:
+                    return f"根据知识库，号码{phone}对应的人是{match.group(1)}。"
+                for line in lines[1:]:
+                    name_match = re.search(r"(?:姓名|联系人|作者|负责人)[:：]\s*([\u4e00-\u9fff]{2,8})", line)
+                    if name_match:
+                        return f"根据知识库，号码{phone}对应的人是{name_match.group(1)}。"
+    return None
 
 
 def should_retrieve_knowledge(user_text: str | None, *, image_prompt: str | None = None) -> RetrievalDecision:
@@ -294,12 +381,18 @@ async def prepare_assistant_turn(db: AsyncSession, session: SessionEntity, user_
 
     context_started = perf_counter()
     if history_lines:
-        context_hint = await run_history_context_lcel(
-            db=db,
-            provider_name=runtime.text_llm_provider,
-            model_name=runtime.text_llm_model,
-            history_texts=history_lines,
-        )
+        try:
+            context_hint = await asyncio.wait_for(
+                run_history_context_lcel(
+                    db=db,
+                    provider_name=runtime.text_llm_provider,
+                    model_name=runtime.text_llm_model,
+                    history_texts=history_lines,
+                ),
+                timeout=5.0,
+            )
+        except Exception:
+            context_hint = "\n".join(f"- {line}" for line in history_lines[-6:])
     else:
         context_hint = "No context"
     context_latency_ms = int((perf_counter() - context_started) * 1000)
@@ -314,6 +407,7 @@ async def prepare_assistant_turn(db: AsyncSession, session: SessionEntity, user_
     retrieval_latency_ms: int | None = 0
     retrieval_hit_count = 0
     retrieval_timed_out = False
+    grounded_answer: str | None = None
     if session.knowledge_enabled and await is_knowledge_globally_enabled(db):
         rag_query = (user_text or "").strip()
         if len(rag_query) > 1000:
@@ -336,6 +430,8 @@ async def prepare_assistant_turn(db: AsyncSession, session: SessionEntity, user_
                 rag_reason=rag_reason,
                 timed_out=retrieval_timed_out,
             )
+            if retrieval_reason == "retrieval_hit":
+                grounded_answer = _extract_grounded_answer(user_text, knowledge_text)
         else:
             retrieval_reason = decision.reason
             rag_trace = {"decision": decision.decision, "reason": decision.reason, "timed_out": False, "hit_count": 0}
@@ -354,6 +450,7 @@ async def prepare_assistant_turn(db: AsyncSession, session: SessionEntity, user_
         rag_trace=rag_trace,
         rag_reason=rag_reason,
         image_prompt=image_prompt,
+        grounded_answer=grounded_answer,
         retrieval_decision=retrieval_decision,
         retrieval_gate_reason=retrieval_gate_reason,
         retrieval_reason=retrieval_reason,
@@ -376,6 +473,7 @@ async def build_assistant_reply_from_prepared(
     rag_trace = prepared.rag_trace
     rag_reason = prepared.rag_reason
     image_prompt = prepared.image_prompt
+    grounded_answer = prepared.grounded_answer
 
     if image_prompt:
         prompt = image_prompt
@@ -426,6 +524,35 @@ async def build_assistant_reply_from_prepared(
                 voice_used=runtime.tts_voice,
                 provider_trace={"image_error": str(exc), "rag": rag_trace} if rag_trace else {"image_error": str(exc)},
             )
+
+    if grounded_answer:
+        provider_trace = {
+            "llm_fallback": False,
+            "retrieval_gate": {
+                "decision": prepared.retrieval_decision,
+                "gate_reason": prepared.retrieval_gate_reason,
+                "reason": prepared.retrieval_reason,
+                "timed_out": prepared.retrieval_timed_out,
+                "hit_count": prepared.retrieval_hit_count,
+            },
+            "stage_metrics": {
+                "context_latency_ms": prepared.context_latency_ms,
+                "retrieval_latency_ms": prepared.retrieval_latency_ms,
+                "llm_latency_ms": 0,
+            },
+            "grounded_answer": True,
+        }
+        if rag_trace:
+            provider_trace["rag"] = rag_trace
+        if rag_reason:
+            provider_trace["rag_error"] = rag_reason
+        return AssistantReply(
+            text=grounded_answer,
+            chain_name="knowledge_grounded_answer",
+            pipeline="rag_chain->knowledge_grounded_answer",
+            voice_used=runtime.tts_voice,
+            provider_trace=provider_trace,
+        )
 
     try:
         chain_result = await run_text_chain(

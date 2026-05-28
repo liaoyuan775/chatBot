@@ -61,6 +61,7 @@ async def bootstrap_runtime_defaults() -> None:
     async with SessionLocal() as db:
         providers = [
             ("dashscope", settings.dashscope_base_url, settings.dashscope_api_key),
+            ("deepseek", "https://api.deepseek.com", getattr(settings, "deepseek_api_key", None)),
             ("volcengine", settings.volcengine_ark_base_url, settings.volcengine_ark_api_key),
             ("siliconflow", "https://api.siliconflow.cn", settings.siliconflow_api_key),
         ]

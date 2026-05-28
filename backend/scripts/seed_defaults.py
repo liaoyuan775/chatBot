@@ -20,6 +20,7 @@ BASELINE_MODELS = [
     ("dashscope", "qwen3.5-omni-plus-realtime", "llm", True),
     ("dashscope", "qwen-omni-turbo", "llm", True),
     ("dashscope", "qwen-plus", "llm", True),
+    ("deepseek", "deepseek-v4-flash", "llm", False),
     ("siliconflow", "FunAudioLLM/SenseVoiceSmall", "asr", True),
     ("volcengine", "doubao-seed-1-6-251015", "llm", True),
     ("siliconflow", settings.siliconflow_tts_model, "tts", True),
@@ -33,6 +34,7 @@ async def main() -> None:
     async with SessionLocal() as db:
         providers = [
             ("dashscope", settings.dashscope_base_url, settings.dashscope_api_key),
+            ("deepseek", "https://api.deepseek.com", getattr(settings, "deepseek_api_key", None)),
             ("volcengine", settings.volcengine_ark_base_url, settings.volcengine_ark_api_key),
             ("siliconflow", "https://api.siliconflow.cn", settings.siliconflow_api_key),
             ("openai", "https://api.openai.com/v1", getattr(settings, "openai_api_key", None)),

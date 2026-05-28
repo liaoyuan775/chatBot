@@ -103,7 +103,7 @@ def _infer_capabilities_from_name(model_name: str) -> set[str]:
         capabilities.update({"audio_input", "asr"})
     if any(keyword in name for keyword in ["cosyvoice", "tts"]):
         capabilities.update({"audio_output", "tts"})
-    if any(keyword in name for keyword in ["qwen", "doubao", "seed"]):
+    if any(keyword in name for keyword in ["qwen", "doubao", "seed", "deepseek"]):
         capabilities.add("chat")
     return capabilities
 

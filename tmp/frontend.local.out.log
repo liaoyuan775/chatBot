@@ -60,3 +60,10 @@
 [2m19:19:13[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/ChatCenterPage.tsx, /src/styles.css[22m
 [2m19:19:18[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/ChatCenterPage.tsx, /src/styles.css[22m
 [2m19:19:23[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/ChatCenterPage.tsx, /src/styles.css[22m
+[2m19:23:14[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/styles.css, /src/pages/ChatCenterPage.tsx[22m
+[2m19:23:21[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/auth/AuthContext.tsx, /src/styles.css, /src/pages/ContextPage.tsx, /src/pages/PersonaPage.tsx, /src/pages/ProviderModelPage.tsx, /src/pages/SettingsPage.tsx, /src/pages/KnowledgePage.tsx, /src/pages/ChainPage.tsx, /src/pages/VoicePage.tsx, /src/pages/ChatCenterPage.tsx[22m
+[2m19:23:22[22m [36m[1m[vite][22m[39m [33mhmr invalidate [39m[2m/src/auth/AuthContext.tsx[22m Could not Fast Refresh ("useAuth" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+[2m19:23:22[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/auth/AuthContext.tsx[22m
+[2m19:25:29[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/ProviderModelPage.tsx, /src/styles.css[22m
+[2m19:33:40[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/ChatCenterPage.tsx, /src/styles.css[22m
+[2m19:33:44[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/ChatCenterPage.tsx, /src/styles.css[22m

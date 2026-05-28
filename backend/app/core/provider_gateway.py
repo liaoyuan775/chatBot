@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import asyncio
 import base64
 from dataclasses import dataclass
 import json
@@ -326,8 +327,19 @@ async def asr_transcribe(
         "file": (filename, audio_bytes, _mime_from_audio_filename(filename)),
         "model": (None, model),
     }
-    payload = await _request_with_fallback(ctx, "POST", "/audio/transcriptions", files=files)
-    return str(payload.get("text") or payload.get("result") or "")
+    transient_prefixes = ("429:", "500:", "502:", "503:", "504:")
+    last_exc: ProviderError | None = None
+    for attempt in range(3):
+        try:
+            payload = await _request_with_fallback(ctx, "POST", "/audio/transcriptions", files=files)
+            return str(payload.get("text") or payload.get("result") or "")
+        except ProviderError as exc:
+            last_exc = exc
+            message = str(exc)
+            if not message.startswith(transient_prefixes) or attempt >= 2:
+                raise
+            await asyncio.sleep(0.25 * (attempt + 1))
+    raise last_exc or ProviderError("ASR transcription failed.")
 
 
 async def omni_transcribe(

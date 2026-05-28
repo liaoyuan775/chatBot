@@ -5,6 +5,7 @@ import { PageShell } from "../components/PageShell";
 
 const builtInPresets: Record<string, string> = {
   dashscope: "https://dashscope.aliyuncs.com",
+  deepseek: "https://api.deepseek.com",
   volcengine: "https://ark.cn-beijing.volces.com/api/v3",
   siliconflow: "https://api.siliconflow.cn",
   openai: "https://api.openai.com/v1",
@@ -123,7 +124,7 @@ export function ProviderModelPage() {
   return (
     <PageShell
       title="厂商与模型管理"
-      subtitle="支持 DashScope、Volcengine、SiliconFlow、GLM、Kimi、MiniMax、OpenAI 等平台。"
+      subtitle="支持 DashScope、DeepSeek、Volcengine、SiliconFlow、GLM、Kimi、MiniMax、OpenAI 等平台。"
       actions={<span className="info-chip">模型总数: {modelsQuery.data?.length ?? 0}</span>}
     >
       <div className="grid gap-4 xl:grid-cols-[380px_1fr_320px]">

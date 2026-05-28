@@ -241,7 +241,7 @@ export class SplitChainStrategy implements VoiceStrategy {
           ctx.setState("thinking", "backend-asr");
           const text = (await ctx.transcribeAudio(blob, filename)).trim();
           if (!text) {
-            ctx.emit("session.error", { message: "backend-asr returned empty text" });
+            // Silent or noise-only audio — not an error, just restart
             return;
           }
           if (this.shouldSuppressEcho(ctx, text)) {

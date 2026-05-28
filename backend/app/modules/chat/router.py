@@ -336,7 +336,7 @@ async def create_message_stream(payload: MessageCreate, db: AsyncSession = Depen
                 ensure_ascii=False,
             ) + "\n"
 
-        if prepared.image_prompt:
+        if prepared.image_prompt or prepared.grounded_answer:
             reply = await build_assistant_reply_from_prepared(db, session, payload.text_content, prepared=prepared)
             assistant_metadata = {
                 "chain_name": reply.chain_name,

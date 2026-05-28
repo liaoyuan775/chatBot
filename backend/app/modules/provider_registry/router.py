@@ -14,6 +14,7 @@ router = APIRouter(prefix="/api/providers", tags=["providers"])
 
 PROVIDER_TEMPLATES = [
     {"provider_name": "dashscope", "base_url": "https://dashscope.aliyuncs.com"},
+    {"provider_name": "deepseek", "base_url": "https://api.deepseek.com"},
     {"provider_name": "volcengine", "base_url": "https://ark.cn-beijing.volces.com/api/v3"},
     {"provider_name": "siliconflow", "base_url": "https://api.siliconflow.cn"},
     {"provider_name": "openai", "base_url": "https://api.openai.com/v1"},

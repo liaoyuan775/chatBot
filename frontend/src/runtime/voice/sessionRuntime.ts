@@ -347,13 +347,14 @@ export class SessionRuntime {
       this.emit("user.transcript.final", { text: clean, turn_id: turnId });
     }
     this.setState("thinking", "send-text-turn");
-    this.currentTextAbortController = new AbortController();
+    const controller = new AbortController();
+    this.currentTextAbortController = controller;
 
     try {
       await this.deps.sendTextTurn({
         sessionId,
         text: clean,
-        signal: this.currentTextAbortController.signal,
+        signal: controller.signal,
         onDelta: (chunk) => {
           if (chunk.event === "metrics.retrieval" && chunk.retrieval) {
             this.emit("metrics.retrieval", {
@@ -430,7 +431,9 @@ export class SessionRuntime {
         this.setState("error", "send-text-failed");
       }
     } finally {
-      this.currentTextAbortController = null;
+      if (this.currentTextAbortController === controller) {
+        this.currentTextAbortController = null;
+      }
       this.streamedAudioInCurrentTurn = false;
     }
   }
