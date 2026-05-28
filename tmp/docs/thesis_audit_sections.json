@@ -1,0 +1,41 @@
+[
+    {
+        "index":  1,
+        "topCm":  2.8,
+        "bottomCm":  2.5,
+        "leftCm":  2.5,
+        "rightCm":  2.5,
+        "headerCm":  2.5,
+        "footerCm":  2,
+        "differentFirstPage":  0,
+        "oddEven":  0,
+        "header":  "",
+        "footer":  ""
+    },
+    {
+        "index":  2,
+        "topCm":  2.5,
+        "bottomCm":  2.5,
+        "leftCm":  2.5,
+        "rightCm":  2.5,
+        "headerCm":  1.5,
+        "footerCm":  1.5,
+        "differentFirstPage":  0,
+        "oddEven":  0,
+        "header":  "安徽工业大学毕业设计（论文）说明书",
+        "footer":  ""
+    },
+    {
+        "index":  3,
+        "topCm":  2.5,
+        "bottomCm":  2.5,
+        "leftCm":  2.5,
+        "rightCm":  2.5,
+        "headerCm":  1.5,
+        "footerCm":  1.5,
+        "differentFirstPage":  0,
+        "oddEven":  0,
+        "header":  "安徽工业大学毕业设计（论文）说明书",
+        "footer":  "第  页 共  页"
+    }
+]

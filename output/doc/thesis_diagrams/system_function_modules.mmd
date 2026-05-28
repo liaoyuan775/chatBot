@@ -1,28 +1,44 @@
-flowchart TB
-    U["用户"] --> F1["聊天中心模块"]
-    U --> F2["语音输入模块"]
-    U --> F3["实时通话模块"]
-    U --> F4["知识库管理模块"]
-    U --> F5["人格与音色管理模块"]
+%%{init: {"theme": "base", "themeVariables": {"fontFamily": "Microsoft YaHei, SimSun, Arial", "fontSize": "18px", "primaryColor": "#EAF2FF", "primaryBorderColor": "#2F5E9E", "lineColor": "#555555"}}}%%
+flowchart LR
+  U["用户"]
+  R["统一会话运行时<br/>SessionRuntime"]
 
-    F1 --> R["统一会话运行时"]
-    F2 --> R
-    F3 --> R
-    F4 --> R
-    F5 --> R
+  subgraph FE["前端功能页面"]
+    direction TB
+    F1["聊天与上下文<br/>ChatCenterPage / ContextPage"]
+    F2["模型与链路<br/>ProviderModelPage / ChainPage"]
+    F3["人格与音色<br/>PersonaPage / VoicePage"]
+    F4["知识库与设置<br/>KnowledgePage / SettingsPage"]
+  end
 
-    R --> S1["分阶段语音链路"]
-    R --> S2["一体化实时语音链路"]
-    R --> S3["文本问答与聊天服务"]
-    R --> S4["知识检索与 RAG 模块"]
-    R --> S5["上下文记忆模块"]
-    R --> S6["模型路由与 Provider 管理"]
-    R --> S7["音色管理与克隆模块"]
+  subgraph BE["后端功能模块"]
+    direction TB
+    B1["chat / context_memory<br/>对话与记忆"]
+    B2["knowledge_rag / realtime_ws<br/>知识增强与实时通话"]
+    B3["provider_registry / model_catalog<br/>模型路由"]
+    B4["chain_config / call_config / persona / voice<br/>链路、人格与音色配置"]
+  end
 
-    S1 --> D["数据库与文件存储"]
-    S2 --> D
-    S3 --> D
-    S4 --> D
-    S5 --> D
-    S6 --> D
-    S7 --> D
+  U --> F1
+  U --> F2
+  U --> F3
+  U --> F4
+
+  F1 --> R
+  F2 --> R
+  F3 --> R
+  F4 --> R
+
+  R --> B1
+  R --> B2
+  R --> B3
+  R --> B4
+
+  classDef user fill:#f7f7f7,stroke:#444,stroke-width:1.4px;
+  classDef front fill:#eaf2ff,stroke:#2f5e9e,stroke-width:1.4px;
+  classDef runtime fill:#fff4df,stroke:#9a6b1f,stroke-width:1.4px;
+  classDef backend fill:#eaf8ef,stroke:#2d7a4b,stroke-width:1.4px;
+  class U user;
+  class F1,F2,F3,F4 front;
+  class R runtime;
+  class B1,B2,B3,B4 backend;

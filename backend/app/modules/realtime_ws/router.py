@@ -53,6 +53,17 @@ def _should_use_native_omni(runtime) -> bool:
     return omni_mode not in {"legacy", "force_legacy"}
 
 
+async def _cancel_turn_task(task: asyncio.Task | None) -> bool:
+    if task is None or task.done():
+        return False
+    task.cancel()
+    try:
+        await task
+    except asyncio.CancelledError:
+        pass
+    return True
+
+
 async def _persist_realtime_turn(
     session_id: uuid.UUID,
     text_input: str,
@@ -355,8 +366,10 @@ async def realtime_chat_endpoint(websocket: WebSocket):
                 continue
 
             if event in {"input_audio.commit", "vad_end"}:
+                interrupted_existing_turn = False
                 if current_turn_task and not current_turn_task.done():
-                    continue
+                    interrupted_existing_turn = await _cancel_turn_task(current_turn_task)
+                    current_turn_task = None
                 if partial_asr_task and not partial_asr_task.done():
                     partial_asr_task.cancel()
                     partial_asr_task = None
@@ -388,10 +401,14 @@ async def realtime_chat_endpoint(websocket: WebSocket):
 
                 text_input = (text_input or "").strip()
                 if not text_input:
+                    if interrupted_existing_turn:
+                        await websocket.send_json({"event": "assistant.interrupted", "turn_id": current_turn_id, "reason": "barge-in-empty"})
                     await websocket.send_json({"event": "session.state.changed", "state": "listening", "reason": "no-speech"})
                     continue
 
                 if text_source != "client_text" and not _is_usable_partial_text(text_input):
+                    if interrupted_existing_turn:
+                        await websocket.send_json({"event": "assistant.interrupted", "turn_id": current_turn_id, "reason": "barge-in-asr-empty"})
                     await websocket.send_json({"event": "session.state.changed", "state": "listening", "reason": "asr-empty"})
                     continue
 
@@ -408,6 +425,8 @@ async def realtime_chat_endpoint(websocket: WebSocket):
 
                 current_turn_id = f"turn-{uuid.uuid4().hex[:10]}"
                 turn_started_at = monotonic()
+                if interrupted_existing_turn:
+                    await websocket.send_json({"event": "session.state.changed", "state": "thinking", "reason": "barge-in-restart"})
                 current_turn_task = asyncio.create_task(run_turn(current_turn_id, text_input, text_source, asr_trace))
                 continue
 
@@ -418,6 +437,12 @@ async def realtime_chat_endpoint(websocket: WebSocket):
                     await websocket.send_json({"event": "session.state.changed", "state": "listening", "reason": "response.cancel"})
                 else:
                     await websocket.send_json({"event": "assistant.interrupted", "reason": "response.cancel_noop"})
+                continue
+
+            if event == "session.config":
+                # Session-bound persona/voice/knowledge settings are re-resolved for
+                # each committed turn on this non-native realtime path, so the client
+                # can safely send config sync events without triggering an error.
                 continue
 
             if event in {"session.end", "end"}:
@@ -436,4 +461,3 @@ async def realtime_chat_endpoint(websocket: WebSocket):
         if partial_asr_task and not partial_asr_task.done():
             partial_asr_task.cancel()
         return
-

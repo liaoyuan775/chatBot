@@ -1,0 +1,83 @@
+{
+  "title": "智能语音聊天机器人设计与实现",
+  "standard": "GB/T 7714-2015",
+  "items": [
+    {
+      "index": 1,
+      "title": "Robust Speech Recognition via Large-Scale Weak Supervision",
+      "type": "conference",
+      "source": "https://proceedings.mlr.press/v202/radford23a.html",
+      "status": "selected"
+    },
+    {
+      "index": 2,
+      "title": "Pre-train, Prompt, and Predict: A Systematic Survey of Prompting Methods in Natural Language Processing",
+      "type": "journal",
+      "source": "https://dl.acm.org/doi/10.1145/3560815",
+      "status": "selected"
+    },
+    {
+      "index": 3,
+      "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+      "type": "conference",
+      "source": "https://proceedings.neurips.cc/paper/2020/hash/6b493230-Abstract.html",
+      "status": "selected"
+    },
+    {
+      "index": 4,
+      "title": "Towards Reasoning in Large Language Models: A Survey",
+      "type": "conference",
+      "source": "https://aclanthology.org/2023.findings-acl.67/",
+      "status": "selected"
+    },
+    {
+      "index": 5,
+      "title": "A Survey of Large Language Models",
+      "type": "journal",
+      "source": "https://link.springer.com/article/10.1007/s11704-026-60308-3",
+      "status": "selected"
+    },
+    {
+      "index": 6,
+      "title": "Conditional Variational Autoencoder with Adversarial Learning for End-to-End Text-to-Speech",
+      "type": "conference",
+      "source": "https://proceedings.mlr.press/v139/kim21f.html",
+      "status": "selected"
+    },
+    {
+      "index": 7,
+      "title": "MemoryBank: Enhancing Large Language Models with Long-Term Memory",
+      "type": "conference",
+      "source": "https://ojs.aaai.org/index.php/AAAI/article/view/29946",
+      "status": "selected"
+    },
+    {
+      "index": 8,
+      "title": "Retrieval-Augmented Generation for AI-Generated Content: A Survey",
+      "type": "journal",
+      "source": "https://link.springer.com/article/10.1007/s41019-025-00335-5",
+      "status": "selected"
+    },
+    {
+      "index": 9,
+      "title": "YourTTS: Towards Zero-Shot Multi-Speaker TTS and Zero-Shot Voice Conversion for Everyone",
+      "type": "conference",
+      "source": "https://proceedings.mlr.press/v162/casanova22a.html",
+      "status": "selected"
+    },
+    {
+      "index": 10,
+      "title": "FunASR: A Fundamental End-to-End Speech Recognition Toolkit",
+      "type": "conference",
+      "source": "https://www.isca-archive.org/interspeech_2023/gao23g_interspeech.html",
+      "status": "selected"
+    },
+    {
+      "index": 11,
+      "title": "CMT: A Memory Compression Method for Continual Knowledge Learning of Large Language Models",
+      "type": "conference",
+      "source": "https://ojs.aaai.org/index.php/AAAI/article/view/34619",
+      "status": "selected"
+    }
+  ]
+}

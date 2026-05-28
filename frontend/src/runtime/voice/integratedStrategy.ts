@@ -1,3 +1,4 @@
+import { ensureMicAccess } from "./micSupport";
 import type { StrategyContext, VoiceStrategy } from "./types";
 
 type UnifiedServerEvent = {
@@ -79,19 +80,29 @@ export class IntegratedRealtimeStrategy implements VoiceStrategy {
 
   private speechFrameStreak = 0;
 
+  private userSpeechActive = false;
+
+  private silenceFrameStreak = 0;
+
   private lastAutoInterruptAt = 0;
+
+  private lastVadCommitAt = 0;
 
   private readonly targetSampleRate = 16000;
 
   private readonly speechThresholdRms = 0.01;
 
-  private readonly speechThresholdWhenAssistantRms = 0.024;
+  private readonly speechThresholdWhenAssistantRms = 0.008;
 
-  private readonly speechActivationFrames = 2;
+  private readonly speechActivationFrames = 1;
 
-  private readonly speechActivationFramesWhenAssistant = 4;
+  private readonly speechActivationFramesWhenAssistant = 1;
 
-  private readonly autoInterruptCooldownMs = 900;
+  private readonly autoInterruptCooldownMs = 400;
+
+  private readonly silenceFramesToCommit = 6;
+
+  private readonly commitCooldownMs = 500;
 
   private syncConfig(ctx: StrategyContext) {
     this.send({
@@ -246,19 +257,38 @@ export class IntegratedRealtimeStrategy implements VoiceStrategy {
       const requiredFrames = this.assistantSpeaking ? this.speechActivationFramesWhenAssistant : this.speechActivationFrames;
       if (rms >= threshold) {
         this.speechFrameStreak = Math.min(this.speechFrameStreak + 1, requiredFrames + 3);
+        this.silenceFrameStreak = 0;
       } else {
         this.speechFrameStreak = Math.max(0, this.speechFrameStreak - 1);
+        if (this.userSpeechActive) {
+          this.silenceFrameStreak += 1;
+        }
+      }
+      if (this.speechFrameStreak >= requiredFrames) {
+        this.userSpeechActive = true;
       }
       if (
-        this.assistantSpeaking &&
+        (this.assistantSpeaking || ctx.getStudioState() === "thinking" || ctx.getStudioState() === "speaking") &&
+        this.userSpeechActive &&
         this.speechFrameStreak >= requiredFrames &&
         Date.now() - this.lastAutoInterruptAt >= this.autoInterruptCooldownMs
       ) {
         this.lastAutoInterruptAt = Date.now();
         this.assistantSpeaking = false;
-        this.send({ event: "response.cancel", reason: "auto-barge-in" });
+        this.send({ event: "response.cancel" });
         ctx.emit("assistant.interrupted", { reason: "auto-barge-in" });
         ctx.setState("listening", "auto-barge-in");
+      }
+      if (
+        this.userSpeechActive &&
+        this.silenceFrameStreak >= this.silenceFramesToCommit &&
+        Date.now() - this.lastVadCommitAt >= this.commitCooldownMs
+      ) {
+        this.lastVadCommitAt = Date.now();
+        this.userSpeechActive = false;
+        this.silenceFrameStreak = 0;
+        this.speechFrameStreak = 0;
+        this.send({ event: "vad_end", reason: "local-vad-end" });
       }
     }, 120);
   }
@@ -277,7 +307,10 @@ export class IntegratedRealtimeStrategy implements VoiceStrategy {
     this.analyser = null;
     this.muteGainNode = null;
     this.speechFrameStreak = 0;
+    this.userSpeechActive = false;
+    this.silenceFrameStreak = 0;
     this.lastAutoInterruptAt = 0;
+    this.lastVadCommitAt = 0;
     if (this.audioContext) {
       const ctx = this.audioContext;
       this.audioContext = null;
@@ -289,6 +322,7 @@ export class IntegratedRealtimeStrategy implements VoiceStrategy {
 
   private async startMic(ctx: StrategyContext) {
     if (this.audioContext) return;
+    ensureMicAccess();
     this.stream = await navigator.mediaDevices.getUserMedia({
       audio: {
         echoCancellation: true,
@@ -339,9 +373,24 @@ export class IntegratedRealtimeStrategy implements VoiceStrategy {
   async startListening(ctx: StrategyContext): Promise<void> {
     this.listening = true;
     this.assistantSpeaking = false;
-    if (!this.ws) this.connect(ctx);
-    else this.syncConfig(ctx);
-    await this.startMic(ctx);
+    this.userSpeechActive = false;
+    this.silenceFrameStreak = 0;
+    this.lastVadCommitAt = 0;
+    try {
+      if (!this.ws) this.connect(ctx);
+      else this.syncConfig(ctx);
+      await this.startMic(ctx);
+    } catch (error) {
+      this.listening = false;
+      this.assistantSpeaking = false;
+      this.stopAudioPipeline();
+      this.ws?.close();
+      this.ws = null;
+      const message = error instanceof Error ? error.message : "Unable to start microphone for realtime call.";
+      ctx.emit("session.error", { message });
+      ctx.setState("error", "mic-start-failed");
+      throw error;
+    }
   }
 
   async stopListening(ctx: StrategyContext): Promise<void> {
@@ -352,7 +401,7 @@ export class IntegratedRealtimeStrategy implements VoiceStrategy {
       this.reconnectTimer = null;
     }
     const shouldFlushTranscript = !ctx.getConfig().autoSubmitVoiceTurns;
-    if (shouldFlushTranscript) {
+    if (shouldFlushTranscript || this.userSpeechActive) {
       this.send({ event: "input_audio.commit" });
       await new Promise((resolve) => window.setTimeout(resolve, 900));
     }

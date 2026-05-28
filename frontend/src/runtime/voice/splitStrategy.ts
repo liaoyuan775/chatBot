@@ -1,4 +1,4 @@
-﻿import type { StrategyContext, VoiceStrategy } from "./types";
+import type { StrategyContext, VoiceStrategy } from "./types";
 
 declare global {
   interface Window {
@@ -44,18 +44,14 @@ type SpeechRecognitionErrorEventLike = {
 
 export class SplitChainStrategy implements VoiceStrategy {
   private listening = false;
-
   private recognition: BrowserSpeechRecognition | null = null;
-
   private recorder: MediaRecorder | null = null;
-
   private stream: MediaStream | null = null;
-
   private restartTimer: number | null = null;
-
   private interrupted = false;
-
   private bargeInTriggered = false;
+  private audioPlaying = false;
+  private activeCtx: StrategyContext | null = null;
 
   private async openMicStream() {
     return navigator.mediaDevices.getUserMedia({
@@ -80,7 +76,7 @@ export class SplitChainStrategy implements VoiceStrategy {
     const lastAssistantReply = ctx.getLastAssistantReply();
     if (!lastAssistantReply?.text?.trim()) return false;
     const ageMs = Date.now() - lastAssistantReply.playedAt;
-    if (ageMs > 3500) return false;
+    if (ageMs > 12000) return false;
     const assistantClean = this.normalizeTranscript(lastAssistantReply.text);
     if (!assistantClean) return false;
     if (clean === assistantClean) return true;
@@ -100,12 +96,57 @@ export class SplitChainStrategy implements VoiceStrategy {
     void ctx.interruptReply("split-barge-in");
   }
 
+  private pauseAsr() {
+    if (this.restartTimer !== null) {
+      window.clearTimeout(this.restartTimer);
+      this.restartTimer = null;
+    }
+    this.recognition?.abort();
+    this.recognition = null;
+    if (this.recorder && this.recorder.state !== "inactive") {
+      this.recorder.stop();
+    }
+    this.recorder = null;
+  }
+
+  private async resumeAsr(ctx: StrategyContext) {
+    if (!this.listening || this.interrupted) return;
+    this.restartTimer = window.setTimeout(() => {
+      this.restartTimer = null;
+      if (!this.listening || this.audioPlaying) return;
+      const cfg = ctx.getConfig();
+      if (cfg.splitAsr === "backend") {
+        void this.startBackendAsr(ctx);
+      } else if (cfg.splitAsr === "browser") {
+        void this.startBrowserAsr(ctx);
+      } else {
+        void this.startBrowserAsr(ctx).catch(() => {
+          void this.startBackendAsr(ctx);
+        });
+      }
+    }, 80);
+  }
+
+  notifyAudioStarted() {
+    this.audioPlaying = true;
+    this.pauseAsr();
+  }
+
+  notifyAudioStopped() {
+    this.audioPlaying = false;
+    if (this.activeCtx) {
+      void this.resumeAsr(this.activeCtx);
+    }
+  }
+
   private async startBrowserAsr(ctx: StrategyContext) {
     const Ctor = (window.SpeechRecognition ?? window.webkitSpeechRecognition) as SpeechRecognitionCtor | undefined;
     if (!Ctor) {
       throw new Error("browser-asr-not-supported");
     }
-    this.stream = await this.openMicStream();
+    if (!this.stream) {
+      this.stream = await this.openMicStream();
+    }
     const recognition = new Ctor();
     this.recognition = recognition;
     recognition.lang = "zh-CN";
@@ -151,18 +192,19 @@ export class SplitChainStrategy implements VoiceStrategy {
       }
     };
     recognition.onend = () => {
-      this.stream?.getTracks().forEach((track) => track.stop());
-      this.stream = null;
       this.recognition = null;
       this.bargeInTriggered = false;
       if (!this.listening || this.interrupted) {
         this.interrupted = false;
         return;
       }
+      if (this.audioPlaying) return;
       this.restartTimer = window.setTimeout(() => {
         this.restartTimer = null;
-        if (!this.listening) return;
-        void this.startListening(ctx);
+        if (!this.listening || this.audioPlaying) return;
+        void this.startBrowserAsr(ctx).catch(() => {
+          void this.startBackendAsr(ctx);
+        });
       }, 80);
     };
     recognition.start();
@@ -174,7 +216,9 @@ export class SplitChainStrategy implements VoiceStrategy {
       ctx.setState("error", "media-recorder-unsupported");
       return;
     }
-    this.stream = await this.openMicStream();
+    if (!this.stream) {
+      this.stream = await this.openMicStream();
+    }
     const recorder = new MediaRecorder(this.stream);
     this.recorder = recorder;
     const chunks: Blob[] = [];
@@ -188,8 +232,6 @@ export class SplitChainStrategy implements VoiceStrategy {
     };
 
     recorder.onstop = () => {
-      this.stream?.getTracks().forEach((track) => track.stop());
-      this.stream = null;
       this.recorder = null;
       const blob = new Blob(chunks, { type: "audio/webm" });
       if (!blob.size) return;
@@ -218,10 +260,11 @@ export class SplitChainStrategy implements VoiceStrategy {
           ctx.emit("session.error", { message: error instanceof Error ? error.message : "backend-asr failed" });
           ctx.setState("error", "backend-asr-failed");
         } finally {
-          if (this.listening) {
+          if (this.listening && !this.audioPlaying) {
             this.restartTimer = window.setTimeout(() => {
               this.restartTimer = null;
-              if (this.listening) void this.startListening(ctx);
+              if (!this.listening || this.audioPlaying) return;
+              void this.startBackendAsr(ctx);
             }, 80);
           }
         }
@@ -229,7 +272,6 @@ export class SplitChainStrategy implements VoiceStrategy {
     };
 
     recorder.start();
-    // Shorter rolling segments keep split realtime-call responsive enough for barge-in.
     this.restartTimer = window.setTimeout(() => {
       this.restartTimer = null;
       if (this.recorder && this.recorder.state !== "inactive") {
@@ -239,9 +281,11 @@ export class SplitChainStrategy implements VoiceStrategy {
   }
 
   async startListening(ctx: StrategyContext): Promise<void> {
+    this.activeCtx = ctx;
     this.listening = true;
     this.interrupted = false;
     this.bargeInTriggered = false;
+    this.audioPlaying = false;
     const cfg = ctx.getConfig();
     if (cfg.splitAsr === "backend") {
       await this.startBackendAsr(ctx);
@@ -261,6 +305,7 @@ export class SplitChainStrategy implements VoiceStrategy {
   async stopListening(ctx: StrategyContext): Promise<void> {
     this.listening = false;
     this.interrupted = true;
+    this.audioPlaying = false;
     if (this.restartTimer !== null) {
       window.clearTimeout(this.restartTimer);
       this.restartTimer = null;
@@ -279,10 +324,13 @@ export class SplitChainStrategy implements VoiceStrategy {
   async interrupt(ctx: StrategyContext): Promise<void> {
     this.interrupted = true;
     this.bargeInTriggered = false;
+    this.audioPlaying = false;
     this.recognition?.abort();
+    this.recognition = null;
     if (this.recorder && this.recorder.state !== "inactive") {
       this.recorder.stop();
     }
+    this.recorder = null;
     ctx.emit("assistant.interrupted", { reason: "split-interrupt" });
     ctx.setState("listening", "split-interrupt");
   }
@@ -290,6 +338,8 @@ export class SplitChainStrategy implements VoiceStrategy {
   async destroy(): Promise<void> {
     this.listening = false;
     this.bargeInTriggered = false;
+    this.audioPlaying = false;
+    this.activeCtx = null;
     if (this.restartTimer !== null) {
       window.clearTimeout(this.restartTimer);
       this.restartTimer = null;
@@ -304,4 +354,3 @@ export class SplitChainStrategy implements VoiceStrategy {
     this.stream = null;
   }
 }
-
