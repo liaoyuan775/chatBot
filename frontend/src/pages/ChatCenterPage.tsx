@@ -182,7 +182,7 @@ export function ChatCenterPage() {
         },
         transcribeAudio: async ({ sessionId, blob, filename }) => {
           const result = await api.transcribeAudio(sessionId, blob, filename);
-          if (!result.asr_success) throw new Error(result.asr_error || "语音识别失败");
+          if (!result.asr_success) return "";
           return result.asr_text;
         }
       },

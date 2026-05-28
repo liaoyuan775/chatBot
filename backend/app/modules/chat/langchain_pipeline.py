@@ -53,6 +53,10 @@ def _extract_query_terms(question: str) -> set[str]:
     return {term for term in terms if term.strip()}
 
 
+def _extract_numeric_terms(question: str) -> list[str]:
+    return [term for term in re.findall(r"\d{5,}", question or "") if term.strip()]
+
+
 def _garbled_ratio(text: str) -> float:
     if not text:
         return 1.0
@@ -322,7 +326,7 @@ async def run_rag_chain_lcel(
         if similarity_threshold is not None
         else float(retrieval_cfg.get("similarity_threshold", 0.0))
     )
-    timeout_ms = max(100, int(rag_timeout_ms or retrieval_cfg.get("rag_timeout_ms", 1500) or 1500))
+    timeout_ms = max(100, int(rag_timeout_ms or retrieval_cfg.get("rag_timeout_ms", 6000) or 6000))
     trace: dict[str, Any] = {
         "embedding": {"provider": emb_provider, "model": emb_model},
         "rerank": {"provider": rr_provider, "model": rr_model},
@@ -335,9 +339,10 @@ async def run_rag_chain_lcel(
             row.id: row.file_name
             for row in (await db.scalars(select(KnowledgeDocumentEntity))).all()
         }
-        rows = (await db.scalars(select(KnowledgeChunkEntity).limit(8))).all()
+        rows = (await db.scalars(select(KnowledgeChunkEntity))).all()
         if not rows:
             return ""
+        numeric_terms = _extract_numeric_terms(payload["question"])
 
         def dot(a: list[float], b: list[float]) -> float:
             return sum(x * y for x, y in zip(a, b))
@@ -350,10 +355,16 @@ async def run_rag_chain_lcel(
             garbled_penalty = 1.0 if _garbled_ratio(candidate_text) <= 0.15 else -20.0
             semantic_score = dot(query_vec[:8], item.embedding[:8])
             lexical_score = _keyword_overlap_score(payload["question"], candidate_text)
-            scored_rows.append((semantic_score + lexical_score + garbled_penalty, candidate_text))
+            numeric_bonus = 200.0 if numeric_terms and any(term in candidate_text for term in numeric_terms) else 0.0
+            scored_rows.append((semantic_score + lexical_score + garbled_penalty + numeric_bonus, candidate_text))
 
         filtered_rows = [item for item in scored_rows if item[0] >= payload["similarity_threshold"]]
-        ranked = sorted(filtered_rows, key=lambda item: item[0], reverse=True)[: max(payload["top_k"] * 6, payload["top_k"])]
+        exact_numeric_rows = [
+            item for item in filtered_rows
+            if numeric_terms and any(term in item[1] for term in numeric_terms)
+        ]
+        candidate_pool = exact_numeric_rows or filtered_rows
+        ranked = sorted(candidate_pool, key=lambda item: item[0], reverse=True)[: max(payload["top_k"] * 6, payload["top_k"])]
         docs = [candidate_text for _, candidate_text in ranked]
         if not docs:
             return ""

@@ -351,6 +351,15 @@ async def create_message_stream(payload: MessageCreate, db: AsyncSession = Depen
                     "timed_out": prepared.retrieval_timed_out,
                 },
             }
+            assistant_audio_url = None
+            if (reply.text or "").strip():
+                audio_url, audio_meta, tts_errors = await _synthesize_assistant_audio(db, payload.session_id, reply.text)
+                assistant_audio_url = audio_url
+                assistant_metadata.update(audio_meta)
+                if audio_meta.get("voice_used"):
+                    assistant_metadata["voice_used"] = audio_meta["voice_used"]
+                if tts_errors:
+                    assistant_metadata["tts_error"] = " | ".join(tts_errors[:3])
             db.add(
                 MessageEntity(
                     session_id=payload.session_id,
@@ -358,7 +367,7 @@ async def create_message_stream(payload: MessageCreate, db: AsyncSession = Depen
                     content_type=reply.content_type,
                     text_content=reply.text,
                     image_url=reply.image_url,
-                    audio_url=None,
+                    audio_url=assistant_audio_url,
                     metadata_json=assistant_metadata,
                 )
             )
@@ -371,6 +380,7 @@ async def create_message_stream(payload: MessageCreate, db: AsyncSession = Depen
                 {
                     "text": reply.text,
                     "image_url": reply.image_url,
+                    "audio_url": assistant_audio_url,
                     "done": True,
                     "metrics": {
                         "context_latency_ms": prepared.context_latency_ms,
