@@ -25,6 +25,8 @@ export class PcmStreamPlayer {
 
   private activeSources = new Set<AudioBufferSourceNode>();
 
+  private onAllEnded: (() => void) | null = null;
+
   private async ensureContext() {
     if (!this.context) {
       this.context = new AudioContext({ latencyHint: "interactive" });
@@ -53,10 +55,20 @@ export class PcmStreamPlayer {
     this.activeSources.add(source);
     source.onended = () => {
       this.activeSources.delete(source);
+      if (this.activeSources.size === 0 && this.onAllEnded) {
+        const cb = this.onAllEnded;
+        this.onAllEnded = null;
+        cb();
+      }
     };
   }
 
+  setOnAllEnded(cb: (() => void) | null) {
+    this.onAllEnded = cb;
+  }
+
   stop() {
+    this.onAllEnded = null;
     this.activeSources.forEach((source) => {
       try {
         source.stop();

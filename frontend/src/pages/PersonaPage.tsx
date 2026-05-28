@@ -2,6 +2,7 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { api } from "../api/client";
 import { PageShell } from "../components/PageShell";
+import { emitToast } from "../store/toastBus";
 
 export function PersonaPage() {
   const queryClient = useQueryClient();
@@ -52,9 +53,23 @@ export function PersonaPage() {
     mutationFn: (id: string) => api.copyPersona(id),
     onSuccess: () => queryClient.invalidateQueries({ queryKey: ["personas"] })
   });
+  const [previewLoading, setPreviewLoading] = useState(false);
   const previewMutation = useMutation({
     mutationFn: (id: string) => api.previewPersona(id, previewPrompt),
-    onSuccess: (data) => setPreviewReply(data.reply)
+    onMutate: () => {
+      setPreviewReply("");
+      setPreviewLoading(true);
+    },
+    onSuccess: (data) => {
+      setPreviewReply(data.reply);
+      setPreviewLoading(false);
+    },
+    onError: (error: unknown) => {
+      setPreviewLoading(false);
+      const message = error instanceof Error ? error.message : "预览请求失败";
+      setPreviewReply(`[预览失败] ${message}`);
+      emitToast(`人格预览失败: ${message}`, "error");
+    }
   });
   const deleteMutation = useMutation({
     mutationFn: (id: string) => api.deletePersona(id),
@@ -159,8 +174,11 @@ export function PersonaPage() {
           </div>
 
           <div className="mt-4 rounded-[20px] border border-[var(--line)] bg-[#fbfdfd] p-4">
-            <div className="mb-2 text-sm font-semibold text-[var(--ink)]">实时问答预览结果</div>
-            <textarea className="field-input min-h-[160px]" value={previewReply} onChange={(e) => setPreviewReply(e.target.value)} placeholder="点击某个人格卡片上的“预览”，这里会显示实时回答。" />
+            <div className="mb-2 flex items-center gap-2 text-sm font-semibold text-[var(--ink)]">
+              <span>实时问答预览结果</span>
+              {previewLoading ? <span className="text-xs text-[var(--muted)]">加载中...</span> : null}
+            </div>
+            <textarea className="field-input min-h-[160px]" value={previewReply} onChange={(e) => setPreviewReply(e.target.value)} placeholder={previewLoading ? "正在请求大模型..." : "点击某个人格卡片上的\"预览\"，这里会显示实时回答。"} />
           </div>
         </article>
       </div>

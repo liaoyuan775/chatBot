@@ -22,8 +22,10 @@ class MemorySnapshot:
 
 
 def deterministic_embedding(text: str) -> list[float]:
-    digest = hashlib.sha256(text.encode("utf-8")).digest()[:8]
-    return [round((b / 255.0) * 2 - 1, 6) for b in digest]
+    import random
+    digest = hashlib.sha256(text.encode("utf-8")).digest()
+    rng = random.Random(int.from_bytes(digest[:8], "big"))
+    return [round(rng.uniform(-1, 1), 6) for _ in range(1024)]
 
 
 def summarize_text(text: str, max_len: int = 100) -> str:
@@ -72,7 +74,7 @@ async def ensure_session_memory(db: AsyncSession, session_id) -> SessionMemoryEn
 async def _embed_summary(db: AsyncSession, text: str) -> list[float]:
     try:
         vectors = await embedding(db, "siliconflow", settings.siliconflow_embedding_model, text)
-        return vectors[0][:8]
+        return vectors[0]
     except Exception:  # noqa: BLE001
         if settings.simulation_enabled:
             return deterministic_embedding(text)

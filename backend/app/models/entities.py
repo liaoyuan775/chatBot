@@ -60,7 +60,7 @@ class LongTermMemoryEntity(Base):
     session_id: Mapped[uuid.UUID] = mapped_column(ForeignKey("sessions.id", ondelete="CASCADE"))
     source_message_id: Mapped[uuid.UUID | None] = mapped_column(ForeignKey("messages.id", ondelete="SET NULL"))
     summary_text: Mapped[str] = mapped_column(Text)
-    embedding: Mapped[list[float]] = mapped_column(Vector(8))
+    embedding: Mapped[list[float]] = mapped_column(Vector(1024))
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
 
 
@@ -163,7 +163,7 @@ class KnowledgeChunkEntity(Base):
     chunk_index: Mapped[int] = mapped_column(Integer)
     content: Mapped[str] = mapped_column(Text)
     metadata_json: Mapped[dict] = mapped_column(JSONB, default=dict)
-    embedding: Mapped[list[float]] = mapped_column(Vector(8))
+    embedding: Mapped[list[float]] = mapped_column(Vector(1024))
 
 
 class SystemSettingEntity(Base):

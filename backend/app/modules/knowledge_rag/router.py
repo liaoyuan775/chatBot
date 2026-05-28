@@ -14,7 +14,7 @@ from pptx import Presentation
 
 from app.core.config import get_settings
 from app.core.database import get_db
-from app.core.provider_gateway import embedding, rerank
+from app.core.provider_gateway import ProviderError, embedding, rerank
 from app.models import KnowledgeBaseEntity, KnowledgeChunkEntity, KnowledgeDocumentEntity, SystemSettingEntity
 from app.schemas.common import RetrievalConfigUpsert
 
@@ -161,7 +161,7 @@ async def process_document(
                 chunk_index=idx,
                 content=chunk,
                 metadata_json={"summary": chunk[:120]},
-                embedding=vec[:8],
+                embedding=vec,
             )
         )
     document.file_name = file_name
@@ -319,16 +319,29 @@ async def upload_document(
     await db.commit()
     await db.refresh(doc)
     retrieval_config = await get_retrieval_config(db)
-    _, chunk_count = await process_document(
-        db,
-        doc,
-        file_name,
-        data,
-        chunk_size,
-        overlap,
-        embedding_provider=str(retrieval_config.get("embedding_provider", "siliconflow")),
-        embedding_model=str(retrieval_config.get("embedding_model", settings.siliconflow_embedding_model)),
-    )
+    try:
+        _, chunk_count = await process_document(
+            db,
+            doc,
+            file_name,
+            data,
+            chunk_size,
+            overlap,
+            embedding_provider=str(retrieval_config.get("embedding_provider", "siliconflow")),
+            embedding_model=str(retrieval_config.get("embedding_model", settings.siliconflow_embedding_model)),
+        )
+    except ProviderError as exc:
+        doc.parse_status = "failed"
+        await db.commit()
+        raise HTTPException(status_code=502, detail=f"Embedding failed: {exc}") from exc
+    except HTTPException:
+        doc.parse_status = "failed"
+        await db.commit()
+        raise
+    except Exception:
+        doc.parse_status = "failed"
+        await db.commit()
+        raise
     return {"id": str(doc.id), "chunk_count": chunk_count, "message": "文档上传并解析成功。"}
 
 
@@ -353,28 +366,47 @@ async def reparse_document(
     doc = await db.get(KnowledgeDocumentEntity, document_id)
     if not doc:
         raise HTTPException(status_code=404, detail="Document not found.")
-    if doc.file_type != "txt":
-        return {"message": "Only txt reparse is supported in current implementation.", "document_id": str(document_id)}
-    chunks = (
+    old_chunks = (
         await db.scalars(
             select(KnowledgeChunkEntity)
             .where(KnowledgeChunkEntity.document_id == document_id)
             .order_by(KnowledgeChunkEntity.chunk_index.asc())
         )
     ).all()
-    combined = "\n".join(chunk.content for chunk in chunks)
+    if not old_chunks:
+        raise HTTPException(status_code=400, detail="文档没有已解析的分块内容，请删除后重新上传原始文件。")
+    combined = "\n".join(chunk.content for chunk in old_chunks)
+    if not combined.strip():
+        raise HTTPException(status_code=400, detail="文档分块内容为空，请删除后重新上传原始文件。")
+
+    # Re-parse directly from extracted text — do NOT call extract_text()
+    # which expects raw binary (PDF/DOCX headers) and would fail on plain text.
     retrieval_config = await get_retrieval_config(db)
-    _, chunk_count = await process_document(
-        db,
-        doc,
-        doc.file_name,
-        combined.encode("utf-8"),
-        chunk_size,
-        overlap,
-        embedding_provider=str(retrieval_config.get("embedding_provider", "siliconflow")),
-        embedding_model=str(retrieval_config.get("embedding_model", settings.siliconflow_embedding_model)),
+    emb_provider = str(retrieval_config.get("embedding_provider", "siliconflow"))
+    emb_model = str(retrieval_config.get("embedding_model", settings.siliconflow_embedding_model))
+
+    new_chunks = split_chunks(combined, chunk_size=chunk_size, overlap=overlap)
+    from app.core.provider_gateway import ProviderError, embedding
+    vectors = await embedding(db, emb_provider, emb_model, new_chunks)
+
+    await db.execute(
+        delete(KnowledgeChunkEntity).where(KnowledgeChunkEntity.document_id == document_id)
     )
-    return {"message": "文档重解析成功。", "chunk_count": chunk_count}
+    for idx, chunk_text in enumerate(new_chunks):
+        vec = vectors[idx] if idx < len(vectors) else vectors[-1]
+        db.add(
+            KnowledgeChunkEntity(
+                document_id=document_id,
+                chunk_index=idx,
+                content=chunk_text,
+                metadata_json={"summary": chunk_text[:120]},
+                embedding=vec,
+            )
+        )
+    doc.parse_status = "parsed"
+    doc.chunk_count = len(new_chunks)
+    await db.commit()
+    return {"message": "文档重解析成功。", "chunk_count": len(new_chunks)}
 
 
 @router.put("/global-switch")
@@ -431,7 +463,7 @@ async def retrieval_test(
     emb_model = str(retrieval_config.get("embedding_model", settings.siliconflow_embedding_model))
     rr_provider = str(retrieval_config.get("rerank_provider", "siliconflow"))
     rr_model = str(retrieval_config.get("rerank_model", settings.siliconflow_rerank_model))
-    query_vec = (await embedding(db, emb_provider, emb_model, question))[0][:8]
+    query_vec = (await embedding(db, emb_provider, emb_model, question))[0]
     query = select(KnowledgeChunkEntity).join(
         KnowledgeDocumentEntity,
         KnowledgeChunkEntity.document_id == KnowledgeDocumentEntity.id,

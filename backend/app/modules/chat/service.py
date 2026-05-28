@@ -135,9 +135,7 @@ def _looks_like_short_follow_up(text: str) -> bool:
     cleaned = re.sub(r"\s+", "", (text or "").strip())
     if not cleaned:
         return True
-    if len(cleaned) <= 4:
-        return True
-    return cleaned in {"继续", "展开", "细说", "具体点", "再说说", "再详细点", "然后", "接着", "举例", "总结下"}
+    return cleaned in {"继续", "展开", "细说", "具体点", "再说说", "再详细点", "然后", "接着", "举例", "总结下", "好的", "嗯嗯", "哦哦", "明白了", "懂了", "行", "可以"}
 
 
 def _contains_knowledge_request(text: str) -> bool:
@@ -167,6 +165,26 @@ def _contains_fact_pattern(text: str) -> bool:
         "概括",
         "说明",
         "介绍",
+        "计划",
+        "安排",
+        "时间",
+        "课程",
+        "内容",
+        "要求",
+        "格式",
+        "方法",
+        "流程",
+        "规则",
+        "条件",
+        "标准",
+        "定义",
+        "含义",
+        "关系",
+        "影响",
+        "原因",
+        "方案",
+        "策略",
+        "建议",
     ]
     return any(trigger in text for trigger in triggers)
 
@@ -174,7 +192,7 @@ def _contains_fact_pattern(text: str) -> bool:
 def _has_dense_terms(text: str) -> bool:
     raw_terms = re.findall(r"[A-Z]{2,}[A-Z0-9_-]*|[a-z]{3,}[a-z0-9_-]*|\d+(?:\.\d+)?|[\u4e00-\u9fff]{2,}", text)
     unique_terms = {term.lower() for term in raw_terms if str(term).strip()}
-    return len(unique_terms) >= 6
+    return len(unique_terms) >= 4
 
 
 def _image_prompt_requires_knowledge(user_text: str | None) -> bool:
@@ -229,7 +247,12 @@ def _extract_image_prompt(user_text: str | None) -> str | None:
     explicit = re.match(r"^(?:/image|/img|/draw)\s*[:：]?\s*(.+)$", text, flags=re.IGNORECASE)
     if explicit and explicit.group(1).strip():
         return explicit.group(1).strip()
-    keywords = ["生成图片", "生成一张图", "画一张", "画个", "绘制", "出一张图", "帮我画", "帮我生成一张"]
+    keywords = [
+        "生成图片", "生成一张图", "生成一张", "生成个", "生成一幅", "生成图像", "生图",
+        "画一张", "画一张图", "画个", "画幅", "画图", "帮我画",
+        "绘制", "出一张图", "出一张", "帮我生成一张", "帮我生成",
+        "帮我做一张", "帮我做图", "作图", "做一张图", "来一张", "来张", "整个图",
+    ]
     if any(keyword in text for keyword in keywords):
         return text[:600]
     return None

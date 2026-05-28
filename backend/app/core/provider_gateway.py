@@ -275,18 +275,25 @@ async def embedding(
     db: AsyncSession, provider_name: str, model: str, text_input: str | list[str]
 ) -> list[list[float]]:
     ctx = await get_provider_context(db, provider_name)
-    payload = await _request_with_fallback(
-        ctx,
-        "POST",
-        "/embeddings",
-        json_payload={"model": model, "input": text_input},
-    )
-    data = payload.get("data") or []
+    inputs = [text_input] if isinstance(text_input, str) else list(text_input)
+    if not inputs:
+        raise ProviderError("Embedding input is empty.")
+
+    max_batch_size = 64
     result: list[list[float]] = []
-    for item in data:
-        vec = item.get("embedding") or []
-        if vec:
-            result.append([float(x) for x in vec[:8]])
+    for start in range(0, len(inputs), max_batch_size):
+        batch = inputs[start : start + max_batch_size]
+        payload = await _request_with_fallback(
+            ctx,
+            "POST",
+            "/embeddings",
+            json_payload={"model": model, "input": batch if len(batch) > 1 else batch[0]},
+        )
+        data = payload.get("data") or []
+        for item in data:
+            vec = item.get("embedding") or []
+            if vec:
+                result.append([float(x) for x in vec])
     if not result:
         raise ProviderError("No embeddings returned.")
     return result

@@ -182,6 +182,7 @@ export function KnowledgePage() {
 
           <div className="mt-4 rounded-[20px] border border-[var(--line)] bg-white/92 p-4">
             <h3 className="text-sm font-semibold text-[var(--ink)]">文档上传与覆盖提醒</h3>
+            <div className="mt-2 text-xs text-[var(--muted)]">当前支持 `txt / md / pdf / pptx / docx` 文档上传。</div>
             <label className="text-sm text-[var(--muted)]">
               上传到知识库
               <select className="field-input mt-1" value={selectedBaseId} onChange={(e) => setSelectedBaseId(e.target.value)}>
@@ -190,7 +191,7 @@ export function KnowledgePage() {
             </label>
             <input
               type="file"
-              accept=".txt,.pdf,.pptx,.docx"
+              accept=".txt,.md,.markdown,.pdf,.pptx,.docx"
               className="field-input mt-3"
               onChange={(e) => {
                 const file = e.target.files?.[0] ?? null;

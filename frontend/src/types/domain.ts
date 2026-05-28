@@ -22,6 +22,7 @@ export type Message = {
   text_content?: string | null;
   image_url?: string | null;
   audio_url?: string | null;
+  has_audio?: boolean;
   metadata_json?: Record<string, unknown>;
   replaced: boolean;
   created_at: string;

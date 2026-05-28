@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from fastapi import HTTPException
+from fastapi.responses import JSONResponse
 from starlette.middleware.base import BaseHTTPMiddleware
 from starlette.requests import Request
 
@@ -28,9 +30,12 @@ class AdminAuthMiddleware(BaseHTTPMiddleware):
 
         principal = None
         if request_requires_admin(request):
-            async with SessionLocal() as db:
-                await require_admin_user(request, db)
-                principal = await get_admin_principal(db, raw_token=request.cookies.get(settings.auth_cookie_name))
+            try:
+                async with SessionLocal() as db:
+                    await require_admin_user(request, db)
+                    principal = await get_admin_principal(db, raw_token=request.cookies.get(settings.auth_cookie_name))
+            except HTTPException as exc:
+                return JSONResponse(status_code=exc.status_code, content={"detail": exc.detail})
 
         response = await call_next(request)
 

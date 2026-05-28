@@ -1,0 +1,62 @@
+
+> chatbot-frontend@1.0.0 dev
+> vite --host 127.0.0.1 --port 5173
+
+
+  [32m[1mVITE[22m v5.4.21[39m  [2mready in [0m[1m543[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://127.0.0.1:[1m5173[22m/[39m
+[2m14:43:34[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/ContextPage.tsx, /src/styles.css, /src/pages/ChatCenterPage.tsx[22m
+[2m14:43:51[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/ChatCenterPage.tsx, /src/styles.css[22m
+[2m15:07:09[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/styles.css, /src/pages/ChatCenterPage.tsx[22m
+[2m15:14:34[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/KnowledgePage.tsx, /src/styles.css[22m
+[2m16:41:13[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/main.tsx[22m
+[2m16:41:13[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/ChatCenterPage.tsx, /src/styles.css[22m
+[2m16:41:17[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/ChatCenterPage.tsx, /src/styles.css[22m
+[2m16:43:25[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/ChatCenterPage.tsx, /src/styles.css[22m
+[2m16:47:10[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/ContextPage.tsx, /src/styles.css, /src/pages/ChatCenterPage.tsx[22m
+[2m16:47:10[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/ChatCenterPage.tsx, /src/styles.css[22m
+[2m16:47:11[22m [36m[1m[vite][22m[39m [32m✨ new dependencies optimized: [33mzustand/middleware[32m[39m
+[2m16:47:11[22m [36m[1m[vite][22m[39m [32m✨ optimized dependencies changed. reloading[39m
+[2m16:54:55[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/types/domain.ts[22m
+[2m16:55:07[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/AudioMessagePlayer.tsx, /src/styles.css[22m
+[2m16:55:12[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/AudioMessagePlayer.tsx, /src/styles.css[22m
+[2m16:55:47[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/AudioMessagePlayer.tsx, /src/styles.css[22m
+[2m16:55:57[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/ChatCenterPage.tsx, /src/styles.css[22m
+[2m17:04:20[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/AudioMessagePlayer.tsx, /src/styles.css[22m
+[2m17:04:38[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/AudioMessagePlayer.tsx, /src/styles.css[22m
+[2m17:07:17[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/styles.css, /src/pages/ChatCenterPage.tsx[22m
+[2m17:32:26[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/PersonaPage.tsx, /src/styles.css[22m
+[2m17:32:32[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/PersonaPage.tsx, /src/styles.css[22m
+[2m17:48:18[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/auth/AuthContext.tsx, /src/styles.css, /src/pages/ContextPage.tsx, /src/pages/PersonaPage.tsx, /src/pages/ProviderModelPage.tsx, /src/pages/SettingsPage.tsx, /src/pages/KnowledgePage.tsx, /src/pages/ChainPage.tsx, /src/pages/VoicePage.tsx, /src/pages/ChatCenterPage.tsx[22m
+[2m17:48:18[22m [36m[1m[vite][22m[39m [33mhmr invalidate [39m[2m/src/auth/AuthContext.tsx[22m Could not Fast Refresh ("useAuth" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+[2m17:48:18[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/auth/AuthContext.tsx[22m
+[2m17:48:29[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/PersonaPage.tsx, /src/styles.css[22m
+[2m17:48:37[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/PersonaPage.tsx, /src/styles.css[22m
+[2m17:51:12[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/PersonaPage.tsx, /src/styles.css[22m
+[2m18:27:09[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/styles.css, /src/pages/ChatCenterPage.tsx[22m
+[2m18:29:51[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/styles.css, /src/pages/ChatCenterPage.tsx[22m
+[2m18:29:58[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/styles.css, /src/pages/ChatCenterPage.tsx[22m
+[2m18:38:45[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/styles.css, /src/pages/ChatCenterPage.tsx[22m
+[2m18:41:15[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/ChatCenterPage.tsx, /src/styles.css[22m
+[2m18:41:43[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/styles.css, /src/pages/ChatCenterPage.tsx[22m
+[2m18:41:56[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/styles.css, /src/pages/ChatCenterPage.tsx[22m
+[2m18:43:40[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/styles.css, /src/pages/ChatCenterPage.tsx[22m
+[2m18:52:43[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/styles.css, /src/pages/ChatCenterPage.tsx[22m
+[2m18:53:11[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/styles.css, /src/pages/ChatCenterPage.tsx[22m
+[2m19:00:57[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/ChatCenterPage.tsx, /src/styles.css[22m
+[2m19:01:10[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/ChatCenterPage.tsx, /src/styles.css[22m
+[2m19:02:06[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/styles.css, /src/pages/ChatCenterPage.tsx[22m
+[2m19:03:38[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/styles.css, /src/pages/ChatCenterPage.tsx[22m
+[2m19:05:20[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/styles.css, /src/pages/ChatCenterPage.tsx[22m
+[2m19:05:25[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/styles.css, /src/pages/ChatCenterPage.tsx[22m
+[2m19:05:31[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/styles.css, /src/pages/ChatCenterPage.tsx[22m
+[2m19:18:07[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/ChatCenterPage.tsx, /src/styles.css[22m
+[2m19:18:13[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/ChatCenterPage.tsx, /src/styles.css[22m
+[2m19:18:22[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/ChatCenterPage.tsx, /src/styles.css[22m
+[2m19:18:30[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/ChatCenterPage.tsx, /src/styles.css[22m
+[2m19:18:46[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/ChatCenterPage.tsx, /src/styles.css[22m
+[2m19:18:57[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/ChatCenterPage.tsx, /src/styles.css[22m
+[2m19:19:13[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/ChatCenterPage.tsx, /src/styles.css[22m
+[2m19:19:18[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/ChatCenterPage.tsx, /src/styles.css[22m
+[2m19:19:23[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/ChatCenterPage.tsx, /src/styles.css[22m

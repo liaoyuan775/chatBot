@@ -167,6 +167,8 @@ def request_requires_admin(request: Request) -> bool:
         return False
     if request.method.upper() == "OPTIONS":
         return False
+    if "/preview" in request.url.path or "/copy" in request.url.path:
+        return False
     return any(request.url.path.startswith(prefix) for prefix in MANAGEMENT_PREFIXES)
 
 

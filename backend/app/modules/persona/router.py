@@ -92,7 +92,7 @@ async def preview_persona(persona_id: uuid.UUID, payload: PersonaPreviewRequest,
             ],
         )
     except Exception:
-        fallback_unknown = str(config.get("unknown_answer", "这个问题我暂时没有可靠依据。"))
+        fallback_unknown = str(config.get("unknown_answer") if config.get("unknown_answer") is not None else "这个问题我暂时没有可靠依据。")
         reply = f"{fallback_unknown}（预览降级响应）"
     return {"reply": reply}
 

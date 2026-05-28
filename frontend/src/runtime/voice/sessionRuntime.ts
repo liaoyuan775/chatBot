@@ -96,6 +96,8 @@ export class SessionRuntime {
 
   private lastAssistantReply: { text: string; playedAt: number } | null = null;
 
+  private streamedAudioInCurrentTurn = false;
+
   constructor(deps: SessionRuntimeDeps, config?: Partial<RuntimeConfig>) {
     this.deps = deps;
     this.liveConfig = {
@@ -199,6 +201,10 @@ export class SessionRuntime {
     if (type === "assistant.text.final") {
       this.addOrUpdateAssistantMessage(data.text, true);
       if (!this.firstTextAt) this.firstTextAt = Date.now();
+      const finalText = (data.text || "").trim();
+      if (finalText) {
+        this.lastAssistantReply = { text: finalText, playedAt: Date.now() };
+      }
     }
     if (type === "assistant.audio.started") {
       if (!this.firstAudioAt) this.firstAudioAt = Date.now();
@@ -207,6 +213,10 @@ export class SessionRuntime {
       if (latestAssistantText) {
         this.lastAssistantReply = { text: latestAssistantText, playedAt: Date.now() };
       }
+      this.activeStrategy?.notifyAudioStarted?.();
+    }
+    if (type === "assistant.audio.stopped") {
+      // no-op: notifyAudioStopped() is called via notifyAudioPlaybackEnded() when browser speakers actually finish
     }
     if (type === "assistant.interrupted") {
       if (this.currentAssistantMessageId) {
@@ -283,8 +293,12 @@ export class SessionRuntime {
   async startListening() {
     if (!this.snapshot.sessionId) return;
     this.snapshot.listening = true;
-    await this.ensureStrategy();
-    await this.activeStrategy?.startListening(this.getContext());
+    try {
+      await this.ensureStrategy();
+      await this.activeStrategy?.startListening(this.getContext());
+    } catch {
+      this.snapshot.listening = false;
+    }
   }
 
   async stopListening() {
@@ -300,6 +314,10 @@ export class SessionRuntime {
     if (this.currentTurnId) {
       this.emit("metrics.turn", { turn_id: this.currentTurnId, interrupt_latency_ms: latency });
     }
+  }
+
+  notifyAudioPlaybackEnded() {
+    this.activeStrategy?.notifyAudioStopped?.();
   }
 
   private async abortActiveReply(reason = "abort-controller") {
@@ -323,6 +341,7 @@ export class SessionRuntime {
     this.turnStartedAt = Date.now();
     this.firstTextAt = 0;
     this.firstAudioAt = 0;
+    this.streamedAudioInCurrentTurn = false;
 
     if (options?.emitUserMessage !== false) {
       this.emit("user.transcript.final", { text: clean, turn_id: turnId });
@@ -347,6 +366,7 @@ export class SessionRuntime {
             });
           }
           if (chunk.event === "assistant.audio.delta" && chunk.audio_base64) {
+            this.streamedAudioInCurrentTurn = true;
             if (!this.firstAudioAt) {
               this.emit("assistant.audio.started", {
                 turn_id: chunk.turn_id ?? turnId,
@@ -368,7 +388,7 @@ export class SessionRuntime {
           }
           if (chunk.audio_url) {
             this.addOrUpdateAssistantMessage(textValue, Boolean(chunk.done), chunk.audio_url);
-            if (!chunk.event) {
+            if (!chunk.event && !this.streamedAudioInCurrentTurn) {
               const match = String(chunk.audio_url).match(/^data:([^;]+);base64,(.+)$/);
               const audioMime = match?.[1] ?? "audio/mpeg";
               this.emit("assistant.audio.started", { turn_id: turnId, audio_mime: audioMime });
@@ -411,6 +431,7 @@ export class SessionRuntime {
       }
     } finally {
       this.currentTextAbortController = null;
+      this.streamedAudioInCurrentTurn = false;
     }
   }
 

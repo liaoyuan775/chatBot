@@ -10,6 +10,7 @@ from typing import Any
 from fastapi import APIRouter, Depends, File, Form, HTTPException, Query, UploadFile
 from fastapi.responses import StreamingResponse
 from sqlalchemy import delete, select
+from sqlalchemy.orm import defer
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.config import get_settings
@@ -174,12 +175,10 @@ async def list_sessions(db: AsyncSession = Depends(get_db)):
 async def create_session(payload: SessionCreate, db: AsyncSession = Depends(get_db)):
     default_chain = await db.scalar(select(ChainConfigEntity).where(ChainConfigEntity.is_default.is_(True)))
     default_persona = await db.scalar(select(PersonaEntity).where(PersonaEntity.is_default.is_(True)))
-    default_voice = await db.scalar(select(VoiceProfileEntity).where(VoiceProfileEntity.is_default.is_(True)))
     row = SessionEntity(
         title=_normalize_session_title(payload.title),
         chain_id=default_chain.id if default_chain else None,
         persona_id=default_persona.id if default_persona else None,
-        voice_id=default_voice.id if default_voice else None,
     )
     db.add(row)
     await db.commit()
@@ -251,8 +250,25 @@ async def batch_delete_sessions(
 @router.get("/api/messages")
 async def list_messages(session_id: uuid.UUID, db: AsyncSession = Depends(get_db)):
     rows = (
-        await db.scalars(select(MessageEntity).where(MessageEntity.session_id == session_id).order_by(MessageEntity.created_at.asc()))
+        await db.scalars(
+            select(MessageEntity)
+            .where(MessageEntity.session_id == session_id)
+            .order_by(MessageEntity.created_at.asc())
+            .options(defer(MessageEntity.audio_url))
+        )
     ).all()
+    audio_ids = {
+        row[0]
+        for row in (
+            await db.execute(
+                select(MessageEntity.id).where(
+                    MessageEntity.session_id == session_id,
+                    MessageEntity.audio_url.is_not(None),
+                    MessageEntity.audio_url != "",
+                )
+            )
+        ).all()
+    }
     return [
         {
             "id": str(r.id),
@@ -261,13 +277,22 @@ async def list_messages(session_id: uuid.UUID, db: AsyncSession = Depends(get_db
             "content_type": r.content_type,
             "text_content": r.text_content,
             "image_url": r.image_url,
-            "audio_url": r.audio_url,
+            "has_audio": r.id in audio_ids,
+            "audio_url": None,
             "metadata_json": r.metadata_json,
             "replaced": r.replaced,
             "created_at": r.created_at,
         }
         for r in rows
     ]
+
+
+@router.get("/api/messages/{message_id}/audio")
+async def get_message_audio(message_id: uuid.UUID, db: AsyncSession = Depends(get_db)):
+    msg = await db.get(MessageEntity, message_id)
+    if not msg:
+        raise HTTPException(status_code=404, detail="Message not found.")
+    return {"audio_url": msg.audio_url}
 
 
 @router.post("/api/messages/stream")

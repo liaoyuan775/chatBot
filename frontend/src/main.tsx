@@ -7,7 +7,14 @@ import { ToastViewport } from "./components/ToastViewport";
 import { AppRoutes } from "./routes";
 import "./styles.css";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 30 * 1000,
+      gcTime: 30 * 60 * 1000,
+    },
+  },
+});
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

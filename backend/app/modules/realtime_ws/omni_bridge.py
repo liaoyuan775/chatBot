@@ -13,13 +13,14 @@ from typing import Any
 
 import aiohttp
 from fastapi import WebSocket
+from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.provider_gateway import ProviderError, get_provider_context
 from app.core.database import SessionLocal
 from app.models import MessageEntity, SessionEntity
 from app.modules.chat.engine import SessionRuntimeConfig, resolve_session_runtime
-from app.modules.chat.langchain_pipeline import is_knowledge_globally_enabled, run_rag_chain_lcel
+from app.modules.chat.langchain_pipeline import is_knowledge_globally_enabled, run_history_context_lcel, run_rag_chain_lcel
 from app.modules.chat.service import _resolve_retrieval_outcome, should_retrieve_knowledge
 from app.modules.context_memory.service import recompute_session_memory
 
@@ -77,6 +78,7 @@ class OmniTurnState:
     retrieval_reason: str = "not_evaluated"
     retrieval_hit_count: int = 0
     retrieval_timed_out: bool = False
+    context_hint: str = ""
 
     def reset(self) -> None:
         self.turn_id = ""
@@ -101,6 +103,7 @@ class OmniTurnState:
         self.retrieval_reason = "not_evaluated"
         self.retrieval_hit_count = 0
         self.retrieval_timed_out = False
+        self.context_hint = ""
 
 
 async def _persist_omni_turn(
@@ -225,6 +228,8 @@ async def run_dashscope_omni_bridge(
         async with http_session.ws_connect(upstream_url, heartbeat=20, autoping=True, max_msg_size=0) as upstream:
             async def send_session_update() -> None:
                 nonlocal ctx, runtime, session_update_sent, voice_name
+                if session_update_sent:
+                    return
                 async with SessionLocal() as db:
                     runtime = await resolve_session_runtime(db, session_id)
                     ctx = await get_provider_context(db, runtime.realtime_main_provider)
@@ -263,18 +268,57 @@ async def run_dashscope_omni_bridge(
                     json.dumps({"event_id": f"commit-{uuid.uuid4().hex[:10]}", "type": "input_audio_buffer.commit"})
                 )
 
+            async def fetch_conversation_context() -> None:
+                if turn.context_hint:
+                    return
+                async with SessionLocal() as db:
+                    history = (
+                        await db.scalars(
+                            select(MessageEntity)
+                            .where(MessageEntity.session_id == session_id, MessageEntity.role.in_(["user", "assistant"]))
+                            .order_by(MessageEntity.created_at.desc())
+                            .limit(8)
+                        )
+                    ).all()
+                history_lines: list[str] = []
+                for item in reversed(history):
+                    text = (item.text_content or "").strip()
+                    if not text:
+                        continue
+                    role_label = "用户" if item.role == "user" else "助手"
+                    history_lines.append(f"{role_label}: {text}")
+                if not history_lines:
+                    turn.context_hint = "No context"
+                    return
+                try:
+                    async with SessionLocal() as db:
+                        ctx = await asyncio.wait_for(
+                            run_history_context_lcel(
+                                db=db,
+                                provider_name=runtime.text_llm_provider,
+                                model_name=runtime.text_llm_model,
+                                history_texts=history_lines,
+                            ),
+                            timeout=5.0,
+                        )
+                        turn.context_hint = ctx
+                except Exception:
+                    turn.context_hint = "\n".join(f"- {line}" for line in history_lines[-6:])
+
             async def request_response() -> None:
                 if not auto_reply or turn.response_requested:
                     return
                 turn.response_requested = True
-                extra_instructions = runtime.persona_realtime_prompt
+                extra_parts = [runtime.persona_realtime_prompt]
+                if turn.context_hint and turn.context_hint != "No context":
+                    extra_parts.append(f"Conversation history:\n{turn.context_hint}")
                 if turn.rag_text.strip():
-                    extra_instructions = (
-                        f"{runtime.persona_realtime_prompt}\n\n"
+                    extra_parts.append(
                         f"Knowledge:\n{turn.rag_text[:1800]}\n\n"
                         "Use the provided knowledge when it is relevant to the user's latest utterance. "
                         "If the knowledge is irrelevant, ignore it."
                     )
+                extra_instructions = "\n\n".join(extra_parts)
                 await upstream.send_str(
                     json.dumps(
                         {
@@ -392,8 +436,13 @@ async def run_dashscope_omni_bridge(
                 await upstream.send_str(
                     json.dumps({"event_id": f"cancel-{uuid.uuid4().hex[:10]}", "type": "response.cancel"})
                 )
+                await upstream.send_str(
+                    json.dumps({"event_id": f"clear-{uuid.uuid4().hex[:10]}", "type": "input_audio_buffer.clear"})
+                )
                 turn.response_active = False
                 turn.response_id = None
+                turn.input_committed = False
+                turn.response_requested = False
                 turn.assistant_interrupted = True
                 if turn.assistant_audio_started:
                     await emit("assistant.audio.stopped", {"turn_id": turn.turn_id})
@@ -473,7 +522,10 @@ async def run_dashscope_omni_bridge(
                             )
                             if auto_reply:
                                 try:
-                                    await retrieve_knowledge_if_needed(transcript)
+                                    await asyncio.gather(
+                                        retrieve_knowledge_if_needed(transcript),
+                                        fetch_conversation_context(),
+                                    )
                                 except Exception as exc:
                                     turn.rag_text = ""
                                     turn.rag_trace = {}
@@ -577,7 +629,6 @@ async def run_dashscope_omni_bridge(
                             continue
                         if event_name == "session.config":
                             auto_reply = bool(data.get("auto_reply", True))
-                            await send_session_update()
                             continue
                         if event_name == "response.cancel":
                             await cancel_response("response.cancel")

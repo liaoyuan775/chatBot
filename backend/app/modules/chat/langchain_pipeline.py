@@ -330,7 +330,7 @@ async def run_rag_chain_lcel(
     }
 
     async def _run(payload: dict[str, Any]) -> str:
-        query_vec = (await embedding(db, payload["emb_provider"], payload["emb_model"], payload["question"]))[0][:8]
+        query_vec = (await embedding(db, payload["emb_provider"], payload["emb_model"], payload["question"]))[0]
         documents = {
             row.id: row.file_name
             for row in (await db.scalars(select(KnowledgeDocumentEntity))).all()

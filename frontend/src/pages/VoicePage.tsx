@@ -2,6 +2,7 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { api } from "../api/client";
 import { PageShell } from "../components/PageShell";
+import { getMicSupportError } from "../runtime/voice/micSupport";
 import { emitToast } from "../store/toastBus";
 
 const MAX_SAMPLE_SECONDS = 30;
@@ -287,8 +288,9 @@ export function VoicePage() {
 
   const startRecording = async () => {
     if (recording) return;
-    if (!navigator.mediaDevices?.getUserMedia) {
-      showSampleFeedback("当前浏览器不支持麦克风录音。", "error");
+    const micError = getMicSupportError();
+    if (micError) {
+      showSampleFeedback(micError, "error");
       return;
     }
     if (typeof window === "undefined" || typeof MediaRecorder === "undefined") {

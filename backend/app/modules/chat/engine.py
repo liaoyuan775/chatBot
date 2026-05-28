@@ -156,21 +156,25 @@ def _persona_prompt_from_config(config: dict[str, Any] | None, *, realtime: bool
         base = "You are a real-time voice assistant."
     if not config:
         return base
-    role = str(config.get("role") or "assistant")
-    style = str(config.get("style") or "professional")
-    tone = str(config.get("tone") or "calm")
-    strictness = str(config.get("strictness") or "medium")
+    lines = [base]
+    role = str(config.get("role", "")).strip()
+    style = str(config.get("style", "")).strip()
+    tone = str(config.get("tone", "")).strip()
+    strictness = str(config.get("strictness", "")).strip()
+    unknown_answer = str(config.get("unknown_answer", "")).strip()
     allow_question_back = bool(config.get("allow_question_back", False))
-    unknown_answer = str(config.get("unknown_answer") or "这个问题我暂时没有可靠依据。")
-    return (
-        f"{base}\n"
-        f"Persona role: {role}\n"
-        f"Style: {style}\n"
-        f"Tone: {tone}\n"
-        f"Strictness: {strictness}\n"
-        f"Allow question back: {allow_question_back}\n"
-        f"If uncertain: {unknown_answer}"
-    )
+    if role:
+        lines.append(f"Persona role: {role}")
+    if style:
+        lines.append(f"Style: {style}")
+    if tone:
+        lines.append(f"Tone: {tone}")
+    if strictness:
+        lines.append(f"Strictness: {strictness}")
+    if unknown_answer:
+        lines.append(f"If uncertain: {unknown_answer}")
+    lines.append(f"Allow question back: {allow_question_back}")
+    return "\n".join(lines)
 
 
 async def _resolve_model_provider(
@@ -324,6 +328,24 @@ async def _resolve_tts_config_by_voice(
     return tts_provider, tts_model, tts_voice
 
 
+async def _resolve_effective_voice_id(
+    db: AsyncSession,
+    session: SessionEntity,
+    chain: ChainConfigEntity | None,
+):
+    session_voice_id = getattr(session, "voice_id", None)
+    chain_voice_id = getattr(chain, "voice_id", None) if chain else None
+    if not chain_voice_id:
+        return session_voice_id
+    if not session_voice_id:
+        return chain_voice_id
+    default_voice = await db.scalar(select(VoiceProfileEntity).where(VoiceProfileEntity.is_default.is_(True)))
+    default_voice_id = getattr(default_voice, "id", None)
+    if default_voice_id and session_voice_id == default_voice_id:
+        return chain_voice_id
+    return session_voice_id
+
+
 async def resolve_session_runtime(db: AsyncSession, session_id) -> SessionRuntimeConfig:
     cfg = await ensure_default_call_config(db)
     runtime = SessionRuntimeConfig(
@@ -408,7 +430,7 @@ async def resolve_session_runtime(db: AsyncSession, session_id) -> SessionRuntim
     runtime.persona_system_prompt = _persona_prompt_from_config(persona.config_json if persona else None, realtime=False)
     runtime.persona_realtime_prompt = _persona_prompt_from_config(persona.config_json if persona else None, realtime=True)
 
-    voice_id = session.voice_id or (chain.voice_id if chain else None)
+    voice_id = await _resolve_effective_voice_id(db, session, chain)
     runtime.tts_provider, runtime.tts_model, runtime.tts_voice = await _resolve_tts_config_by_voice(
         db,
         voice_id,

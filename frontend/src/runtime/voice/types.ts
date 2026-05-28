@@ -116,6 +116,8 @@ export interface VoiceStrategy {
   startListening(ctx: StrategyContext): Promise<void>;
   stopListening(ctx: StrategyContext): Promise<void>;
   interrupt(ctx: StrategyContext): Promise<void>;
+  notifyAudioStarted?(): void;
+  notifyAudioStopped?(): void;
   destroy?(): Promise<void>;
 }
 

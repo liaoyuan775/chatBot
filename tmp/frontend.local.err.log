@@ -1,0 +1,344 @@
+[2m16:55:12[22m [31m[1m[vite][22m[39m [31mInternal server error: D:\AgentLearning\chatBot\frontend\src\components\AudioMessagePlayer.tsx: Expected corresponding JSX closing tag for <>. (183:4)
+
+[0m [90m 181 |[31m         [33m/[31m[33m>[31m
+ [90m 182 |[31m       [33m<[31m[33m/[31m[33mdiv[31m[33m>[31m
+[31m[1m>[22m[31m[90m 183 |[31m     [33m<[31m[33m/[31m[33mdiv[31m[33m>[31m
+ [90m     |[31m     [31m[1m^[22m[31m
+ [90m 184 |[31m   )[33m;[31m
+ [90m 185 |[31m }
+ [90m 186 |[31m[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36mD:/AgentLearning/chatBot/frontend/src/components/AudioMessagePlayer.tsx[39m:183:4
+[33m  181|          />
+  182|        </div>
+  183|      </div>
+     |      ^
+  184|    );
+  185|  }[39m
+      at constructor (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:365:19)
+      at TypeScriptParserMixin.raise (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:6599:19)
+      at TypeScriptParserMixin.jsxParseElementAt (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4720:14)
+      at TypeScriptParserMixin.jsxParseElement (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4749:17)
+      at TypeScriptParserMixin.parseExprAtom (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4759:19)
+      at TypeScriptParserMixin.parseExprSubscripts (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:11081:23)
+      at TypeScriptParserMixin.parseUpdate (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:11066:21)
+      at TypeScriptParserMixin.parseMaybeUnary (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:11046:23)
+      at TypeScriptParserMixin.parseMaybeUnary (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:9837:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10899:61)
+      at TypeScriptParserMixin.parseExprOps (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10904:23)
+      at TypeScriptParserMixin.parseMaybeConditional (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10881:23)
+      at TypeScriptParserMixin.parseMaybeAssign (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10831:21)
+      at D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:9775:39
+      at TypeScriptParserMixin.tryParse (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:6907:20)
+      at TypeScriptParserMixin.parseMaybeAssign (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:9775:18)
+      at D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10800:39
+      at TypeScriptParserMixin.allowInAnd (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:12426:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10800:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:12493:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:11675:28)
+      at TypeScriptParserMixin.parseExprAtom (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:11331:23)
+      at TypeScriptParserMixin.parseExprAtom (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4764:20)
+      at TypeScriptParserMixin.parseExprSubscripts (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:11081:23)
+      at TypeScriptParserMixin.parseUpdate (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:11066:21)
+      at TypeScriptParserMixin.parseMaybeUnary (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:11046:23)
+      at TypeScriptParserMixin.parseMaybeUnary (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:9837:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10899:61)
+      at TypeScriptParserMixin.parseExprOps (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10904:23)
+      at TypeScriptParserMixin.parseMaybeConditional (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10881:23)
+      at TypeScriptParserMixin.parseMaybeAssign (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10831:21)
+      at TypeScriptParserMixin.parseMaybeAssign (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:9786:20)
+      at D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10800:39
+      at TypeScriptParserMixin.allowInAnd (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:12426:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10800:17)
+      at TypeScriptParserMixin.parseConditional (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10891:30)
+      at TypeScriptParserMixin.parseConditional (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:9603:18)
+      at TypeScriptParserMixin.parseMaybeConditional (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10885:17)
+      at TypeScriptParserMixin.parseMaybeAssign (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10831:21)
+      at TypeScriptParserMixin.parseMaybeAssign (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:9786:20)
+      at TypeScriptParserMixin.parseConditional (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10893:29)
+      at TypeScriptParserMixin.parseConditional (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:9603:18)
+      at TypeScriptParserMixin.parseMaybeConditional (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10885:17)
+      at TypeScriptParserMixin.parseMaybeAssign (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10831:21)
+      at TypeScriptParserMixin.parseMaybeAssign (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:9786:20)
+      at TypeScriptParserMixin.parseExpressionBase (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10784:23)
+      at D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10780:39
+      at TypeScriptParserMixin.allowInAnd (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:12426:12)
+      at TypeScriptParserMixin.parseExpression (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10780:17)
+      at TypeScriptParserMixin.jsxParseExpressionContainer (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4632:31)
+[2m16:55:12[22m [31m[1m[vite][22m[39m [31mInternal server error: D:\AgentLearning\chatBot\frontend\src\components\AudioMessagePlayer.tsx: Expected corresponding JSX closing tag for <>. (183:4)
+
+[0m [90m 181 |[31m         [33m/[31m[33m>[31m
+ [90m 182 |[31m       [33m<[31m[33m/[31m[33mdiv[31m[33m>[31m
+[31m[1m>[22m[31m[90m 183 |[31m     [33m<[31m[33m/[31m[33mdiv[31m[33m>[31m
+ [90m     |[31m     [31m[1m^[22m[31m
+ [90m 184 |[31m   )[33m;[31m
+ [90m 185 |[31m }
+ [90m 186 |[31m[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36mD:/AgentLearning/chatBot/frontend/src/components/AudioMessagePlayer.tsx[39m:183:4
+[33m  181|          />
+  182|        </div>
+  183|      </div>
+     |      ^
+  184|    );
+  185|  }[39m
+      at constructor (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:365:19)
+      at TypeScriptParserMixin.raise (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:6599:19)
+      at TypeScriptParserMixin.jsxParseElementAt (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4720:14)
+      at TypeScriptParserMixin.jsxParseElement (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4749:17)
+      at TypeScriptParserMixin.parseExprAtom (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4759:19)
+      at TypeScriptParserMixin.parseExprSubscripts (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:11081:23)
+      at TypeScriptParserMixin.parseUpdate (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:11066:21)
+      at TypeScriptParserMixin.parseMaybeUnary (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:11046:23)
+      at TypeScriptParserMixin.parseMaybeUnary (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:9837:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10899:61)
+      at TypeScriptParserMixin.parseExprOps (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10904:23)
+      at TypeScriptParserMixin.parseMaybeConditional (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10881:23)
+      at TypeScriptParserMixin.parseMaybeAssign (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10831:21)
+      at D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:9775:39
+      at TypeScriptParserMixin.tryParse (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:6907:20)
+      at TypeScriptParserMixin.parseMaybeAssign (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:9775:18)
+      at D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10800:39
+      at TypeScriptParserMixin.allowInAnd (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:12426:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10800:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:12493:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:11675:28)
+      at TypeScriptParserMixin.parseExprAtom (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:11331:23)
+      at TypeScriptParserMixin.parseExprAtom (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4764:20)
+      at TypeScriptParserMixin.parseExprSubscripts (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:11081:23)
+      at TypeScriptParserMixin.parseUpdate (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:11066:21)
+      at TypeScriptParserMixin.parseMaybeUnary (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:11046:23)
+      at TypeScriptParserMixin.parseMaybeUnary (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:9837:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10899:61)
+      at TypeScriptParserMixin.parseExprOps (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10904:23)
+      at TypeScriptParserMixin.parseMaybeConditional (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10881:23)
+      at TypeScriptParserMixin.parseMaybeAssign (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10831:21)
+      at TypeScriptParserMixin.parseMaybeAssign (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:9786:20)
+      at D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10800:39
+      at TypeScriptParserMixin.allowInAnd (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:12426:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10800:17)
+      at TypeScriptParserMixin.parseConditional (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10891:30)
+      at TypeScriptParserMixin.parseConditional (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:9603:18)
+      at TypeScriptParserMixin.parseMaybeConditional (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10885:17)
+      at TypeScriptParserMixin.parseMaybeAssign (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10831:21)
+      at TypeScriptParserMixin.parseMaybeAssign (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:9786:20)
+      at TypeScriptParserMixin.parseConditional (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10893:29)
+      at TypeScriptParserMixin.parseConditional (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:9603:18)
+      at TypeScriptParserMixin.parseMaybeConditional (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10885:17)
+      at TypeScriptParserMixin.parseMaybeAssign (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10831:21)
+      at TypeScriptParserMixin.parseMaybeAssign (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:9786:20)
+      at TypeScriptParserMixin.parseExpressionBase (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10784:23)
+      at D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10780:39
+      at TypeScriptParserMixin.allowInAnd (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:12426:12)
+      at TypeScriptParserMixin.parseExpression (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10780:17)
+      at TypeScriptParserMixin.jsxParseExpressionContainer (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4632:31)
+[2m17:48:37[22m [31m[1m[vite][22m[39m [31mInternal server error: D:\AgentLearning\chatBot\frontend\src\pages\PersonaPage.tsx: Unexpected character '”'. (176:25)
+
+[0m [90m 174 |[31m           [33m<[31m[33m/[31m[33mdiv[31m[33m>[31m
+ [90m 175 |[31m
+[31m[1m>[22m[31m[90m 176 |[31m           [33m<[31m[33mdiv[31m className[33m=[31m”mt[33m-[31m[35m4[31m rounded[33m-[31m[[35m20[31mpx] border border[33m-[31m[[36mvar[31m([33m--[31mline)] bg[33m-[31m[[33m#[31mfbfdfd] p[33m-[31m[35m4[31m”[33m>[31m
+ [90m     |[31m                          [31m[1m^[22m[31m
+ [90m 177 |[31m             [33m<[31m[33mdiv[31m className[33m=[31m”mb[33m-[31m[35m2[31m flex items[33m-[31mcenter gap[33m-[31m[35m2[31m text[33m-[31msm font[33m-[31msemibold text[33m-[31m[[36mvar[31m([33m--[31mink)]”[33m>[31m
+ [90m 178 |[31m               [33m<[31m[33mspan[31m[33m>[31m实时问答预览结果[33m<[31m[33m/[31m[33mspan[31m[33m>[31m
+ [90m 179 |[31m               {previewLoading [33m?[31m [33m<[31m[33mspan[31m className[33m=[31m”text[33m-[31mxs text[33m-[31m[[36mvar[31m([33m--[31mmuted)]”[33m>[31m加载中[33m...[31m[33m<[31m[33m/[31m[33mspan[31m[33m>[31m [33m:[31m [36mnull[31m}[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36mD:/AgentLearning/chatBot/frontend/src/pages/PersonaPage.tsx[39m:176:25
+[33m  174|            </div>
+  175|  
+  176|            <div className=”mt-4 rounded-[20px] border border-[var(--line)] bg-[#fbfdfd] p-4”>
+     |                           ^
+  177|              <div className=”mb-2 flex items-center gap-2 text-sm font-semibold text-[var(--ink)]”>
+  178|                <span>实时问答预览结果</span>[39m
+      at constructor (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:365:19)
+      at TypeScriptParserMixin.raise (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:6599:19)
+      at TypeScriptParserMixin.getTokenFromCode (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:6306:16)
+      at TypeScriptParserMixin.getTokenFromCode (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4797:11)
+      at TypeScriptParserMixin.getTokenFromCode (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:9987:11)
+      at TypeScriptParserMixin.nextToken (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:5782:10)
+      at TypeScriptParserMixin.next (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:5692:10)
+      at TypeScriptParserMixin.eat (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:5696:12)
+      at TypeScriptParserMixin.jsxParseAttribute (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4653:23)
+      at TypeScriptParserMixin.jsxParseOpeningElementAfterName (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4667:28)
+      at TypeScriptParserMixin.jsxParseOpeningElementAfterName (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10043:18)
+      at TypeScriptParserMixin.jsxParseOpeningElementAt (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4662:17)
+      at TypeScriptParserMixin.jsxParseElementAt (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4686:33)
+      at TypeScriptParserMixin.jsxParseElementAt (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4698:32)
+      at TypeScriptParserMixin.jsxParseElementAt (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4698:32)
+      at TypeScriptParserMixin.jsxParseElementAt (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4698:32)
+      at TypeScriptParserMixin.jsxParseElement (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4749:17)
+      at TypeScriptParserMixin.parseExprAtom (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4759:19)
+      at TypeScriptParserMixin.parseExprSubscripts (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:11081:23)
+      at TypeScriptParserMixin.parseUpdate (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:11066:21)
+      at TypeScriptParserMixin.parseMaybeUnary (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:11046:23)
+      at TypeScriptParserMixin.parseMaybeUnary (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:9837:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10899:61)
+      at TypeScriptParserMixin.parseExprOps (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10904:23)
+      at TypeScriptParserMixin.parseMaybeConditional (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10881:23)
+      at TypeScriptParserMixin.parseMaybeAssign (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10831:21)
+      at D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:9775:39
+      at TypeScriptParserMixin.tryParse (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:6907:20)
+      at TypeScriptParserMixin.parseMaybeAssign (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:9775:18)
+      at D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10800:39
+      at TypeScriptParserMixin.allowInAnd (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:12426:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10800:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:12493:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:11675:28)
+      at TypeScriptParserMixin.parseExprAtom (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:11331:23)
+      at TypeScriptParserMixin.parseExprAtom (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4764:20)
+      at TypeScriptParserMixin.parseExprSubscripts (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:11081:23)
+      at TypeScriptParserMixin.parseUpdate (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:11066:21)
+      at TypeScriptParserMixin.parseMaybeUnary (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:11046:23)
+      at TypeScriptParserMixin.parseMaybeUnary (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:9837:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10899:61)
+      at TypeScriptParserMixin.parseExprOps (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10904:23)
+      at TypeScriptParserMixin.parseMaybeConditional (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10881:23)
+      at TypeScriptParserMixin.parseMaybeAssign (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10831:21)
+      at TypeScriptParserMixin.parseMaybeAssign (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:9786:20)
+      at TypeScriptParserMixin.parseExpressionBase (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10784:23)
+      at D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10780:39
+      at TypeScriptParserMixin.allowInAnd (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:12421:16)
+      at TypeScriptParserMixin.parseExpression (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10780:17)
+      at TypeScriptParserMixin.parseReturnStatement (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:13142:28)
+[2m17:48:37[22m [31m[1m[vite][22m[39m [31mInternal server error: D:\AgentLearning\chatBot\frontend\src\pages\PersonaPage.tsx: Unexpected character '”'. (176:25)
+
+[0m [90m 174 |[31m           [33m<[31m[33m/[31m[33mdiv[31m[33m>[31m
+ [90m 175 |[31m
+[31m[1m>[22m[31m[90m 176 |[31m           [33m<[31m[33mdiv[31m className[33m=[31m”mt[33m-[31m[35m4[31m rounded[33m-[31m[[35m20[31mpx] border border[33m-[31m[[36mvar[31m([33m--[31mline)] bg[33m-[31m[[33m#[31mfbfdfd] p[33m-[31m[35m4[31m”[33m>[31m
+ [90m     |[31m                          [31m[1m^[22m[31m
+ [90m 177 |[31m             [33m<[31m[33mdiv[31m className[33m=[31m”mb[33m-[31m[35m2[31m flex items[33m-[31mcenter gap[33m-[31m[35m2[31m text[33m-[31msm font[33m-[31msemibold text[33m-[31m[[36mvar[31m([33m--[31mink)]”[33m>[31m
+ [90m 178 |[31m               [33m<[31m[33mspan[31m[33m>[31m实时问答预览结果[33m<[31m[33m/[31m[33mspan[31m[33m>[31m
+ [90m 179 |[31m               {previewLoading [33m?[31m [33m<[31m[33mspan[31m className[33m=[31m”text[33m-[31mxs text[33m-[31m[[36mvar[31m([33m--[31mmuted)]”[33m>[31m加载中[33m...[31m[33m<[31m[33m/[31m[33mspan[31m[33m>[31m [33m:[31m [36mnull[31m}[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36mD:/AgentLearning/chatBot/frontend/src/pages/PersonaPage.tsx[39m:176:25
+[33m  174|            </div>
+  175|  
+  176|            <div className=”mt-4 rounded-[20px] border border-[var(--line)] bg-[#fbfdfd] p-4”>
+     |                           ^
+  177|              <div className=”mb-2 flex items-center gap-2 text-sm font-semibold text-[var(--ink)]”>
+  178|                <span>实时问答预览结果</span>[39m
+      at constructor (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:365:19)
+      at TypeScriptParserMixin.raise (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:6599:19)
+      at TypeScriptParserMixin.getTokenFromCode (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:6306:16)
+      at TypeScriptParserMixin.getTokenFromCode (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4797:11)
+      at TypeScriptParserMixin.getTokenFromCode (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:9987:11)
+      at TypeScriptParserMixin.nextToken (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:5782:10)
+      at TypeScriptParserMixin.next (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:5692:10)
+      at TypeScriptParserMixin.eat (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:5696:12)
+      at TypeScriptParserMixin.jsxParseAttribute (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4653:23)
+      at TypeScriptParserMixin.jsxParseOpeningElementAfterName (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4667:28)
+      at TypeScriptParserMixin.jsxParseOpeningElementAfterName (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10043:18)
+      at TypeScriptParserMixin.jsxParseOpeningElementAt (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4662:17)
+      at TypeScriptParserMixin.jsxParseElementAt (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4686:33)
+      at TypeScriptParserMixin.jsxParseElementAt (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4698:32)
+      at TypeScriptParserMixin.jsxParseElementAt (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4698:32)
+      at TypeScriptParserMixin.jsxParseElementAt (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4698:32)
+      at TypeScriptParserMixin.jsxParseElement (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4749:17)
+      at TypeScriptParserMixin.parseExprAtom (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4759:19)
+      at TypeScriptParserMixin.parseExprSubscripts (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:11081:23)
+      at TypeScriptParserMixin.parseUpdate (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:11066:21)
+      at TypeScriptParserMixin.parseMaybeUnary (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:11046:23)
+      at TypeScriptParserMixin.parseMaybeUnary (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:9837:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10899:61)
+      at TypeScriptParserMixin.parseExprOps (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10904:23)
+      at TypeScriptParserMixin.parseMaybeConditional (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10881:23)
+      at TypeScriptParserMixin.parseMaybeAssign (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10831:21)
+      at D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:9775:39
+      at TypeScriptParserMixin.tryParse (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:6907:20)
+      at TypeScriptParserMixin.parseMaybeAssign (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:9775:18)
+      at D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10800:39
+      at TypeScriptParserMixin.allowInAnd (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:12426:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10800:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:12493:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:11675:28)
+      at TypeScriptParserMixin.parseExprAtom (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:11331:23)
+      at TypeScriptParserMixin.parseExprAtom (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4764:20)
+      at TypeScriptParserMixin.parseExprSubscripts (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:11081:23)
+      at TypeScriptParserMixin.parseUpdate (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:11066:21)
+      at TypeScriptParserMixin.parseMaybeUnary (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:11046:23)
+      at TypeScriptParserMixin.parseMaybeUnary (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:9837:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10899:61)
+      at TypeScriptParserMixin.parseExprOps (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10904:23)
+      at TypeScriptParserMixin.parseMaybeConditional (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10881:23)
+      at TypeScriptParserMixin.parseMaybeAssign (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10831:21)
+      at TypeScriptParserMixin.parseMaybeAssign (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:9786:20)
+      at TypeScriptParserMixin.parseExpressionBase (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10784:23)
+      at D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10780:39
+      at TypeScriptParserMixin.allowInAnd (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:12421:16)
+      at TypeScriptParserMixin.parseExpression (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10780:17)
+      at TypeScriptParserMixin.parseReturnStatement (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:13142:28)
+[2m17:50:13[22m [31m[1m[vite][22m[39m Pre-transform error: D:\AgentLearning\chatBot\frontend\src\pages\PersonaPage.tsx: Unexpected character '”'. (176:25)
+
+[0m [90m 174 |[39m           [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+ [90m 175 |[39m
+[31m[1m>[22m[39m[90m 176 |[39m           [33m<[39m[33mdiv[39m className[33m=[39m”mt[33m-[39m[35m4[39m rounded[33m-[39m[[35m20[39mpx] border border[33m-[39m[[36mvar[39m([33m--[39mline)] bg[33m-[39m[[33m#[39mfbfdfd] p[33m-[39m[35m4[39m”[33m>[39m
+ [90m     |[39m                          [31m[1m^[22m[39m
+ [90m 177 |[39m             [33m<[39m[33mdiv[39m className[33m=[39m”mb[33m-[39m[35m2[39m flex items[33m-[39mcenter gap[33m-[39m[35m2[39m text[33m-[39msm font[33m-[39msemibold text[33m-[39m[[36mvar[39m([33m--[39mink)]”[33m>[39m
+ [90m 178 |[39m               [33m<[39m[33mspan[39m[33m>[39m实时问答预览结果[33m<[39m[33m/[39m[33mspan[39m[33m>[39m
+ [90m 179 |[39m               {previewLoading [33m?[39m [33m<[39m[33mspan[39m className[33m=[39m”text[33m-[39mxs text[33m-[39m[[36mvar[39m([33m--[39mmuted)]”[33m>[39m加载中[33m...[39m[33m<[39m[33m/[39m[33mspan[39m[33m>[39m [33m:[39m [36mnull[39m}[0m
+[2m17:50:13[22m [31m[1m[vite][22m[39m [31mInternal server error: D:\AgentLearning\chatBot\frontend\src\pages\PersonaPage.tsx: Unexpected character '”'. (176:25)
+
+[0m [90m 174 |[31m           [33m<[31m[33m/[31m[33mdiv[31m[33m>[31m
+ [90m 175 |[31m
+[31m[1m>[22m[31m[90m 176 |[31m           [33m<[31m[33mdiv[31m className[33m=[31m”mt[33m-[31m[35m4[31m rounded[33m-[31m[[35m20[31mpx] border border[33m-[31m[[36mvar[31m([33m--[31mline)] bg[33m-[31m[[33m#[31mfbfdfd] p[33m-[31m[35m4[31m”[33m>[31m
+ [90m     |[31m                          [31m[1m^[22m[31m
+ [90m 177 |[31m             [33m<[31m[33mdiv[31m className[33m=[31m”mb[33m-[31m[35m2[31m flex items[33m-[31mcenter gap[33m-[31m[35m2[31m text[33m-[31msm font[33m-[31msemibold text[33m-[31m[[36mvar[31m([33m--[31mink)]”[33m>[31m
+ [90m 178 |[31m               [33m<[31m[33mspan[31m[33m>[31m实时问答预览结果[33m<[31m[33m/[31m[33mspan[31m[33m>[31m
+ [90m 179 |[31m               {previewLoading [33m?[31m [33m<[31m[33mspan[31m className[33m=[31m”text[33m-[31mxs text[33m-[31m[[36mvar[31m([33m--[31mmuted)]”[33m>[31m加载中[33m...[31m[33m<[31m[33m/[31m[33mspan[31m[33m>[31m [33m:[31m [36mnull[31m}[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36mD:/AgentLearning/chatBot/frontend/src/pages/PersonaPage.tsx[39m:176:25
+[33m  174|            </div>
+  175|  
+  176|            <div className=”mt-4 rounded-[20px] border border-[var(--line)] bg-[#fbfdfd] p-4”>
+     |                           ^
+  177|              <div className=”mb-2 flex items-center gap-2 text-sm font-semibold text-[var(--ink)]”>
+  178|                <span>实时问答预览结果</span>[39m
+      at constructor (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:365:19)
+      at TypeScriptParserMixin.raise (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:6599:19)
+      at TypeScriptParserMixin.getTokenFromCode (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:6306:16)
+      at TypeScriptParserMixin.getTokenFromCode (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4797:11)
+      at TypeScriptParserMixin.getTokenFromCode (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:9987:11)
+      at TypeScriptParserMixin.nextToken (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:5782:10)
+      at TypeScriptParserMixin.next (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:5692:10)
+      at TypeScriptParserMixin.eat (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:5696:12)
+      at TypeScriptParserMixin.jsxParseAttribute (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4653:23)
+      at TypeScriptParserMixin.jsxParseOpeningElementAfterName (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4667:28)
+      at TypeScriptParserMixin.jsxParseOpeningElementAfterName (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10043:18)
+      at TypeScriptParserMixin.jsxParseOpeningElementAt (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4662:17)
+      at TypeScriptParserMixin.jsxParseElementAt (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4686:33)
+      at TypeScriptParserMixin.jsxParseElementAt (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4698:32)
+      at TypeScriptParserMixin.jsxParseElementAt (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4698:32)
+      at TypeScriptParserMixin.jsxParseElementAt (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4698:32)
+      at TypeScriptParserMixin.jsxParseElement (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4749:17)
+      at TypeScriptParserMixin.parseExprAtom (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4759:19)
+      at TypeScriptParserMixin.parseExprSubscripts (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:11081:23)
+      at TypeScriptParserMixin.parseUpdate (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:11066:21)
+      at TypeScriptParserMixin.parseMaybeUnary (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:11046:23)
+      at TypeScriptParserMixin.parseMaybeUnary (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:9837:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10899:61)
+      at TypeScriptParserMixin.parseExprOps (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10904:23)
+      at TypeScriptParserMixin.parseMaybeConditional (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10881:23)
+      at TypeScriptParserMixin.parseMaybeAssign (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10831:21)
+      at D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:9775:39
+      at TypeScriptParserMixin.tryParse (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:6907:20)
+      at TypeScriptParserMixin.parseMaybeAssign (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:9775:18)
+      at D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10800:39
+      at TypeScriptParserMixin.allowInAnd (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:12426:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10800:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:12493:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:11675:28)
+      at TypeScriptParserMixin.parseExprAtom (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:11331:23)
+      at TypeScriptParserMixin.parseExprAtom (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:4764:20)
+      at TypeScriptParserMixin.parseExprSubscripts (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:11081:23)
+      at TypeScriptParserMixin.parseUpdate (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:11066:21)
+      at TypeScriptParserMixin.parseMaybeUnary (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:11046:23)
+      at TypeScriptParserMixin.parseMaybeUnary (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:9837:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10899:61)
+      at TypeScriptParserMixin.parseExprOps (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10904:23)
+      at TypeScriptParserMixin.parseMaybeConditional (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10881:23)
+      at TypeScriptParserMixin.parseMaybeAssign (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10831:21)
+      at TypeScriptParserMixin.parseMaybeAssign (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:9786:20)
+      at TypeScriptParserMixin.parseExpressionBase (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10784:23)
+      at D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10780:39
+      at TypeScriptParserMixin.allowInAnd (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:12421:16)
+      at TypeScriptParserMixin.parseExpression (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:10780:17)
+      at TypeScriptParserMixin.parseReturnStatement (D:\AgentLearning\chatBot\frontend\node_modules\@babel\parser\lib\index.js:13142:28)

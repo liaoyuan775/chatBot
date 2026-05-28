@@ -261,7 +261,7 @@ export const api = {
   createPersona: async (payload: Record<string, unknown>) => (await http.post("/api/personas", payload)).data,
   updatePersona: async (personaId: string, payload: Record<string, unknown>) => (await http.put(`/api/personas/${personaId}`, payload)).data,
   copyPersona: async (personaId: string) => (await http.post(`/api/personas/${personaId}/copy`)).data,
-  previewPersona: async (personaId: string, prompt: string) => (await http.post<{ reply: string }>(`/api/personas/${personaId}/preview`, { prompt })).data,
+  previewPersona: async (personaId: string, prompt: string) => (await http.post<{ reply: string }>(`/api/personas/${personaId}/preview`, { prompt }, { headers: { "x-toast-skip": "1" } })).data,
   deletePersona: async (personaId: string) => (await http.delete(`/api/personas/${personaId}`)).data,
 
   listVoices: async () => (await http.get<VoiceProfile[]>("/api/voices")).data,

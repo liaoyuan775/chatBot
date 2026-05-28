@@ -68,6 +68,9 @@ export function ChatCenterPage() {
   const assistantPcmPlayerRef = useRef<PcmStreamPlayer | null>(null);
   const assistantAudioQueueRef = useRef<Array<{ mime: string; base64: string }>>([]);
   const assistantAudioPlayingRef = useRef(false);
+  const audioStreamEndedRef = useRef(false);
+  const isPcmPathRef = useRef(false);
+  const pcmFinishedRef = useRef(false);
   const [mode, setMode] = useState<VoiceMode>("integrated-realtime");
   const [listening, setListening] = useState(false);
   const [studioState, setStudioState] = useState<StudioState>("idle");
@@ -82,15 +85,17 @@ export function ChatCenterPage() {
   const sessionsQuery = useQuery({ queryKey: ["sessions"], queryFn: api.listSessions });
   const chainsQuery = useQuery({ queryKey: ["chains"], queryFn: api.listChains });
   const personasQuery = useQuery({ queryKey: ["personas"], queryFn: api.listPersonas });
+  const voicesQuery = useQuery({ queryKey: ["voices"], queryFn: api.listVoices });
   const messagesQuery = useQuery({
     queryKey: ["messages", activeSessionId],
     queryFn: () => api.listMessages(activeSessionId!),
-    enabled: Boolean(activeSessionId)
+    enabled: Boolean(activeSessionId),
   });
 
   const sessions = sessionsQuery.data ?? [];
   const chains = chainsQuery.data ?? [];
   const personas = personasQuery.data ?? [];
+  const voices = voicesQuery.data ?? [];
   const messages = messagesQuery.data ?? [];
 
   const activeSession = useMemo<Session | undefined>(
@@ -101,7 +106,53 @@ export function ChatCenterPage() {
     () => chains.find((chain) => chain.id === activeSession?.chain_id),
     [chains, activeSession?.chain_id]
   );
+  const effectivePersonaId = activeSession?.persona_id ?? activeChain?.persona_id ?? null;
+  const activePersona = useMemo(
+    () => personas.find((persona) => persona.id === effectivePersonaId),
+    [effectivePersonaId, personas]
+  );
+  const sessionVoiceProfile = useMemo(
+    () => voices.find((voice) => voice.id === (activeSession?.voice_id ?? null)),
+    [activeSession?.voice_id, voices]
+  );
+  const chainVoiceProfile = useMemo(
+    () => voices.find((voice) => voice.id === (activeChain?.voice_id ?? null)),
+    [activeChain?.voice_id, voices]
+  );
   const chainRuntimeMode = resolveChainMode(activeChain?.mapping_json?.voice_runtime_mode);
+  const runtimeBindingSignature = useMemo(
+    () =>
+      JSON.stringify({
+        sessionId: activeSessionId,
+        chainId: activeSession?.chain_id ?? null,
+        sessionPersonaId: activeSession?.persona_id ?? null,
+        sessionVoiceId: activeSession?.voice_id ?? null,
+        knowledgeEnabled: Boolean(activeSession?.knowledge_enabled),
+        chainPersonaId: activeChain?.persona_id ?? null,
+        chainVoiceId: activeChain?.voice_id ?? null,
+        chainRuntimeMode,
+        chainMapping: activeChain?.mapping_json ?? null,
+        personaConfig: activePersona?.config_json ?? null,
+        sessionVoiceConfig: sessionVoiceProfile?.config_json ?? null,
+        chainVoiceConfig: chainVoiceProfile?.config_json ?? null
+      }),
+    [
+      activeChain?.mapping_json,
+      activeChain?.persona_id,
+      activeChain?.voice_id,
+      activePersona?.config_json,
+      activeSession?.chain_id,
+      activeSession?.knowledge_enabled,
+      activeSession?.persona_id,
+      activeSession?.voice_id,
+      activeSessionId,
+      chainRuntimeMode,
+      chainVoiceProfile?.config_json,
+      sessionVoiceProfile?.config_json
+    ]
+  );
+  const runtimeBindingSignatureRef = useRef("");
+  const runtimeBindingModeRef = useRef<VoiceMode>(chainRuntimeMode);
   const allSessionIds = sessions.map((session) => session.id);
   const allSelected = allSessionIds.length > 0 && allSessionIds.every((id) => selectedSessionIds.includes(id));
 
@@ -109,6 +160,14 @@ export function ChatCenterPage() {
     if (!assistantPcmPlayerRef.current) {
       assistantPcmPlayerRef.current = new PcmStreamPlayer();
     }
+    assistantPcmPlayerRef.current.setOnAllEnded(() => {
+      pcmFinishedRef.current = true;
+      if (audioStreamEndedRef.current) {
+        runtimeRef.current?.notifyAudioPlaybackEnded();
+        pcmFinishedRef.current = false;
+        audioStreamEndedRef.current = false;
+      }
+    });
     if (runtimeRef.current) return;
     runtimeRef.current = new SessionRuntime(
       {
@@ -157,6 +216,9 @@ export function ChatCenterPage() {
 
   useEffect(() => {
     setRetrievalStatus("未执行");
+    setTranscript("");
+    stopAssistantAudio();
+    setTurnDraft({});
   }, [activeSessionId]);
 
   const stopAssistantAudio = () => {
@@ -165,12 +227,20 @@ export function ChatCenterPage() {
     assistantPcmPlayerRef.current?.stop();
     assistantAudioQueueRef.current = [];
     assistantAudioPlayingRef.current = false;
+    audioStreamEndedRef.current = false;
+    pcmFinishedRef.current = false;
   };
 
   const playNextAssistantAudio = () => {
     if (assistantAudioPlayingRef.current) return;
     const next = assistantAudioQueueRef.current.shift();
-    if (!next) return;
+    if (!next) {
+      if (audioStreamEndedRef.current) {
+        runtimeRef.current?.notifyAudioPlaybackEnded();
+        audioStreamEndedRef.current = false;
+      }
+      return;
+    }
     assistantAudioPlayingRef.current = true;
     const audio = new Audio(`data:${next.mime};base64,${next.base64}`);
     assistantAudioRef.current = audio;
@@ -210,11 +280,15 @@ export function ChatCenterPage() {
         stopAssistantAudio();
         setTranscript(event.payload.text);
         if (activeVoiceFeature !== "voice-input") {
-          setTurnDraft({ userText: event.payload.text, assistantText: "" });
+          setTurnDraft({ sessionId: activeSessionId ?? undefined, userText: event.payload.text, assistantText: "" });
         }
       }
       if (event.type === "assistant.text.delta" || event.type === "assistant.text.final") {
-        setTurnDraft({ userText: turnDraft.userText, assistantText: event.payload.text });
+        setTurnDraft({
+          sessionId: activeSessionId ?? undefined,
+          userText: turnDraft.sessionId === activeSessionId ? turnDraft.userText : "",
+          assistantText: event.payload.text
+        });
       }
       if (event.type === "metrics.turn") {
         const c = event.payload.context_latency_ms ?? "-";
@@ -258,7 +332,8 @@ export function ChatCenterPage() {
       }
       if (event.type === "assistant.audio.delta") {
         const mime = event.payload.audio_mime || "audio/mpeg";
-        if (mime.startsWith("audio/pcm")) {
+        isPcmPathRef.current = mime.startsWith("audio/pcm");
+        if (isPcmPathRef.current) {
           assistantAudioRef.current?.pause();
           const match = mime.match(/rate=(\d+)/i);
           const sampleRate = match ? Number(match[1]) : 24000;
@@ -267,6 +342,21 @@ export function ChatCenterPage() {
           assistantPcmPlayerRef.current?.stop();
           assistantAudioQueueRef.current.push({ mime, base64: event.payload.audio_base64 });
           playNextAssistantAudio();
+        }
+      }
+      if (event.type === "assistant.audio.stopped") {
+        audioStreamEndedRef.current = true;
+        if (isPcmPathRef.current) {
+          if (pcmFinishedRef.current) {
+            runtimeRef.current?.notifyAudioPlaybackEnded();
+            pcmFinishedRef.current = false;
+            audioStreamEndedRef.current = false;
+          }
+        } else {
+          if (!assistantAudioPlayingRef.current && assistantAudioQueueRef.current.length === 0) {
+            runtimeRef.current?.notifyAudioPlaybackEnded();
+            audioStreamEndedRef.current = false;
+          }
         }
       }
       if (event.type === "assistant.interrupted") {
@@ -350,20 +440,8 @@ export function ChatCenterPage() {
   const updateSessionMutation = useMutation({
     mutationFn: ({ sessionId, payload }: { sessionId: string; payload: Partial<Pick<Session, "chain_id" | "persona_id" | "voice_id" | "knowledge_enabled">> }) =>
       api.updateSession(sessionId, payload),
-    onSuccess: async (_, variables) => {
+    onSuccess: async () => {
       await queryClient.invalidateQueries({ queryKey: ["sessions"] });
-      if (
-        variables.sessionId === activeSessionId &&
-        activeVoiceFeature &&
-        listening
-      ) {
-        const forceRestart = Object.prototype.hasOwnProperty.call(variables.payload, "chain_id");
-        const nextMode =
-          typeof variables.payload.chain_id === "string"
-            ? resolveChainMode(chains.find((chain) => chain.id === variables.payload.chain_id)?.mapping_json?.voice_runtime_mode)
-            : chainRuntimeMode;
-        await refreshListeningRuntime(activeVoiceFeature, nextMode, forceRestart);
-      }
     }
   });
 
@@ -427,6 +505,21 @@ export function ChatCenterPage() {
     }
   };
 
+  useEffect(() => {
+    const previousSignature = runtimeBindingSignatureRef.current;
+    const previousMode = runtimeBindingModeRef.current;
+    runtimeBindingSignatureRef.current = runtimeBindingSignature;
+    runtimeBindingModeRef.current = chainRuntimeMode;
+    if (!activeSessionId || !previousSignature || previousSignature === runtimeBindingSignature) {
+      return;
+    }
+    if (!listening || !activeVoiceFeature) {
+      return;
+    }
+    const forceRestart = previousMode !== chainRuntimeMode;
+    void refreshListeningRuntime(activeVoiceFeature, chainRuntimeMode, forceRestart);
+  }, [activeSessionId, activeVoiceFeature, chainRuntimeMode, listening, runtimeBindingSignature]);
+
   const interruptVoice = async () => {
     if (!runtimeRef.current) return;
     stopAssistantAudio();
@@ -466,7 +559,7 @@ export function ChatCenterPage() {
 
   const displayMessages = useMemo(() => {
     const rows = [...messages];
-    const allowDraftMessages = activeVoiceFeature !== "voice-input";
+    const allowDraftMessages = activeVoiceFeature !== "voice-input" && turnDraft.sessionId === activeSessionId;
     const latestUserText = [...rows].reverse().find((message) => message.role === "user")?.text_content?.trim() ?? "";
     const latestAssistantText =
       [...rows].reverse().find((message) => message.role === "assistant")?.text_content?.trim() ?? "";
@@ -556,6 +649,28 @@ export function ChatCenterPage() {
                 {personas.map((persona: Persona) => (
                   <option key={persona.id} value={persona.id}>
                     {persona.name}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label className="text-xs text-[var(--muted)]">
+              当前音色
+              <select
+                className="field-input mt-1"
+                value={activeSession?.voice_id ?? ""}
+                disabled={!activeSessionId}
+                onChange={(e) =>
+                  activeSessionId &&
+                  updateSessionMutation.mutate({
+                    sessionId: activeSessionId,
+                    payload: { voice_id: e.target.value || null }
+                  })
+                }
+              >
+                <option value="">跟随链路 / 默认</option>
+                {voices.map((voice) => (
+                  <option key={voice.id} value={voice.id}>
+                    {voice.name}
                   </option>
                 ))}
               </select>
@@ -656,7 +771,7 @@ export function ChatCenterPage() {
                   {message.image_url ? (
                     <img className="mt-2 max-h-[320px] w-full rounded-lg border border-[var(--line)] object-cover" src={message.image_url} alt="generated" />
                   ) : null}
-                  {message.audio_url ? <AudioMessagePlayer className="mt-2" src={message.audio_url} /> : null}
+                  {message.has_audio || message.audio_url ? <AudioMessagePlayer className="mt-2" src={message.audio_url} messageId={message.id} /> : null}
                 </article>
               ))}
             </div>

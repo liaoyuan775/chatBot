@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
 type ChatStore = {
   activeSessionId: string | null;
@@ -18,6 +19,7 @@ type ChatStore = {
     totalLatencyMs?: number;
   };
   turnDraft: {
+    sessionId?: string;
     userText?: string;
     assistantText?: string;
   };
@@ -30,19 +32,27 @@ type ChatStore = {
   setTurnDraft: (draft: ChatStore["turnDraft"]) => void;
 };
 
-export const useChatStore = create<ChatStore>((set) => ({
-  activeSessionId: null,
-  inputText: "",
-  realtimeEnabled: false,
-  voiceMode: "integrated-realtime",
-  studioState: "idle",
-  runtimeMetrics: {},
-  turnDraft: {},
-  setActiveSessionId: (id) => set({ activeSessionId: id }),
-  setInputText: (text) => set({ inputText: text }),
-  setRealtimeEnabled: (v) => set({ realtimeEnabled: v }),
-  setVoiceMode: (mode) => set({ voiceMode: mode }),
-  setStudioState: (studioState) => set({ studioState }),
-  setRuntimeMetrics: (runtimeMetrics) => set({ runtimeMetrics }),
-  setTurnDraft: (turnDraft) => set({ turnDraft })
-}));
+export const useChatStore = create<ChatStore>()(
+  persist(
+    (set) => ({
+      activeSessionId: null,
+      inputText: "",
+      realtimeEnabled: false,
+      voiceMode: "integrated-realtime",
+      studioState: "idle",
+      runtimeMetrics: {},
+      turnDraft: {},
+      setActiveSessionId: (id) => set({ activeSessionId: id }),
+      setInputText: (text) => set({ inputText: text }),
+      setRealtimeEnabled: (v) => set({ realtimeEnabled: v }),
+      setVoiceMode: (mode) => set({ voiceMode: mode }),
+      setStudioState: (studioState) => set({ studioState }),
+      setRuntimeMetrics: (runtimeMetrics) => set({ runtimeMetrics }),
+      setTurnDraft: (turnDraft) => set({ turnDraft })
+    }),
+    {
+      name: "chat-store",
+      partialize: (state) => ({ activeSessionId: state.activeSessionId }),
+    }
+  )
+);
